@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h1 {display: inline; }
+    button { width: 12rem;}
+    .contenedor {width:90%; margin: 0 auto;}
+    details {font-size: 0.85rem; color:#6d2c7d; font-style: oblique;}
+  </style>
+  <title>Galletitas de la Suerte</title>
+</head>
+<body>
+  <div class="contenedor">
+    <details>
+      <summary><h1>Galletitas de la Suerte</h1></summary>
+      <p>Trabajaremos con un array y los métodos <b>floor</b> y <b>random</b> del objeto <b>Math</b>.
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">MDN</a></p>
+      <p>Para mostrar el mensaje en pantalla:</p>
+      <ol>
+        <li>Creamos un <a href="https://www.w3schools.com/js/js_array_methods.asp" target="_blank">array</a> de mensajes.
+        (<a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener noreferrer">+</a>).</li>
+        <li>Leemos cuántos mensajes hay y lo guardamos en la constante NUM_MENSAJES</li>
+        <li>Generamos un número random entre 0 y el número de mensajes guardados en el paso 2</li>
+        <li>Mostramos el mensaje que está en la posición del número generado clicando el botón <em>msj</em></li>
+        <li>Cambiamos la <a href="https://www.w3schools.com/tags/tag_img.asp" target="_blank">imagen</a> 
+            de la galletita cerrada por una galletita abierta. Recuerda:</li>
+        <p><img src="cambiarAtributo.png" title="cambiar atributo a un elemento HTML"></p>
+        <li>Deshabilitamos el <a href="https://www.w3schools.com/tags/tag_button.asp" target="_blank">botón</a> <em>msj</em></li>
+      </ol>
+      <p><b>Abre la consola</b> (<em>botón derecho del ratón - Inspeccionar</em>) para ver los mensajes</p> 
+    </details>
+    
+    <p><button id="msj" onclick="mostrarMensaje()"><em>click</em> para ver el mensaje</button>
+      <button onclick="recargar()">volver a jugar</button>
+    </p>
+    <hr>
+    <p><img id="galleta" src="galletas1.png" alt="Galleta de la Suerte"></p>
+    <p id="mensaje"></p>
+
+  </div>
+  <script>
+    function mostrarMensaje() {
+      const mensajes = [
+        "Si tú sabes lo que vales, ve y consigue lo que mereces.<br><em>Rocky Balboa</em>.", //0
+        "Por muy alta que sea una montaña, siempre hay un camino hacia la cima.<br><em>Anónimo</em>.", //1
+        "El triunfo verdadero del hombre surge de las cenizas del error.<br><em>Pablo Neruda</em>.",  //2
+        "Lo único imposible es aquello que no intentas.<br><em>Anónimo</em>.",  //3
+        "El 80% del éxito se basa simplemente en insistir.<br><em>Woody Allen</em>.", //4
+        "Nunca pares, nunca te conformes, hasta que lo bueno sea mejor y lo mejor excelente.<br><em>Anónimo</em>.", //5
+        "Cuanto más hacemos, más podemos hacer.<br><em>William Hazlitt</em>.", //6
+        "Da siempre lo mejor que tienes. Lo que plantes ahora, lo cosecharás más tarde.<br><em>Og Mandino</em>.", //7
+        "La tragedia no es no alcanzar tus objetivos, la tragedia es no tener objetivos que alcanzar.<br><em>Benjamin Mays</em>.", //8
+      ]
+      console.log("Número de mensajes", mensajes.length);
+
+      //lenght devuelve el largo del array
+      // El último mensaje lo agregaremos con el método push
+      mensajes.push("El éxito no está en vencer siempre sino en no desanimarse nunca.<br><em>Napoleón Bonaparte</em>.") //9
+      
+      console.log("Número de mensajes después de push", mensajes.length);
+      console.table(mensajes);
+
+      const NUM_MENSAJES = mensajes.length; 
+
+      let numRandom = Math.floor(Math.random() * NUM_MENSAJES);
+      // Devuelve un número entre 0 y 9 
+
+      console.log("numRandom", numRandom);
+      document.getElementById("mensaje").innerHTML = mensajes[numRandom];
+      document.getElementById("galleta").src = "galletas2.png";
+      document.getElementById("msj").disabled = true;
+
+    }
+    function recargar() {
+      location.reload();
+    }
+  </script>
+</body>
+</html>

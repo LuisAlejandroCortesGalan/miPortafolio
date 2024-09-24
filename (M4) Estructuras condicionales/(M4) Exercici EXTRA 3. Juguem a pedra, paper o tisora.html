@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Haz tu Eleccion:</h1>
+        <label for="piedra">Piedra 🪨
+            <input type="radio" name="juego" id="piedra" value="1">
+        </label>
+        <label for="papel">Papel 🗞️
+            <input type="radio" name="juego" id="papel" value="2">
+        </label>
+        <label for="tijeras">Tijeras✂️
+            <input type="radio" name="juego" id="tijeras" value="3">
+        </label>
+        <div class="botones">
+            <button type="submit" onclick="jugar(event)">Jugar!!</button>
+            <button onclick="reiniciar()" class="reset">Reiniciar</button>
+        </div>
+        <p id="resultado"></p>
+        <p id="resultadoTotal"></p>
+
+    </div>
+</body>
+
+<script>
+    let win = 0;
+    let lose = 0;
+    let draw = 0;
+
+
+    function jugar(event) {
+        event.preventDefault();
+        const PIEDRA = 1;
+        const PAPEL = 2;
+        const TIJERAS = 3;
+
+        let random = Math.floor(Math.random() * 3) + 1;
+
+        let radios = document.getElementsByName("juego");
+        let eleccion = null;
+
+        const opciones = {
+            1: '🪨',  // Piedra
+            2: '🗞️',  // Papel
+            3: '✂️'   // Tijeras
+        };
+        // Iterar sobre los radios para encontrar el seleccionado
+        for (const radio of radios) {
+            if (radio.checked) {
+                eleccion = Number(radio.value);
+                console.log(eleccion);
+                break;
+            }
+        }
+
+        // Verificar si se ha hecho una selección
+        if (eleccion === null) {
+            document.getElementById('resultado').innerHTML = 'Por favor, selecciona una opción.';
+            return;
+        }
+
+        if (eleccion === random) {
+            draw = draw + 1;
+            document.getElementById('resultadoTotal').innerHTML = `Ganadas: ${win} Perdidas: ${lose} Empatadas: ${draw}`;
+            document.getElementById('resultado').innerHTML = `Tu eleccion fue: ${opciones[eleccion]} <br> y la maquina eligio: ${opciones[random]} <br> <span class="draw"> Empate!</span>`;
+        } else if ((eleccion == 1 && random == 2) || (eleccion == 3 && random == 1) || (eleccion == 2 && random == 3)) {
+            lose = lose + 1;
+            document.getElementById('resultadoTotal').innerHTML = `Ganadas: ${win} Perdidas: ${lose} Empatadas: ${draw}`;
+            document.getElementById('resultado').innerHTML = `Tu eleccion fue: ${opciones[eleccion]} <br> y la maquina eligio: ${opciones[random]} <br> <span class="lose">Perdiste!</span>`;
+        } else if ((eleccion == 1 && random == 3) || (eleccion == 2 && random == 1) || (eleccion == 3 && random == 2)) {
+            win = win + 1;
+            document.getElementById('resultadoTotal').innerHTML = `Ganadas: ${win} Perdidas: ${lose} Empatadas: ${draw}`;
+            document.getElementById('resultado').innerHTML = `Tu eleccion fue: ${opciones[eleccion]} <br> y la maquina eligio: ${opciones[random]} <br> <span class="win">Ganaste!</span>`;
+
+        }
+    }
+
+    function reiniciar() {
+        location.reload();
+    }
+</script>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f2f2;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    button {
+        background-color: darkgreen;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .reset {
+        background-color: darkred;
+    }
+
+    .botones {
+        display: flex;
+        gap: 10px;
+    }
+    h1 {
+        font-size: 42px;
+        margin: 10px;
+        color: darkred;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 5px solid darkred;
+        border-radius: 7px;
+        box-shadow: 0 2px 0 2px grey;
+        width: 400px;
+        height: auto;
+        margin: 40px;
+        padding: 20px;
+        gap: 20px;
+        background-color: white;
+    }
+
+    .win {
+        font-size: 50px;
+        color: darkgreen;
+    }
+
+    .lose {
+        font-size: 50px;
+        color: darkred;
+    }
+
+    .draw {
+        font-size: 50px;
+        color: grey;
+    }
+
+    #resultado {
+        margin-top: -10px;
+    }
+
+    #resultadoTotal {
+        display: flex;
+        flex-direction: row;
+        font-size: 22px;
+        margin-top: -20px;
+    }
+</style>
+
+</html>

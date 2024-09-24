@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+:root {
+    --width-content: 1000px;
+    --color-verde: #007704;
+    --color-verde-claro: #66CC66;
+    --letra-pequeña: 14px;
+    --letra-mediana: 16px;
+    --letra-grande: 18px;
+    ;
+}
+
+.width-content {
+    max-width: var(--width-content);
+    margin: 0 auto;
+}
+
+body {
+    background-color: #121212;
+}
+
+b {
+    color: var(--color-verde-claro);
+}
+
+hr {
+    border: solid 1px var(--color-verde);
+    width: 100vw;
+    margin: 50px 0;
+    opacity: 0.2;
+}
+
+#hr {
+    margin-top: 0;
+
+}
+
+/* ================================Header============================ */
+header {
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.nav {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    background-color: transparent;
+    position: sticky;
+    position: fixed;
+    top: 0;
+    z-index: 101;
+}
+
+.sticky {
+    background-color: #080808;
+    width: 100%;
+    padding: 20px 200px 20px 200px;
+    transition: background-color 1s ease-in-out, padding 1s ease-in-out;
+    /* Aumenta la duración */
+
+}
+
+.nav-sticky-transition {
+    transition: padding 0.01s;
+    /* Transición instantánea para el padding */
+}
+
+i {
+    margin-right: 5px;
+}
+
+.centrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/fondo3.jpg');
+    min-height: 100vh;
+    background-size: cover;
+    /* Asegura que la imagen cubra todo el área */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    background-attachment: fixed;
+}
+
+
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 15px;
+    background-color: transparent;
+}
+
+li {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.navLinks {
+    text-decoration: none;
+    font-size: var(--letra-pequeña);
+    align-items: center;
+}
+
+.navLinks:hover {
+    border-bottom: 2px solid var(--color-verde);
+    border-radius: 2px;
+    transition: ease-in-out 0.5s;
+    color: var(--color-verde-claro);
+}
+
+.navLinks:hover i {
+    color: var(--color-verde-claro);
+    transition: ease-in-out 0.5s;
+}
+
+.nombre {
+    font-size: 20px;
+    font-weight: 700;
+    align-items: center;
+    color: white;
+    text-shadow: 5px 5px 5px var(--color-verde-claro);
+    border-bottom: none;
+}
+
+
+/* ================================Header2============================ */
+
+.header2 {
+    margin: 100px 0px 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 5px 5px 5px var(--color-verde);
+
+}
+
+.soy {
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.dev {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.cambiarTexto {
+    text-shadow: 5px 5px 5px var(--color-verde);
+}
+
+.textoEmocion {
+    text-shadow: 5px 5px 5px var(--color-verde);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.header2 span {
+    font-size: 42px;
+}
+
+
+button {
+    color: black;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 900;
+    margin: 20px;
+    background: linear-gradient(45deg, white, darkgreen);
+    transition: background-position 0.5s ease;
+    background-size: 200%;
+}
+
+
+#botonCv {
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #007704, #66CC66);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-position 0.5s ease;
+    animation: jump 2s infinite;
+    /* Añadir la animación */
+    background-size: 200%;
+}
+
+@keyframes jump {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        /* Posición inicial y final */
+    }
+
+    50% {
+        transform: translateY(-10px);
+        /* Salto hacia arriba */
+    }
+}
+
+#botonCv:hover {
+    background-position: right center;
+}
+
+.active {
+    background-position: right center;
+}
+
+/* ==================================Main============================= */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+    margin: 30px 0 50px 0;
+    text-shadow: 5px 5px 7px var(--color-verde);
+    scroll-margin-top: 80px;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 1000px;
+}
+
+.sobreMi {
+    display: flex;
+    border: 1px solid white;
+    padding: 20px;
+}
+
+#sobreMiNav {
+    margin: 0 0 50px 0;
+}
+
+.imgSobreMi {
+    position: relative;
+    /* Asegura que el pseudo-elemento esté posicionado correctamente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url('../img/fondo1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: -50px;
+    margin-bottom: -50px;
+
+}
+
+.imgSobreMi::before {
+    content: "";
+    /* Necesario para mostrar el pseudo-elemento */
+    position: absolute;
+    /* Posiciona el pseudo-elemento */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Negro con 50% de opacidad */
+    z-index: 1;
+    /* Asegura que esté detrás del contenido */
+}
+
+.imgSobreMi>* {
+    position: relative;
+    /* Asegura que el contenido esté encima del pseudo-elemento */
+    z-index: 2;
+    /* Lleva el contenido por encima del fondo */
+}
+
+.verde {
+    color: var(--color-verde);
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.perfil {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+}
+
+.perfil p {
+    display: flex;
+    font-size: 15px;
+    justify-content: start;
+    line-height: 0.1;
+    margin: 20px;
+}
+
+.perfil h3 {
+    margin: 20px;
+    margin-top: 0;
+}
+
+.perfil div {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+
+.header2 img {
+    width: 200px;
+    height: 200px;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.habilidades {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.habilidades h3 {
+    margin: 20px;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.habilidades p {
+    display: flex;
+    font-size: 15px;
+    line-height: 0.2;
+    text-align: start;
+    margin: 20px;
+    margin-left: 0px;
+}
+
+
+
+/* =================================Progress Bar========================= */
+.progress-container {
+    width: 90%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--color-verde);
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    border-radius: 25px 0 0 25px;
+}
+
+/* =================================Experiencia laboral========================= */
+
+.experienciaLaboral {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 20px;
+    width: 1000px;
+}
+
+/* =================================BarraExperiencia========================= */
+
+.experience-bar {
+    display: flex;
+    flex-direction: column;
+    width: 10px;
+    height: auto;
+    background-color: var(--color-verde);
+    border-radius: 10px;
+    position: relative;
+}
+
+.experience-bar {
+    display: flex;
+    flex-direction: column;
+    width: 10px;
+    background-color: var(--color-verde);
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress {
+    width: 100%;
+    background-color: var(--color-verde);
+    /* Color de la barra de progreso */
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.experienciaIt {
+    display: flex;
+    position: relative;
+    gap: 50px;
+    margin-top: 40px;
+    max-height: auto;
+}
+
+.show {
+    display: flex;
+}
+
+.punto-clave {
+    position: absolute;
+    left: 40px;
+    transform: translateX(-95%);
+    font-size: 14px;
+    background-color: var(--color-verde);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.punto-clave1 {
+    position: absolute;
+    left: 40px;
+    font-size: 18px;
+    color: #333;
+    background-color: var(--color-verde);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    transform: translateX(-75%);
+}
+
+.botones_experiencia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experiencia {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px 0px 20px;
+    width: 100%;
+    gap: 40px;
+    line-height: 1.6;
+}
+
+.contenido-oculto {
+    display: none;
+}
+
+.links {
+    color: #007704;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+/* =================================Experiencia chef========================= */
+
+.chef_xp {
+    display: flex;
+    flex-direction: column;
+}
+
+.descripcion_xp {
+    line-height: 2;
+    margin-top: 20px;
+    font-size: var(--letra-grande);
+    text-align: center;
+}
+
+/* =================================Proyectos laborales========================= */
+
+.proyectos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    height: 300px;
+    box-shadow: 4px 4px 8px var(--color-verde);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: white;
+    margin: 20px;
+    text-align: center;
+}
+
+#cardGrande {
+    width: 300px;
+    height: auto;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 8px 8px 40px var(--color-verde);
+    cursor: pointer;
+}
+
+#linkCard {
+    border-bottom: none;
+}
+
+.card h4 {
+    font-size: var(--letra-grande);
+    border-bottom: 10px;
+}
+
+.card img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: var(--letra-pequeña);
+    margin-bottom: 10px;
+}
+
+.card b {
+    color: #66CC66;
+    /* Resaltar en verde */
+}
+
+#botonesPortafolio {
+    margin-bottom: 20px;
+}
+
+/* =================================Contacto========================= */
+
+
+.seccionContacto {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactoContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#fondo {
+    position: relative;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 70vh;
+    background-image: url('../img/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: -50px;
+}
+
+#fondo:before {
+    content: "";
+    /* Necesario para mostrar el pseudo-elemento */
+    position: absolute;
+    /* Posiciona el pseudo-elemento */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Negro con 50% de opacidad */
+    z-index: 1;
+    /* Asegura que esté detrás del contenido */
+}
+
+#fondo>* {
+    position: relative;
+    /* Asegura que el contenido esté encima del pseudo-elemento */
+    z-index: 2;
+    /* Lleva el contenido por encima del fondo */
+}
+
+.form {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+    border: 1px solid white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+
+}
+
+form button {
+    width: auto;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+
+.contacto {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+    gap: 30px;
+    border: 1px solid white;
+}
+
+#contactoNav {
+    padding-top: 50px;
+}
+
+.contacto ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* =================================Footer========================= */
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding: 20px;
+    gap: 10px;
+}
+
+.quitarMargin {
+    margin-top: -30px;
+}
+
+
+/* =================================scrollToTop========================= */
+
+#scrollTopBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 100;
+    font-size: 24px;
+    background-color: var(--color-verde);
+    color: black;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    /* Comienza oculto */
+    transition: opacity 0.5s ease;
+    /* Transición de la opacidad */
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    /* Mostrar el botón */
+}
+
+.cambiarTexto {
+    font-weight: 700;
+}
+
+
+/* =================================Redes Sociales========================= */
+
+ul li a img {
+    width: 40px;
+    height: 40px;
+    box-shadow: 5px 5px 25px var(--color-verde);
+    border-radius: 7px;
+}

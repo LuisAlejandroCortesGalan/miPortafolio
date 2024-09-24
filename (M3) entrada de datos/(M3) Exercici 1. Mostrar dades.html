@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Datos</title>
+</head>
+<body>
+    <p id="mostrarInner" class="dom"></p> 
+
+    <script>
+        // Pedir los datos al usuario
+        let nom = prompt("Introduce tu nombre:");
+        let cognom = prompt("Introduce tu apellido:");
+        let edat = prompt("Introduce tu edad:");
+
+        // Validar que los campos no estén vacíos
+        if (!nom || !cognom || !edat) {
+            alert("Por favor, completa todos los campos.");
+        } else {
+            // Mostrar en consola
+            console.log("Nombre: ", nom, "Apellido: ", cognom, "Edad: ", edat);
+
+            // Mostrar los datos en la página
+            document.getElementById("mostrarInner").innerHTML = `
+                <strong>Nombre:</strong> ${nom} <br>
+                <strong>Apellido:</strong> ${cognom} <br>
+                <strong>Edad:</strong> ${edat}
+            `;
+
+            // Mostrar alerta con los datos
+            alert(`Nombre: ${nom}\nApellido: ${cognom}\nEdad: ${edat}`);
+        }
+    </script>
+</body>
+</html>

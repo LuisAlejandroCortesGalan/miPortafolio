@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Litros de pintura</title>
+</head>
+<body>
+    <div class="box">
+    <h1>Calcular Litros de pintura necesarios</h1>
+    <div class="prompt">
+    <label for="alto"> Alto de la pared:</label>
+    <input type="number" id="alto">
+
+    <label for="ancho"> Ancho de la pared:</label>
+    <input type="number" id="ancho">
+
+    <label for="capas"> Cuantas capas de pintura quieres darle a tu pared?:</label>
+    <input type="number" id="capas">
+    </div>
+    <br>
+    <div class="botones">
+    <button onclick="calcular()">Calcular</button>
+    <button onclick="resetear()">Reset</button>
+    </div>
+
+    
+    <div class="resultados">
+    
+    <h2>Litros de pintura necesarios:</h2>
+    <p id="resultado" class="resultado"></p>
+
+
+    </div>
+    </div>
+
+    <script>
+        function calcular() {
+
+            const LITROS_PINTURA = 12;
+            let alto = Number(document.getElementById("alto").value);
+            let ancho = Number(document.getElementById("ancho").value);
+            let capas = Number(document.getElementById("capas").value);
+
+            let metrosCuadrados = (alto * ancho) * capas;
+
+            let calculo = metrosCuadrados / LITROS_PINTURA;
+
+            document.getElementById("resultado").innerHTML = `Necesitarás ${calculo} Litros de pintura`;
+
+        }
+
+        function resetear() {
+            location.reload();
+        }
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: auto;
+            height: auto;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .texto {
+            font-size: 21px;   
+            font-weight: 600;
+        }
+
+        .resultados {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .operacion {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+        }
+
+        .prompt {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .total {
+            flex-wrap: wrap;
+        }
+
+        .resultado {
+            color: red;
+            font-size: 25px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</body>
+</html>

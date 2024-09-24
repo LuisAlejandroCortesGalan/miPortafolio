@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titelles per Nens!</title>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Cuantos niñ@s inscribiras en <span class="win">Titelles</span></h1>
+        <input type="number" id="num1">
+        <div class="botones">
+            <button onclick="calcular()">Inscribelos!</button>
+            <button onclick="reiniciar()" class="reset">Reiniciar</button>
+        </div>
+        <p id="respuesta"></p>
+    </div>
+
+    <script>
+
+        function calcular() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = 0;
+            let edades = [];
+            let sumaEdades = 0;
+            let media = 0;
+
+            if (num1 < 1 || num1 > 10) {
+                document.getElementById('respuesta').innerHTML = `Minimo 1 niño <br> y Maximo 10 niños`;
+                return;
+            }
+
+            if (num1 > num2) {
+                document.getElementById('respuesta').innerHTML = `Has inscrito ${num1} niñ@s en Titelles!`;
+
+                while (num1 > num2) {
+                    let edad = Number(prompt('Los niñ@s en Titelles deben tener entre 2 y 7 años. ¿Cuántos años tienen tus niños?'));     
+                    if (edad >= 2 && edad <= 7) {
+                        num2++;
+                        edades.push(edad);
+                        sumaEdades += edad;
+                    } else {
+                        alert(`Lo siento, los niñ@s no pueden tener ${edad} años. Por favor, introduce una edad entre 2 y 7 años.`);
+                    }
+                }
+                
+                if (edades.length > 0) {
+                    media = sumaEdades / edades.length; 
+                    document.getElementById('respuesta').innerHTML = `<span class="win">Los ${edades.length} niñ@s tienen una edad media de ${Math.round(media)} años.<span>`;
+                    console.log(`EL numero de niños es ${num1}, las edades introducidas son ${edades} y la media es ${Math.round(media)}`)
+                }
+            }
+        }
+
+        function reiniciar() {
+            location.reload();
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        label {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            border: 5px solid darkgreen;
+            border-radius: 5px;
+            width: 500px;
+            height: auto;
+            margin-top: 40px;
+        }
+
+        h1 {
+            margin: 0;
+            color: darkred;
+        }
+
+        label {
+            color: darkgreen;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .win {
+            font-size: 42px;
+            color: darkgreen;
+        }
+
+        .lose {
+            color: darkred;
+            font-size: 42px;
+        }
+
+        #respuesta {
+            display: block;
+            flex-wrap: wrap;
+            overflow: auto;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .generar {
+            background-color: darkblue;
+        }
+    </style>
+</body>
+
+</html>

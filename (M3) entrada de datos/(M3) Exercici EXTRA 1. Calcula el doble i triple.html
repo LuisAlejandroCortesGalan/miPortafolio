@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular doble y triple</title>
+</head>
+<body>
+    <div class="box">
+    <h1>Introduce un numero:</h1>
+    <div class="prompt">
+    <label for="num1"> Numero 1:</label>
+    <input type="text" id="num1">
+    </div>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+
+    
+    <div class="resultados">
+    
+    <h2>Doble:</h2>
+    <p id="resultado1" class="resultado"></p>
+
+    <h2>Triple:</h2>
+    <p id="resultado2" class="resultado"></p>
+
+    </div>
+    </div>
+
+    <script>
+        function calcular() {
+            let num1 = document.getElementById("num1").value;
+
+
+            num1 = Number(num1);
+
+            // Calcular el doble
+            let doble = (num1 * 2);
+            if (isNaN(num1)) {
+            document.getElementById("resultado1").innerHTML = "Introduce valores numericos validos";
+            } else {
+            document.getElementById("resultado1").innerHTML = doble;
+            }
+
+            // Calcular el triple
+            let triple = (num1 * 3);
+            if (isNaN(num1)) {
+            document.getElementById("resultado2").innerHTML = "Introduce valores numericos validos";
+            } else {
+            document.getElementById("resultado2").innerHTML = triple;
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: auto;
+            height: auto;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .texto {
+            font-size: 21px;   
+            font-weight: 600;
+        }
+
+        .resultados {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .operacion {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+        }
+
+        .prompt {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .total {
+            flex-wrap: wrap;
+        }
+
+        .resultado {
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</body>
+</html>

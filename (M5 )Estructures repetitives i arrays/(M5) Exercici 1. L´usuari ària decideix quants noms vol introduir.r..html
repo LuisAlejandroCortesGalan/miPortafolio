@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuantos nombres empiezan por A?
+    </title>
+</head>
+<body>
+    <div class="box">
+        <h1>Cuantos nombres querrás <br>introducir? (MAX. 10)</h1>
+        <input type="number" id="numeroNombres" min="1" max="10" required>
+        <div class="botones">
+        <button onclick="contarNombres()">Introducir nombres</button>
+        <button onclick="reiniciar()" class="reset">Reiniciar</button>
+        </div>
+        <p id="respuesta"></p>
+    </div>
+
+    <script>
+        let nombres = [];
+        function contarNombres() {
+            let numeroNombres = parseInt(document.getElementById('numeroNombres').value);
+            nombres = []; // Reiniciar el array cada vez que se presiona el botón
+            if (isNaN(numeroNombres || numeroNombres < 0) || numeroNombres > 10) {
+                document.getElementById("respuesta").innerHTML = `Introduce un valor numerico entre <span class="lose">el 1 al 10</span>`;
+                return;
+            }
+            for (let i = 0; i < numeroNombres; i++) {
+                var nombre = prompt(`Introduce un nombre:`);
+                if (nombre.charAt(0).toUpperCase() === 'A') {
+                    nombres.push(nombre);
+                }              
+            }
+
+            if (nombres.length > 0 && nombres.length <= 10) {
+                document.getElementById('respuesta').innerHTML = `Hay ${numeroNombres} nombres introducidos... <br><span class="win">los que empiezan por 'A' son :</span><br>`;
+                for (let i = 0; i < nombres.length; i++) {
+                    document.getElementById('respuesta').innerHTML += `<br><li class="win">${nombres[i]}</li>`;  
+                }
+            }
+        }
+
+        function reiniciar() {
+            location.reload();
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px;
+            padding: 20px;
+            border: 5px solid darkgreen;
+            border-radius: 5px;
+            width: 400px;
+            height: auto;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen; 
+            border-radius: 5px; 
+            padding: 10px; 
+            font-size: 16px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            outline: none; 
+            margin: 0;
+        }
+        
+        .win {
+            font-size: 36px;
+            color: darkgreen;
+        }
+
+        .lose {
+            font-size: 36px;
+            color: darkred;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+    </style>
+</body>
+</html>

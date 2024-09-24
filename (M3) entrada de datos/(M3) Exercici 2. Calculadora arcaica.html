@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Arcaica</title>
+</head>
+<body>
+    <div class="box">
+    <h1>Introduce dos números:</h1>
+    <div class="prompt">
+    <label for="num1"> Numero 1:</label>
+    <input type="text" id="num1">
+    <label for="num2">Numero 2:</label>
+    <input type="text" id="num2">
+    </div>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+
+    
+    <div class="resultados">
+    
+    <div class="operacion">
+    <p class="texto">Suma:</p>
+    <p id="suma" class="total"></p>
+    </div>
+    <div class="operacion">
+    <p class="texto">Resta:</p>
+    <p id="resta" class="total"></p>
+    </div>
+    <div class="operacion">
+    <p class="texto">Multiplicación:</p>
+    <p id="multiplicacion" class="total"></p>
+    </div>
+    <div class="operacion">
+    <p class="texto">División:</p>
+    <p id="division" class="total"></p>
+    </div>
+
+    </div>
+    </div>
+
+    <script>
+        function calcular() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            num1 = Number(num1);
+            num2 = Number(num2);
+            // se ejecuta la suma
+            let suma = num1 + num2;
+            if (isNaN(suma)) {
+            document.getElementById("suma").innerHTML = "Introduce valores numericos validos";
+            } else {
+            document.getElementById("suma").innerHTML = suma;
+            }
+            // se ejecuta la resta
+            let resta = num1 - num2;
+            if (isNaN(resta)) {
+                document.getElementById("resta").innerHTML = "Introduce valores numericos validos";
+            } else{
+                document.getElementById("resta").innerHTML = resta;
+            }
+            // se ejecuta la multiplicación
+            let multiplicacion = num1 * num2;
+            if (isNaN(multiplicacion)) {
+                document.getElementById("multiplicacion").innerHTML = "Introduce valores numericos validos";
+            } else{
+                document.getElementById("multiplicacion").innerHTML = multiplicacion;
+            }
+            // Ejecutar la división con validación adicional para división entre cero
+            let division = num1 / num2;
+            if (isNaN(division) || !isFinite(division)) {
+                document.getElementById("division").innerHTML = "No se puede dividir por <br> cero o valores no válidos";
+            } else {
+                document.getElementById("division").innerHTML = division;
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 800px;
+            height: auto;
+            margin: 50px;
+        }
+
+        .texto {
+            font-size: 21px;   
+            font-weight: 600;
+        }
+
+        .resultados {
+            display: flex;
+            gap: 40px;
+        }
+
+        .operacion {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .prompt {
+            display: flex;
+            gap: 30px;
+        }
+
+        .total {
+            flex-wrap: wrap;
+            color: red;
+            font-size: 25px;
+        }
+
+    </style>
+</body>
+</html>

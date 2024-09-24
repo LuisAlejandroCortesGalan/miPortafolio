@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordena tu plato ideal</title>
+</head>
+<body>
+    <section>
+        <h2>¿Qué quieres <span class="bonita">Comer?</span></h2>
+        <form>
+            <label for="plato">Elige un <span class="bonitas">Plato:</span></label>
+            <select id="plato" name="plato" required>
+                <option value="">--Seleccionar--</option>
+                <option value="carne">Carne</option>
+                <option value="pasta">Pasta</option>
+                <option value="rissoto">Rissoto</option>
+            </select>
+            <label>Elige tus <span class="bonitas">intolerancias:</span></label>
+            <div>
+                <input type="checkbox" id="vegan" name="intolerancias" value="vegan">
+                <label for="vegan">Vegan</label>
+            </div>
+            <div>
+                <input type="checkbox" id="lactosa" name="intolerancias" value="lactosa">
+                <label for="lactosa">A la lactosa</label>
+            </div>
+            <div>
+                <input type="checkbox" id="gluten" name="intolerancias" value="gluten">
+                <label for="gluten">Al gluten</label>
+            </div>
+            <button type="submit" onclick="comprobar(event)">Haz clic para Ordenar!</button>
+            <button type="button" onclick="borrar(event)">Borrar</button>
+        </form>
+        <p id="respuesta"></p>
+    </section>
+
+    <script>
+    function comprobar(event) {
+        event.preventDefault();
+        let plato = document.getElementById("plato").value;
+        let intolerancias = Array.from(document.querySelectorAll('input[name="intolerancias"]:checked'))
+        .map(checkbox => checkbox.value);
+
+        if (intolerancias.length === 0 && plato === "") {
+            document.getElementById('respuesta').innerHTML = 'Por favor, <span class="error">seleccione</span> un <span class="error">Plato</span> y una <span class="error">Intolerancia</span>.';
+        } else if (plato === "") {
+            document.getElementById('respuesta').innerHTML = 'Por favor, <span class="error">seleccione</span> un <span class="error">Plato</span>.';
+        } else if (intolerancias.length === 0) {
+            document.getElementById('respuesta').innerHTML = 'Por favor, <span class="error">seleccione</span> una <span class="error">Intolerancia</span>.';
+        }     switch (plato) {
+        case "carne":
+            if (intolerancias.includes("vegan")) {
+                document.getElementById('respuesta').innerHTML = 'Lo siento, <span class="error"> no puedes</span> comer <span class="error">Carne</span> si eres <span class="error">Vegan.</span>';
+            } else {
+                document.getElementById('respuesta').innerHTML = 'Tu plato es ideal, <span class="bonita">Marchando...!</span>';
+            }
+            break;
+
+        case "pasta":
+            if (intolerancias.includes("gluten")) {
+                document.getElementById('respuesta').innerHTML = 'Lo siento, <span class="error"> no puedes</span> comer <span class="error">Pasta</span> si eres <span class="error">Alérgico al Gluten.</span>';
+            } else {
+                document.getElementById('respuesta').innerHTML = 'Tu plato es ideal, <span class="bonita">Marchando...!</span>';
+            }
+            break;
+
+        case "rissoto":
+            if (intolerancias.includes("lactosa")) {
+                document.getElementById('respuesta').innerHTML = 'Lo siento, <span class="error"> no puedes</span> comer <span class="error">Rissoto</span> si eres <span class="error">intolerante a la Lactosa.</span>';
+            } else {
+                document.getElementById('respuesta').innerHTML = 'Tu plato es ideal, <span class="bonita">Marchando...!</span>';
+            }
+            break;
+
+        default:
+            document.getElementById('respuesta').innerHTML = 'Por favor, <span class="error">seleccione un plato válido.</span>';
+            break;
+    }
+};
+
+    function borrar(event) {
+        event.preventDefault();
+        document.getElementById('plato').value = '';
+        let intolerancias = document.querySelectorAll('input[name="intolerancias"]:checked');
+        intolerancias.forEach(checkbox => checkbox.checked = false);
+        document.getElementById('respuesta').innerHTML = '';
+    }
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #E0F7FA;
+        }
+
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 40px;
+            padding: 30px;
+            width: 400px;
+            height: auto;
+            border: 3px solid goldenrod;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        form {
+            display: flex;
+            text-align: center;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        select {
+            text-align: center;
+            border: 2px solid goldenrod; 
+            border-radius: 5px; 
+            padding: 10px; 
+            font-size: 16px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            outline: none; 
+        }
+    
+        input:focus {
+            box-shadow: 0 0 5px goldenrod;  
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: goldenrod;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 800;
+        }
+        .bonitas {
+            color: darkorange;
+            font-weight: 800;
+            font-size: 28px;
+        }
+
+        .bonita {
+            color: darkgreen;
+            font-family: Garamond;
+            font-size: 42px;
+            font-weight: 800;
+
+        }
+
+        .fea {
+            font-weight: 800;
+            font-size: 34px;
+            color: darkgreen;
+        }
+
+        #respuesta {
+            text-align: center;
+            color: goldenrod;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .icon {
+            margin: 0;
+            padding: 0;
+            font-size: 32px;
+        }
+
+        .error {
+            color: red;
+            font-weight: 800;
+            font-size: 36px;
+        }
+    </style>
+    
+</body>
+</html>

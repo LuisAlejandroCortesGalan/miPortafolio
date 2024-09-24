@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+      h1{color:deeppink; font-size: 115%;}
+      p {margin:0; line-height: 1.5;}
+      span {display: inline-block; width: 15em;}
+      .botones {display: flex;}
+   </style>
+   <title>TEST DIVERTIDO</title>
+</head>
+<body>
+   <h1>TEST DIVERTIDO</h1>
+   <p id="p1">1. Ordena estos animales en orden de preferencia:</p>
+   <blockquote>
+      <p><span id="vaca">Vaca: </span> <input type="number" size="5"/></p>
+      <p><span id="tigre">Tigre: </span> <input type="number" size="5"/></p>
+      <p><span id="oveja">Oveja: </span> <input type="number" size="5"/></p>
+      <p><span id="caballo">Caballo: </span> <input type="number" size="5"/></p>
+      <p><span id="mono">Mono: </span> <input type="number" size="5"/></p>
+   </blockquote>
+   <p id="p2">2. Escribe una palabra que describa lo siguiente:</p>
+   <blockquote>
+      <p><span id="perro">Perro: </span> <input type="text"/></p>
+      <p><span id="gato">Gato: </span> <input type="text"/></p>
+      <p><span id="rata">Rata: </span> <input type="text"/></p>
+      <p><span id="cafe">Café: </span> <input type="text"/></p>
+      <p><span id="mar">Mar: </span> <input type="text"/></p>
+   </blockquote>
+   <p id="p3">3. Indica alguien importante para tí, que te sugiera este color:</p>
+   <blockquote>
+      <p><span id="amarillo">Amarillo: </span> <input type="text"/></p>
+      <p><span id="naranja">Naranja: </span> <input type="text"/></p>
+      <p><span id="blanco">Blanco: </span> <input type="text"/></p>
+      <p><span id="rojo">Rojo: </span> <input type="text"/></p>
+      <p><span id="verde">Verde: </span> <input type="text"/></p>
+   </blockquote>
+   <div class="botones">
+   <p><button onclick="calcularTest()"> resultados </button></p>
+   <p><button onclick="deshacer()">Reset</button></p>
+   </div>
+   <script>
+    function calcularTest() {
+        let titulo1 = document.getElementById("p1").innerHTML= "<strong>Tu orden de prioridades:</strong>";
+        let vaca = document.getElementById("vaca").innerHTML= "Tu Carrera";
+        let tigre = document.getElementById("tigre").innerHTML= "El Orgullo";
+        let oveja = document.getElementById("oveja").innerHTML= "El Amor";
+        let caballo = document.getElementById("caballo").innerHTML= "La Familia";
+        let mono = document.getElementById("mono").innerHTML= "El Dinero";
+
+        let titulo2 = document.getElementById("p2").innerHTML= "<strong>Como ves la vida:</strong>";
+        let perro = document.getElementById("perro").innerHTML= "Yo Soy..";
+        let gato = document.getElementById("gato").innerHTML= "Mi Pareja";
+        let rata = document.getElementById("rata").innerHTML= "Lo que más odio:";
+        let cafe = document.getElementById("cafe").innerHTML= "Para mi el sexo es: ";
+        let mar = document.getElementById("mar").innerHTML= "y la vida...";
+
+        let titulo3 = document.getElementById("p3").innerHTML = "<strong>Tu gente:</strong>";
+        let amarillo = document.getElementById("amarillo").innerHTML = "Nunca te olvidará";
+        let naranja = document.getElementById("naranja").innerHTML = "Puede ser un gran amigo/a";
+        let blanco = document.getElementById("blanco").innerHTML = "Tu Alma Gemela";
+        let rojo = document.getElementById("rojo").innerHTML = "Realmente amas a... ";
+        let verde = document.getElementById("verde").innerHTML = "Siempre estará en tu memoria";
+
+    }
+
+    function deshacer() {
+        location.reload();
+    }
+
+   </script>
+   
+
+</body>
+</html>

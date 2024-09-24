@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número!</title>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Trata de adivinar el número</h1>
+        <label>Elige un numero del 1 al 10</label>
+        <input type="number" id="num1">
+        <div class="botones">
+            <button onclick="calcular()">Adivina!</button>
+            <button onclick="reiniciar()" class="reset">Reiniciar</button>
+        </div>
+        <p id="respuesta"></p>
+    </div>
+
+    <script>
+        
+
+        function calcular() {
+
+            let numeroIntroducido = Number(document.getElementById('num1').value);
+            let maquina = 0;
+                maquina = Math.ceil(Math.random() * 10);
+            if (!numeroIntroducido || isNaN(numeroIntroducido)) {
+                document.getElementById('respuesta').innerHTML = `Introduce un caracter <span class="lose">Valido!</span>`
+                return;
+            }
+            if (numeroIntroducido < 1 || numeroIntroducido > 10) {
+                document.getElementById('respuesta').innerHTML = `Elige un numero entre <span class="lose">1 y 10!</span>`
+                return;
+            }
+
+            while (maquina !== numeroIntroducido) {
+                console.log(maquina);
+                numeroIntroducido = Number(prompt('Has fallado intentalo de nuevo! (NÚMEROS DEL 1 AL 10)'));
+                if (!numeroIntroducido || isNaN(numeroIntroducido) || numeroIntroducido < 1 || numeroIntroducido > 10) {
+                    document.getElementById('respuesta').innerHTML = `Introduce un número <span class="lose">Valido!</span>`
+                }
+            }
+            if (maquina == numeroIntroducido) {
+                document.getElementById('respuesta').innerHTML = `<span class="win">Has acertado! <br> El Número era ${maquina} <br> No fue facil... Felicidades!!!</span>`;
+            }
+        }
+
+        function reiniciar() {
+            location.reload();
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        label {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            border: 5px solid darkgreen;
+            border-radius: 5px;
+            width: 500px;
+            height: auto;
+            margin-top: 40px;
+        }
+
+        h1 {
+            margin: 0;
+            color: darkred;
+        }
+
+        label {
+            color: darkgreen;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .win {
+            font-size: 42px;
+            color: darkgreen;
+        }
+
+        .lose {
+            color: darkred;
+            font-size: 42px;
+        }
+
+        #respuesta {
+            display: block;
+            flex-wrap: wrap;
+            overflow: auto;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .generar {
+            background-color: darkblue;
+        }
+    </style>
+</body>
+
+</html>

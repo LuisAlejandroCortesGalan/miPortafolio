@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Horóscopo Chino</title>
+      <meta charset='utf-8'>
+      <style>
+         * {font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;}
+         body {font-size: 14px; margin: 1em 15em;}
+         summary {font-weight: bold; color:white; background-color: blue; margin: 10px 0;}
+         details {background-color: #EBF5FB; padding: 1em; font-size: 85%;}
+         table {background-color: #fff; border-collapse: collapse; border: 1px #000 solid;}
+         input[type=number] {width: 5em; text-align: center; font-size: 105%; font-weight: bold; background-color: #fff;}
+      </style>
+    </head>
+    <body>
+      <!--Esto es HTML-->
+      <h1>Cálculo del Horóscopo Chino</h1>
+      <details>
+         <summary>Este programa muestra el signo aproximado del horóscopo chino dado un año  y mes de nacimiento.</summary>
+         <p>Para conocer el signo del horóscopo chino, debemos extraer el residuo de la división del año de nacimiento entre 12. <br>El residuo, <em>entre 0 y 11</em>, está asociado a un signo según la siguiente tabla:</p>
+            <table width="80%">
+            <tr>
+               <th>Resto</th>
+               <td>0</td>   
+               <td>1</td>   
+               <td>2</td>   
+               <td>3</td>   
+               <td>4</td>   
+               <td>5</td>   
+               <td>6</td>   
+               <td>7</td>   
+               <td>8</td>   
+               <td>9</td>   
+               <td>10</td>   
+               <td>11</td>
+            </tr><tr>
+               <th>Signo</th>
+               <td>Mono</td>   
+               <td>Gallo</td>   
+               <td>Perro</td>   
+               <td>Cerdo</td>   
+               <td>Rata</td>   
+               <td>Buey</td>   
+               <td>Tigre</td>   
+               <td>Conejo</td>   
+               <td>Dragón</td>   
+               <td>Serpiente</td>   
+               <td>Caballo</td>   
+               <td>Cabra</td>
+            </tr></table>
+            <p>Como el año chino generalmente comienza en febrero, si has nacido en enero (<em>o los primeros días de febrero</em>) te podría tocar el signo anterior <em>Va según la luna nueva</em>.</p>   
+      </details>
+      <div class="ejercicio">
+            <h3>Para calcular tu signo, indica tu año y mes de nacimiento y presiona el botón <b>CALCULAR</b>
+            </h3>
+            <p>Mes de nacimiento (1-12): 
+               <input style="width: 4em;" type="number" min="1" max="12" id="mes"/></p>
+            <p>Año de nacimiento (4 dígitos): 
+               <input style="width: 4em;" type="number" id="anho"/></p>
+
+            <p><input type='button' Value=' CALCULAR ' onClick='validar()'/></p>
+            
+            <h2 id="signo"></h2>
+            <p><img id="imgSigno" src="./img/i8.jpg" title="tu signo chino" alt="tu signo chino"/></p>
+      </div>
+      <!--Acá pasaremos a JavaScript (con la instrucción SCRIPT)--> 
+      <script>
+         "use strict"; //Obligamos a definir las variables
+
+         function main() {
+            let mensaje, imagen;
+            let signos = ["Mono", "Gallo", "Perro", "Cerdo", "Rata", "Buey", "Tigre", "Conejo",	"Dragón",
+               "Serpiente", "Caballo",	"Cabra"];
+            let anho =  parseInt(document.getElementById("anho").value);
+            let posicion = anho % 12;
+            let posicionAntes = (posicion == 0 ? 11 : posicion -1)
+            let mes = parseInt(document.getElementById("mes").value);
+            
+            imagen = "./img/i" + posicion + ".jpg"
+
+            if (mes >2) {
+               mensaje = "Tu signo es <em>" + signos[posicion] + "</em>";
+            } else if (mes == 2) { 
+               mensaje = "Tu signo es <em>" + signos[posicion] + "</em>";
+               mensaje += "<br>aunque si has nacido antes del dia 5 podrias ser <em>" + signos[posicionAntes] + "</em>";
+            } else {
+               mensaje = "Tu signo es <em>" + signos[posicionAntes] + "</em>";
+               imagen = "./img/i" + posicionAntes + ".jpg"
+            }
+
+            document.getElementById("signo").innerHTML = mensaje;
+            document.getElementById("imgSigno").src = imagen;
+         }
+
+         function validar() {
+            let valor; //lo usamos para que las validaciones en el if queden más cortas
+            let validado = true;
+            let msgError = "Los campos en rojo tienen información incorrecta!\n"
+            msgError += "Corrija los valores y presione de nuevo el botón 'CALCULAR'"
+         
+            valor = document.getElementById("mes").value; 
+            if (isNaN(valor) || valor <1 || valor >12) {
+                  validado = false;
+                  document.getElementById("mes").style.backgroundColor = "#E6B0AA";   
+            } else {
+                  document.getElementById("mes").style.backgroundColor = "white";
+            }
+
+            valor = document.getElementById("anho").value; 
+            if (isNaN(valor) || valor=="" || valor <999) {
+                  validado = false;
+                  document.getElementById("anho").style.backgroundColor = "#E6B0AA";   
+            } else {
+                  document.getElementById("anho").style.backgroundColor = "white";
+            }
+
+            // abortar si todo no está validado
+            if (!validado) {
+                  alert(msgError);
+            } else {
+                  main();
+            }
+                  
+         }
+
+
+      </script>
+    </body>
+</html>

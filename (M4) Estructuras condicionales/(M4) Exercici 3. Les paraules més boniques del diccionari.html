@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tú palabra es Bonita?</title>
+</head>
+<body>
+    <section>
+        <h2>¿Es tu palabra<span class="bonita">bonita?</span></h2>
+        <form>
+            <label for="palabra">Introduce una palabra:</label>
+            <input type="text" id="palabra" name="palabra">
+            <button type="submit" onclick="comprobar(event)">Haz clic para descubrirlo:</button>
+        </form>
+        <p id="respuesta"></p>
+    </section>
+    <script>
+        function comprobar(event) {
+            event.preventDefault();
+            let palabra = document.getElementById('palabra').value;
+            let primeraLetra = palabra.charAt(0).toUpperCase();
+        if ((palabra.length == 9 && primeraLetra == 'H') || (palabra.length == 5 && primeraLetra == 'P')){
+            document.getElementById('respuesta').innerHTML = 'La palabra... <span class="bonita">¡Es hermosa!</span> <br/> <span class="icon">😍</span>';
+            document.body.style.backgroundColor = '#D0F0C0';
+         } else {
+            document.getElementById('respuesta').innerHTML = 'Lo siento... <span class="fea">no</span> es <span class="fea">Bonita!</span> <br/> <span class="icon">😓</span>';
+            document.body.style.backgroundColor = '#A9A9A9';
+        }
+        }
+    </script>
+
+
+
+
+
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #E0F7FA;
+        }
+
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 40px;
+            width: 400px;
+            height: 400px;
+            border: 3px solid goldenrod;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        form {
+            display: flex;
+            text-align: center;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #FF9800;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input {
+            padding: 10px 20px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        input {
+            text-align: center;
+        }
+
+        .bonita {
+            color: blueviolet;
+            font-family: Garamond;
+            font-size: 34px;
+            font-weight: 800;
+
+        }
+
+        .fea {
+            font-weight: 800;
+            font-size: 34px;
+
+        }
+
+        #respuesta {
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 32px;
+        }
+    </style>
+    
+</body>
+</html>

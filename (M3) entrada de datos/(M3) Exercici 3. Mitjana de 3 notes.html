@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediana de 3 notas</title>
+</head>
+<body>
+    <div class="box">
+    <h1>Introduce tres números para hacer la media:</h1>
+    <div class="prompt">
+    <label for="num1"> Numero 1:</label>
+    <input type="text" id="num1">
+    <label for="num2">Numero 2:</label>
+    <input type="text" id="num2">
+    <label for="num3">Numero 3:</label>
+    <input type="text" id="num3">
+    </div>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+
+    
+    <div class="resultados">
+    
+    <h2>Media de los numeros</h2>
+    <p id="resultado" class="resultado"></p>
+
+    </div>
+    </div>
+
+    <script>
+        function calcular() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let num3 = document.getElementById("num3").value;
+
+            num1 = Number(num1);
+            num2 = Number(num2);
+            num3 = Number(num3);
+            // se ejecuta la media
+            let media = (num1 + num2 + num3) / 3;
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+            document.getElementById("resultado").innerHTML = "Introduce valores numericos validos";
+            } else {
+            document.getElementById("resultado").innerHTML = media;
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: auto;
+            height: auto;
+            margin: 50px;
+            padding: 20px;
+        }
+
+        .texto {
+            font-size: 21px;   
+            font-weight: 600;
+        }
+
+        .resultados {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .operacion {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .prompt {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .total {
+            flex-wrap: wrap;
+        }
+
+        .resultado {
+            color: red;
+            font-size: 35px;
+        }
+    </style>
+</body>
+</html>
