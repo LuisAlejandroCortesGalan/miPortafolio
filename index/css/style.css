@@ -45,9 +45,7 @@ hr {
 
 #hr {
     margin-top: 0;
-
 }
-
 /* ================================Header============================ */
 header {
     color: white;
@@ -539,24 +537,48 @@ main {
     justify-content: space-evenly;
 }
 
+#proyectos {
+    max-width: 1000px;
+}
+
+.divTitulo {
+    text-align: center;
+}
+
 .cardContainer {
     display: flex;
     justify-content: space-around;
     gap: 20px;
     align-items: center;
+    max-width: 1000px;
+    justify-content: center;
 }
+
+.cardContainerProyectos {
+    display: flex;
+    flex-direction: column;
+}
+
+.divCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
 
 .card {
     background-color: #1e1e1e;
     border-radius: 10px;
     padding: 20px;
     width: 250px;
-    height: 300px;
     box-shadow: 4px 4px 8px var(--color-verde);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     color: white;
     margin: 20px;
     text-align: center;
+    border: 1px solid white;
+
 }
 
 #cardGrande {
@@ -572,6 +594,10 @@ main {
 
 #linkCard {
     border-bottom: none;
+}
+
+#linkCardM3 {
+    height: auto;
 }
 
 .card h4 {
@@ -605,6 +631,7 @@ main {
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 .contactoContainer {

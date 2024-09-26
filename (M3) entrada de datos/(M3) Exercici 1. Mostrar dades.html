@@ -1,36 +1,191 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostrar Datos</title>
 </head>
+
 <body>
-    <p id="mostrarInner" class="dom"></p> 
+    <section>
+        <h1>Dime tu nombre, apellido y edad</h1>
+        <div class="botones">
+            <button id="loadBtn" onclick="procesar()">Procesar</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+        <div class="loading-container">
+            <div class="loading-bar" id="loadingBar"></div>
+        </div>
+        <p id="mostrarInner" class="dom palabraResaltada"></p>
+    </section>
+
+    <style>
+        html {
+            --s: 65px;
+
+            --c1: #dadee1;
+            --c2: #4a99b4;
+            --c3: #9cceb5;
+
+            --_c: 75%, var(--c3) 52.72deg, #0000 0;
+            --_g1: conic-gradient(from -116.36deg at 25% var(--_c));
+            --_g2: conic-gradient(from 63.43deg at 75% var(--_c));
+            background:
+                var(--_g1), var(--_g1) calc(3*var(--s)) calc(var(--s)/2),
+                var(--_g2), var(--_g2) calc(3*var(--s)) calc(var(--s)/2),
+                conic-gradient(var(--c2) 63.43deg, var(--c1) 0 116.36deg,
+                    var(--c2) 0 180deg, var(--c1) 0 243.43deg,
+                    var(--c2) 0 296.15deg, var(--c1) 0);
+            background-size: calc(2*var(--s)) var(--s);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 40px;
+            padding: 30px;
+            min-width: 500px;
+            width: auto;
+            height: auto;
+            border: 3px solid goldenrod;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+            color: darkblue;
+        }
+
+
+        button {
+            padding: 10px 20px;
+            background-color: goldenrod;
+            color: white;
+            border: none;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+            border: solid 1px darkblue;
+            width: 150px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        .palabraResaltada {
+            color: darkorange;
+            font-weight: 600;
+            font-size: 30px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            width: 100%;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .loading-bar {
+            width: 0;
+            height: 100%;
+            background-color: #007704;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .datos {
+            color: darkgreen;
+        }
+
+        .dom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+    </style>
+
+
 
     <script>
-        // Pedir los datos al usuario
-        let nom = prompt("Introduce tu nombre:");
-        let cognom = prompt("Introduce tu apellido:");
-        let edat = prompt("Introduce tu edad:");
+        //FUNCION RESET 
+        function reset() {
+            location.reload();
+        }
 
-        // Validar que los campos no estén vacíos
-        if (!nom || !cognom || !edat) {
-            alert("Por favor, completa todos los campos.");
-        } else {
-            // Mostrar en consola
-            console.log("Nombre: ", nom, "Apellido: ", cognom, "Edad: ", edat);
+        // Función para iniciar la barra de carga
+        function iniciarCarga(callback) {
+            var loadingBar = document.getElementById('loadingBar');
 
-            // Mostrar los datos en la página
-            document.getElementById("mostrarInner").innerHTML = `
-                <strong>Nombre:</strong> ${nom} <br>
-                <strong>Apellido:</strong> ${cognom} <br>
-                <strong>Edad:</strong> ${edat}
-            `;
+            // Reiniciar la barra
+            loadingBar.style.width = '0';
+            loadingBar.style.display = 'block'; // Mostrar la barra al inicio
 
-            // Mostrar alerta con los datos
-            alert(`Nombre: ${nom}\nApellido: ${cognom}\nEdad: ${edat}`);
+            // Simular la carga
+            var width = 0;
+            var interval = setInterval(function () {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    loadingBar.style.display = 'none'; // Ocultar la barra cuando llegue al 100%
+                    callback(); // Mostrar los datos una vez que la barra de carga haya terminado
+                } else {
+                    width += 10; // Incrementa el ancho de la barra
+                    loadingBar.style.width = width + '%'; // Actualiza el ancho en porcentaje
+                }
+            }, 150); // Intervalo de 500ms para simular el progreso
+        }
+
+        // Función para procesar los datos del usuario
+        function procesar() {
+            // Pedir los datos al usuario
+            let nom = prompt("Introduce tu nombre:");
+            let cognom = prompt("Introduce tu apellido:");
+            let edat = prompt("Introduce tu edad:");
+
+            // Validar que los campos no estén vacíos
+            if (!nom || !cognom || !edat) {
+                alert("Por favor, completa todos los campos.");
+            } else {
+                // Iniciar la barra de carga y luego mostrar los datos
+                iniciarCarga(function () {
+                    // Mostrar los datos en la consola y en la página
+                    console.log("Nombre: ", nom, "Apellido: ", cognom, "Edad: ", edat);
+                    document.getElementById("mostrarInner").innerHTML = `<span class="datos">Tus Datos personales son: <br>🤣<br> </span><br>
+                        <strong>Nombre:</strong><span class="datos"> ${nom}</span> <br>
+                        <strong>Apellido:</strong><span class="datos"> ${cognom} </span><br>
+                        <strong>Edad:</strong><span class="datos"> ${edat}</span>
+                    `;
+                });
+            }
         }
     </script>
 </body>
-</html>

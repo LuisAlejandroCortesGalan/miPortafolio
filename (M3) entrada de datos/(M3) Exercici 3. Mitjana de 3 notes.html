@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mediana de 3 notas</title>
 </head>
+
 <body>
-    <div class="box">
-    <h1>Introduce tres números para hacer la media:</h1>
-    <div class="prompt">
-    <label for="num1"> Numero 1:</label>
-    <input type="text" id="num1">
-    <label for="num2">Numero 2:</label>
-    <input type="text" id="num2">
-    <label for="num3">Numero 3:</label>
-    <input type="text" id="num3">
-    </div>
-    <br>
-    <button onclick="calcular()">Calcular</button>
+    <section>
+        <div class="box">
+            <h1>Introduce tres números para hacer la media:</h1>
+            <div class="prompt">
+                <label for="num1" class="palabraResaltada"> Numero 1:</label>
+                <input type="text" id="num1">
+                <label for="num2" class="palabraResaltada">Numero 2:</label>
+                <input type="text" id="num2">
+                <label for="num3" class="palabraResaltada">Numero 3:</label>
+                <input type="text" id="num3">
+            </div>
+            <br>
+            <div class="botones">
+                <button onclick="calcular()">Calcular</button>
+                <button onclick="reset()">Reset</button>
+            </div>
+            <div class="resultados">
 
-    
-    <div class="resultados">
-    
-    <h2>Media de los numeros</h2>
-    <p id="resultado" class="resultado"></p>
+                <h2>Media de los numeros:</h2>
+                <p id="resultado" class="resultado good"></p>
 
-    </div>
-    </div>
+            </div>
+        </div>
+    </section>
 
     <script>
+
+        function reset() {
+            location.reload();
+        }
         function calcular() {
             let num1 = document.getElementById("num1").value;
             let num2 = document.getElementById("num2").value;
@@ -40,70 +49,158 @@
             // se ejecuta la media
             let media = (num1 + num2 + num3) / 3;
             if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
-            document.getElementById("resultado").innerHTML = "Introduce valores numericos validos";
+                document.getElementById("resultado").innerHTML = "Introduce valores numericos validos";
             } else {
-            document.getElementById("resultado").innerHTML = media;
+                document.getElementById("resultado").innerHTML = media;
             }
         }
     </script>
 
     <style>
+        html {
+            --s: 150px;
+            /* control the size*/
+            --c1: #f7d2a1;
+            --c2: #05057e;
+
+            --_g:
+                var(--c1) 0% 5%, var(--c2) 6% 15%, var(--c1) 16% 25%, var(--c2) 26% 35%, var(--c1) 36% 45%,
+                var(--c2) 46% 55%, var(--c1) 56% 65%, var(--c2) 66% 75%, var(--c1) 76% 85%, var(--c2) 86% 95%,
+                #0000 96%;
+            background:
+                radial-gradient(50% 50% at 100% 0, var(--_g)),
+                radial-gradient(50% 50% at 0 100%, var(--_g)),
+                radial-gradient(50% 50%, var(--_g)),
+                radial-gradient(50% 50%, var(--_g)) calc(var(--s)/2) calc(var(--s)/2) var(--c1);
+            background-size: var(--s) var(--s);
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 40px;
+            padding: 30px;
+            width: 500px;
+            height: auto;
+            border: 3px solid goldenrod;
+            border-radius: 5px;
+            background-color: white;
+        }
+
         .box {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            border: 1px solid black;
-            width: auto;
-            height: auto;
-            margin: 50px;
-            padding: 20px;
+            flex-direction: column;
         }
 
-        .texto {
-            font-size: 21px;   
-            font-weight: 600;
-        }
-
-        .resultados {
+        form {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
             gap: 10px;
-        }
-
-        .operacion {
-            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
         label {
-            font-size: 18px;
+            font-size: 21px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+            color: darkblue;
+        }
+
+        input {
+            text-align: center;
+            border: solid 1px darkblue;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            width: 200px;
+    
+        }
+
+        input:focus {
+            box-shadow: 0 0 5px goldenrod;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: goldenrod;
+            color: white;
+            border: none;
             font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+            border: solid 1px darkblue;
+            width: 150px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 800;
         }
 
         .prompt {
             display: flex;
             flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
         }
 
-        .total {
-            flex-wrap: wrap;
+        .operacion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
         }
 
-        .resultado {
-            color: red;
-            font-size: 35px;
+        .resultados {
+            display: flex;
+            justify-content: space-around;
+            width: 500px;
+        }
+
+        .palabraResaltada {
+            color: darkgreen;
+            font-weight: 600;
+        }
+
+        .good {
+            font-size: 26px;
+            color: darkgreen;
+            font-weight: 600;
+            padding: 10px;
+        }
+
+        .bad {
+            color: darkred;
+            font-weight: 600;
+            padding: 10px;
         }
     </style>
+    </style>
 </body>
+
 </html>

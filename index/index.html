@@ -32,7 +32,8 @@
         content="Alejandro Cortés Galán, desarrollador full stack, optimización web, Node.js, PHP, WordPress, UX, UI, bases de datos, MySQL">
     <!-- Open Graph Meta Tags (Para Redes Sociales) -->
     <meta property="og:title" content="Alejandro Cortés Galán - Desarrollador Full Stack">
-    <meta property="og:description" content="Desarrollador full stack especializado en optimización de sitios web y mejora de la experiencia de usuario.">
+    <meta property="og:description"
+        content="Desarrollador full stack especializado en optimización de sitios web y mejora de la experiencia de usuario.">
     <meta property="og:type" content="website">
 
     <!-- Twitter Cards (Para compartir en Twitter) -->
@@ -58,6 +59,8 @@
        }
        </script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/medias380.css">
+    <link rel="stylesheet" href="css/medias420.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="shortcut icon" href="img/fav/fav.png" type="image/x-icon">
 </head>
@@ -73,7 +76,7 @@
                 <nav>
                     <ul>
                         <li><a class="navLinks" href="#headerNav"><i class="fa fa-home"></i>INICIO</a></li>
-                        <li><a class="navLinks" href="#xp"><i class="fa fa-book"></i>CURRICULUM</a></li>
+                        <li><a class="navLinks" href="#xp"><i class="fa fa-book"></i>EXPERIENCIA</a></li>
                         <li><a class="navLinks" href="#sobreMiNav"><i class="fa fa-user"></i>SOBRE MÍ</a></li>
                         <li><a class="navLinks" href="#proyectosNav"><i class="fa fa-briefcase"></i>PROYECTOS</a></li>
                         <li><a class="navLinks" href="#contactoNav"><i class="fa fa-address-book"></i>CONTACTO</a></li>
@@ -95,8 +98,8 @@
     </header>
     <hr id="hr">
     <main class="width-content">
-        </section>
         <!-- SECCION DE EXPERIENCIA LABORAL IT -->
+        </section>
         <h2 class="titulo" id="xp">Experiencia Laboral</h2>
         <div class="botones_experiencia">
             <button onClick="botonExperienciaIt()" class="botonIt">Experiencia actual IT</button>
@@ -311,63 +314,58 @@
         </div>
         <hr>
         <!-- SECTION PORTAFOLIO -->
+
+         
         <h2 class="titulo" id="proyectosNav">Proyectos</h2>
         <section class="proyectos">
             <div class="botones_experiencia" id="botonesPortafolio">
                 <button onclick="mostrarAlternWeb()" id="btnAlternWeb" class="active">AlternWeb (Practicas)</button>
-                <button onclick="mostrarCreArt()" id="btnCreArt">CreArt</button>
+                <button onclick="mostrarCreArt()" id="btnCreArt">Proyecto CreArt</button>
                 <button onclick="mostrarProyectos()" id="btnProyectos">Proyectos Educativos</button>
             </div>
             <!-- SECTION PROYECTOS EDUCATIVOS -->
-            <section class="cardContainer" id="proyectos" style="display: none;">
-                <h3>(M4) Estructuras condicionales</h3>
-                <a target="_blank"
-                    href="../(M4)%20Estructuras%20condicionales/(M4)%20Exercici%206.%20Comanda%20correcta.html"
-                    id="linkCard">
-                    <div class="card">
-                        <h4>Calculadora Arcaica</h4>
-                        <img src="img/cards/creart.png" alt="Imagen de la web CreArt">
-                        <p>
-                        <h4>(M4) Ejercicio 6.</h4><b>Pedido</b>,<b>Correcto</b>,<br> <b>CSS</b>,
-                        <b>HTML</b> y <b>JavaScript</b>.
-                        </p>
-                        <p>
-                            Optimizacion de <b>SEO</b>, rendimiento con <b>Google Insights</b>,
-                            <b>Diseño</b> y <b>Seguridad</b>.
-                        </p>
-                    </div>
-                </a>
-                <a target="_blank"
-                    href="../(M4)%20Estructuras%20condicionales/(M4)%20Exercici%201.%20Nombres%20enters.html"
-                    id="linkCard">
-                    <div class="card">
-                        <h4>Números enteros</h4>
-                        <img src="../img/cards/numerosEnteros.png" alt="Imagen de la web CreArt">
-                        <p>
-                        <h4>(M4) Ejercicio 1.</h4><b>Números</b>,<b>enteros</b>,<br> <b>CSS</b>,
-                        <b>HTML</b> y <b>JavaScript</b>.
-                        </p>
-                        <p>
-                            Optimizacion de <b>SEO</b>, rendimiento con <b>Google Insights</b>,
-                            <b>Diseño</b> y <b>Seguridad</b>.
-                        </p>
-                    </div>
-                </a>
+            <section class="cardContainerProyectos" id="proyectos" style="display: none;">
+                <div class="divTitulo">
+                    <ul>
+                        <li>(M3) entrada de datos</li>
+                        <li>(M4) Estructuras condicionales</li>
+                        <li>(M5)Estructures repetitives i arrays</li>
+                        <li>(M6) Funcions</li>
+                        <li>(M7) Practica</li>
+                    </ul>
+                </div>
+                <div class="divCards">
+                    <a target="_blank"
+                        href="../(M3)%20entrada%20de%20datos/(M3)%20Exercici%201.%20Mostrar%20dades.html">
+                        <div class="card" id="linkCardM3">
+                            <h4>(M3) Exercici 1. Mostrar dades</h4>
+                        </div>
+                    </a>
+                    <a target="_blank" href="../(M3) entrada de datos/(M3) Exercici 2. Calculadora arcaica.html">
+                        <div class="card" id="linkCardM3">
+                            <h4>(M3) Exercici 2. Calculadora arcaica</h4>
+                        </div>
+                    </a>
 
-                <a target="_blank" href="https://web-creart-2.onrender.com/" id="linkCard">
-                    <div class="card">
-                        <h4>Proyectos Educativos</h4>
-                        <img src="img/creart.png" alt="Imagen de la web CreArt">
-                        <p>
-                        <h4>Jordi Pla, Psicologo</h4><br><b>Wordpress</b>,<b>Elementor</b>, <b>CSS</b>,
-                        <b>php</b> y <b>JavaScript</b>.
-                        </p>
-                        <p>
-                            Optimizacion de <b>SEO</b>, rendimiento con <b>Google Insights</b>,
-                            <b>Diseño</b> y <b>Seguridad</b>.
-                        </p>
-                    </div>
-                </a>
+                    <a target="_blank" href="../(M3) entrada de datos/(M3) Exercici 3. Mitjana de 3 notes.html">
+                        <div class="card" id="linkCardM3">
+                            <h4>(M3) Exercici 3. Mitjana de 3 notes</h4>
+                        </div>
+                    </a>
+
+                    <a target="_blank"
+                        href="../(M3) entrada de datos/(M3) Exercici EXTRA 1. Calcula el doble i triple.html">
+                        <div class="card" id="linkCardM3">
+                            <h4>(M3) Exercici 3. Mitjana de 3 notes</h4>
+                        </div>
+                    </a>
+
+                    <a target="_blank"
+                        href="../(M3) entrada de datos/(M3) Exercici EXTRA 2. Litres de pintura necessaris..html">
+                        <div class="card" id="linkCardM3">
+                            <h4>(M3) Exercici 3. Mitjana de 3 notes</h4>
+                        </div>
+                    </a>
             </section>
         </section>
 
@@ -455,7 +453,7 @@
         </section>
         </section>
         <hr>
-
+    
         <!-- ZONA CONTACTO Y FORMULARIO -->
         <section class="seccionContacto" id="fondo">
             <h2 class="titulo" id="contactoNav">Contactame</h2>
@@ -472,7 +470,7 @@
                 </div>
                 <div class="contacto">
                     <h2 class="tituloContact">Contacto</h2>
-                    <p class="quitarMargin">Si necesitas ayuda en algún proyecto, no dudes en ponerte en contacto
+                    <p>Si necesitas ayuda en algún proyecto, no dudes en ponerte en contacto
                         conmigo.
                     </p>
                     <p>Dirección</p>
