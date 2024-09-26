@@ -22,6 +22,8 @@
         gap: 50px;
         padding: 20px;
         max-width: 100%;
+        padding: 15px 40px 10px 40px;
+
     }
 
     .navLinks {
@@ -46,7 +48,7 @@
     }
 
     .sticky {
-        padding: 20px;
+        padding: 15px 40px 10px 40px;
     }
 
     .titulo {
@@ -119,7 +121,7 @@
     .sobreMi {
         flex-direction: column-reverse;
         gap: 20px;
-        width: 380px;
+        width: 420px;
         font-size: 18px;
         margin: 0 0 20px 0;
     }
@@ -206,12 +208,13 @@
     } 
 
     .form {
-        width: 380px;
+        width: 400px;
         margin-bottom: 40px;
     }
 
     .contacto {
-        width: 380px;
+        width: 
+        400px;
         gap: 10px;
     }
 
