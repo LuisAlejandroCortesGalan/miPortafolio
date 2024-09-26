@@ -181,7 +181,6 @@ h1 {
 }
 
 .textoEmocion {
-    text-shadow: 5px 5px 5px var(--color-verde);
     display: flex;
     flex-direction: column;
     text-align: center;
