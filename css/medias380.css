@@ -1,5 +1,8 @@
 @media only screen and (max-width: 380px) {
-
+    html, body {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
     .soy {
         font-size: 15px;
     }
@@ -24,6 +27,8 @@
         gap: 50px;
         padding: 10px 30px 5px 30px;
         max-width: 100%;
+        justify-content: center;
+        gap: 10px;
     }
 
     .navLinks {
@@ -44,11 +49,14 @@
     }
 
     .nombre {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .sticky {
         padding: 10px 30px 5px 30px;
+        display: flex;
+        justify-content: center;
+        gap: 10;
     }
 
     .titulo {
@@ -163,7 +171,7 @@
     }
 
     .card {
-        max-width: 360px;
+        max-width: 100%;
         width: 180px;
         height: 200px;
         height: auto;
@@ -237,7 +245,7 @@
     }
 
     .proyectos {
-        max-width: 360px;
+        max-width: 100%;
     }
 }
 

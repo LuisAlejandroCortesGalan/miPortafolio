@@ -48,12 +48,17 @@ hr {
     margin-top: 0;
 }
 /* ================================Header============================ */
+#headerNav {
+    max-width: 100%;
+}
+
 header {
     color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: transparent;
+    overflow-x: hidden;
 }
 
 .nav {
@@ -260,6 +265,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
 
 .titulo {
@@ -277,13 +283,14 @@ main {
     font-size: 18px;
     margin-bottom: 30px;
     line-height: 1.6;
-    max-width: 1000px;
+    max-width: 70%;
 }
 
 .sobreMi {
     display: flex;
     border: 1px solid white;
     padding: 20px;
+    max-width: 100%;
 }
 
 #sobreMiNav {
@@ -741,6 +748,7 @@ footer {
     margin-bottom: 50px;
     padding: 20px;
     gap: 10px;
+    max-width: 100%;
 }
 
 .quitarMargin {
