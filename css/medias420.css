@@ -129,7 +129,7 @@
         font-size: 14px;
         justify-content: center;
         align-items: center;
-        width: 360px;
+        width: 90%;
     }
 
     b {
@@ -201,7 +201,7 @@
     }
 
     .card p {
-        font-size: 10px;
+        font-size: 8px;
         margin: 0;
     }
 
@@ -230,13 +230,12 @@
     } 
 
     .form {
-        width: 400px;
+        width: 90%;
         margin-bottom: 40px;
     }
 
     .contacto {
-        width: 
-        400px;
+        width: 90%;
         gap: 10px;
     }
 

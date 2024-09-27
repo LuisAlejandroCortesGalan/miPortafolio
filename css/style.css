@@ -638,7 +638,6 @@ main {
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 .contactoContainer {
@@ -650,7 +649,6 @@ main {
     position: relative;
     align-items: center;
     min-width: 100vw;
-    min-height: 70vh;
     background-image: url('../img/fondo2.jpg');
     background-size: cover;
     background-position: center;
