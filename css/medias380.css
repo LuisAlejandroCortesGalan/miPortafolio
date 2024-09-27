@@ -19,6 +19,10 @@
         font-size: 14px;
     } 
 
+    .botones_experiencia {
+        font-size: 12px;
+    }
+
     .textoEmocion {
         font-size: 14px;
     }
@@ -127,7 +131,7 @@
     .sobreMi {
         flex-direction: column-reverse;
         gap: 20px;
-        width: 350px;
+        width: 90%;
         font-size: 16px;
         margin: 0 0 20px 0;
     }
@@ -172,11 +176,11 @@
 
     .card {
         max-width: 100%;
-        width: 180px;
+        width: 140px;
         height: 200px;
-        height: auto;
         margin: 0;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        padding: 5px;
     }
     
     .card h4 {
@@ -185,7 +189,7 @@
     }
 
     .card p {
-        font-size: 10px;
+        font-size: 8px;
         margin: 0;
     }
 
@@ -200,6 +204,7 @@
     #cardGrande {
         width: 240px;
         height: auto;
+        padding: 15px;
     }
 
     #texto_oculto {
@@ -214,12 +219,12 @@
     } 
 
     .form {
-        width: 350px;
+        width: 90%;
         margin-bottom: 40px;
     }
 
     .contacto {
-        width: 350px;
+        width: 90%;
         gap: 10px;
     }
 
