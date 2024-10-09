@@ -4,50 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibuja una L mayuscula</title>
+    <title>Calcula el Factorial de un Número!
+    </title>
 </head>
 
 <body>
     <div class="box">
-        <h1>Elige un número para dibujar la <span class="icon bonita">L</span></h1>
-        <label>Elige un numero del 1 al 30</label>
+        <h1>Escribe un número y descubre su<span class="win"> Factorial!</span></h1>
+        <label>Introduce un numero:</label>
         <input type="number" id="num1">
         <div class="botones">
-            <button onclick="adivinar()">Dibuja la L!</button>
+            <button onclick="contar()">Calcular</button>
             <button onclick="reiniciar()" class="reset">Reiniciar</button>
         </div>
         <p id="respuesta"></p>
     </div>
 
     <script>
-        function adivinar() {
-            document.getElementById("respuesta").innerHTML = "";
-            let num1 = Number(document.getElementById("num1").value);
-            if (num1 < 1 || num1 > 30) {
-                document.getElementById("respuesta").innerHTML = "Introduce un caracter valido entre 1 y 30";
+        function contar() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let arrayFactorial = [];
+            let total = 1;
+
+            if (num1 > 10 || num1 < 1) {
+                respuesta.innerHTML = "Introduce un numero valido!";
                 return;
             }
-            let num2 = Math.round((num1 / 2) + 1);
 
-            for (let i = 1; i < num1; i++) {
-                document.getElementById("respuesta").innerHTML += `*<br>`
+            for (let i = 0; i < num1; i++) {
+                let operacion = num1 - i;
+                arrayFactorial.push(operacion);
             }
+            console.log(arrayFactorial);
 
-            for (let i = 0; i < num2; i++) {
-                document.getElementById("respuesta").innerHTML += ' ' + '*' + ' ';
+            if (arrayFactorial.length > 0) {
+                for (let i = 0; i < arrayFactorial.length; i++) {
+                    total *= Number(arrayFactorial[i]);
+                }
+                respuesta.innerHTML = `El factorial de ${num1} es: <span class="win">${total}</span>`;
             }
-
-
-
-            console.log('el num1: ' + num1 + ' num2: ' + num2);
         }
-
-
 
         function reiniciar() {
             location.reload();
         }
-
     </script>
 
     <style>
@@ -57,6 +57,8 @@
         }
 
         body {
+            margin: 80px;
+            ;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,18 +101,13 @@
             padding: 20px;
             border: 5px solid darkgreen;
             border-radius: 5px;
-            width: auto;
+            width: 500px;
             height: auto;
-            margin-top: 40px;
         }
 
         h1 {
             margin: 0;
             color: darkred;
-        }
-
-        label {
-            color: darkgreen;
         }
 
         input {
@@ -125,32 +122,20 @@
         }
 
         .win {
-            font-size: 42px;
+            font-size: 36px;
             color: darkgreen;
         }
 
         .lose {
-            color: darkred;
-            font-size: 42px;
+            color: darkred
         }
 
         #respuesta {
             display: block;
-            font-size: 36px;
-            margin: 0;
+            width: 200px;
+            flex-wrap: wrap;
+            overflow: auto;
             text-align: start;
-        }
-
-        .reset {
-            background-color: darkred;
-        }
-
-        .generar {
-            background-color: darkblue;
-        }
-
-        #pistaBtn {
-            background-color: goldenrod;
         }
     </style>
 </body>

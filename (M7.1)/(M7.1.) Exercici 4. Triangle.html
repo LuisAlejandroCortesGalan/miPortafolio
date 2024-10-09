@@ -4,50 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibuja una L mayuscula</title>
+    <title>Conoce tu triangulo!!!
+    </title>
 </head>
 
 <body>
     <div class="box">
-        <h1>Elige un número para dibujar la <span class="icon bonita">L</span></h1>
-        <label>Elige un numero del 1 al 30</label>
+        <h1>Dame los valores de sus lados!!!</h1>
+        <label>Introduce lado: A</label>
         <input type="number" id="num1">
+        <label>Introduce lado: B</label>
+        <input type="number" id="num2">
+        <label>Introduce lado: C</label>
+        <input type="number" id="num3">
         <div class="botones">
-            <button onclick="adivinar()">Dibuja la L!</button>
+            <button onclick="contar()">Calcular</button>
             <button onclick="reiniciar()" class="reset">Reiniciar</button>
         </div>
         <p id="respuesta"></p>
     </div>
 
     <script>
-        function adivinar() {
-            document.getElementById("respuesta").innerHTML = "";
+        function contar() {
             let num1 = Number(document.getElementById("num1").value);
-            if (num1 < 1 || num1 > 30) {
-                document.getElementById("respuesta").innerHTML = "Introduce un caracter valido entre 1 y 30";
+            let num2 = Number(document.getElementById("num2").value);
+            let num3 = Number(document.getElementById("num3").value);
+
+             
+            let respuesta= "";
+            if (num1 + num2 <= num3 || num1 + num3 <= num2 || num3 + num2 <= num1) {
+                respuesta = `<span class="lose">Los lados no pueden formar un triangulo</span>`;
+                document.getElementById("respuesta").innerHTML = respuesta;
                 return;
             }
-            let num2 = Math.round((num1 / 2) + 1);
 
-            for (let i = 1; i < num1; i++) {
-                document.getElementById("respuesta").innerHTML += `*<br>`
+            if (num1 === num2 && num2 === num3) {
+                respuesta = `<span class="win">Es un triangulo Equilatero</span>`
+            } else if (num1 === num2 || num2 === num3 || num3 === num1) {
+                respuesta = `<span class="win">Es un triangulo Isoceles</span>`
+            } else {
+                respuesta = `<span class="win">Es un triangulo Escaleno</span>`
             }
+            document.getElementById("respuesta").innerHTML = respuesta;
 
-            for (let i = 0; i < num2; i++) {
-                document.getElementById("respuesta").innerHTML += ' ' + '*' + ' ';
-            }
-
-
-
-            console.log('el num1: ' + num1 + ' num2: ' + num2);
         }
-
-
 
         function reiniciar() {
             location.reload();
         }
-
     </script>
 
     <style>
@@ -57,6 +61,8 @@
         }
 
         body {
+            margin: 80px;
+            ;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,18 +105,13 @@
             padding: 20px;
             border: 5px solid darkgreen;
             border-radius: 5px;
-            width: auto;
+            width: 500px;
             height: auto;
-            margin-top: 40px;
         }
 
         h1 {
             margin: 0;
             color: darkred;
-        }
-
-        label {
-            color: darkgreen;
         }
 
         input {
@@ -125,32 +126,19 @@
         }
 
         .win {
-            font-size: 42px;
+            font-size: 36px;
             color: darkgreen;
         }
 
         .lose {
             color: darkred;
-            font-size: 42px;
+            font-size: 36px;
         }
 
         #respuesta {
-            display: block;
-            font-size: 36px;
-            margin: 0;
-            text-align: start;
-        }
-
-        .reset {
-            background-color: darkred;
-        }
-
-        .generar {
-            background-color: darkblue;
-        }
-
-        #pistaBtn {
-            background-color: goldenrod;
+            width: 300px;
+            flex-wrap: wrap;
+            overflow: auto;
         }
     </style>
 </body>

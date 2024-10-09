@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu To Do App
+    </title>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Mira, Añade o Elimina<br><span class="win">tus Tareas</span></h1>
+        <div id="tarea" style="display: none;">
+            <label for="nuevaTarea">Introduce tu Nueva taréa</label>
+            <input type="text" id="nuevaTarea" placeholder="Introduce una Tarea">
+            <button onclick="agregar()">Agregar</button>
+        </div>
+        <div class="botones">
+            <button onclick="añadir()">Añadir taréa</button>
+            <button onclick="mostrar()">Mostrar Taréas</button>
+            <button onclick="eliminar()">Eliminar Taréa</button>
+            <button onclick="salir()">Salir de la Aplicación</button>
+        </div>
+        <div id="respuesta"></div>
+    </div>
+
+    <script>
+
+        let arrayTareas = [];
+        function salir() {
+            location.reload();
+        }
+
+        function añadir() {
+            document.getElementById("tarea").style.display = "flex";
+            let tarea = document.getElementById("tarea").value;
+        }
+
+        function agregar() {
+            let tarea = document.getElementById("nuevaTarea").value;
+            arrayTareas.push(tarea);
+            document.getElementById("respuesta").innerHTML = `<p><span>Tarea guardada: ${tarea}</span></p><br>`;
+        }
+
+        function mostrar() {
+            if (arrayTareas.length == 0) {
+                document.getElementById('respuesta').innerHTML = '<p>No hay tareas guardadas</p>';
+            } else {
+                document.getElementById('respuesta').innerHTML = '<p>Mira tu listado de tareas guardadas</p>';
+                for (let i = 0; i < arrayTareas.length; i++) {
+                    if (arrayTareas[i] != null) {
+                        document.getElementById("respuesta").innerHTML += `<p id="${i}" >🆗${arrayTareas[i]}</p>`;
+                    }
+                }
+            }
+        }
+
+        function eliminar() {
+            if (arrayTareas.length == 0) {
+                document.getElementById('respuesta').innerHTML = '<p>No hay tareas guardadas</p>';
+            } else {
+                document.getElementById('respuesta').innerHTML = `<span class="lose">Haz click sobre el elemento que quieras borrar</span>`;
+                for (let i = 0; i < arrayTareas.length; i++) {
+                    document.getElementById("respuesta").innerHTML += `<p onclick="borrar(${i})" id="${i}" class="lose">❌${arrayTareas[i]}</p>`;
+                }
+            }
+        }
+
+        function borrar(i) {
+            arrayTareas.splice(i, 1);
+            console.log(arrayTareas);
+            eliminar();
+        }
+
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            margin: 80px;
+            ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            border: 5px solid darkgreen;
+            border-radius: 5px;
+            min-width: 500px;
+            height: auto;
+        }
+
+        h1 {
+            margin: 0;
+            color: darkred;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        p {
+            font-size: 34px;
+            color: darkblue;
+        }
+
+        .win {
+            font-size: 36px;
+            color: darkgreen;
+        }
+
+        .lose {
+            color: darkred;
+            font-size: 36px;
+        }
+
+        #respuesta {
+            display: block;
+            width: 300px;
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+
+        #tarea {
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+</body>
+
+</html>

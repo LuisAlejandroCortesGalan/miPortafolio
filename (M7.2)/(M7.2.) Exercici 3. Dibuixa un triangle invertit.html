@@ -4,50 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibuja una L mayuscula</title>
+    <title>Dibuja un triangulo INVERTIDO!
+    </title>
 </head>
 
 <body>
     <div class="box">
-        <h1>Elige un número para dibujar la <span class="icon bonita">L</span></h1>
-        <label>Elige un numero del 1 al 30</label>
+        <h1>Dibuja tu <span class="win">Triangulo INVERTIDO</span></h1>
+        <label>Introduce una altura (Mayor que cero, Menor de 10)</label>
         <input type="number" id="num1">
         <div class="botones">
-            <button onclick="adivinar()">Dibuja la L!</button>
+            <button onclick="contar()">Dibujar</button>
             <button onclick="reiniciar()" class="reset">Reiniciar</button>
         </div>
         <p id="respuesta"></p>
     </div>
 
     <script>
-        function adivinar() {
-            document.getElementById("respuesta").innerHTML = "";
-            let num1 = Number(document.getElementById("num1").value);
-            if (num1 < 1 || num1 > 30) {
-                document.getElementById("respuesta").innerHTML = "Introduce un caracter valido entre 1 y 30";
+        function contar() {
+            let char = `*`;
+            let respuesta = document.getElementById('respuesta');
+            respuesta.innerHTML = "";
+            let a = parseInt(document.getElementById("num1").value);
+
+            if (a > 10 || a < 1) {
+                respuesta.innerHTML = "Introduce un numero valido!";
                 return;
             }
-            let num2 = Math.round((num1 / 2) + 1);
 
-            for (let i = 1; i < num1; i++) {
-                document.getElementById("respuesta").innerHTML += `*<br>`
+            for (let i = 0; i < a; i++) {
+                respuesta.innerHTML += `<br>`;
+                for (let j = 0 + i; j < a; j++) {
+                    respuesta.innerHTML += " " + "*";                    
+                }
             }
-
-            for (let i = 0; i < num2; i++) {
-                document.getElementById("respuesta").innerHTML += ' ' + '*' + ' ';
-            }
-
-
-
-            console.log('el num1: ' + num1 + ' num2: ' + num2);
         }
-
-
-
         function reiniciar() {
             location.reload();
         }
-
     </script>
 
     <style>
@@ -57,6 +51,8 @@
         }
 
         body {
+            margin: 80px;
+            ;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,18 +95,13 @@
             padding: 20px;
             border: 5px solid darkgreen;
             border-radius: 5px;
-            width: auto;
+            width: 500px;
             height: auto;
-            margin-top: 40px;
         }
 
         h1 {
             margin: 0;
             color: darkred;
-        }
-
-        label {
-            color: darkgreen;
         }
 
         input {
@@ -125,32 +116,20 @@
         }
 
         .win {
-            font-size: 42px;
+            font-size: 36px;
             color: darkgreen;
         }
 
         .lose {
-            color: darkred;
-            font-size: 42px;
+            color: darkred
         }
 
         #respuesta {
             display: block;
-            font-size: 36px;
-            margin: 0;
+            width: 200px;
+            flex-wrap: wrap;
+            overflow: auto;
             text-align: start;
-        }
-
-        .reset {
-            background-color: darkred;
-        }
-
-        .generar {
-            background-color: darkblue;
-        }
-
-        #pistaBtn {
-            background-color: goldenrod;
         }
     </style>
 </body>

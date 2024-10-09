@@ -22,27 +22,28 @@
 
         function calcular() {
             let num1 = Number(document.getElementById('num1').value);
-            let num2 = 0;
+            let num2 = 1;
             let edades = [];
             let sumaEdades = 0;
             let media = 0;
+            let edad = 0;
 
             if (num1 < 1 || num1 > 10) {
                 document.getElementById('respuesta').innerHTML = `Minimo 1 niño <br> y Maximo 10 niños`;
                 return;
             }
 
-            if (num1 > num2) {
+            if (num1 >= num2) {
                 document.getElementById('respuesta').innerHTML = `Has inscrito ${num1} niñ@s en Titelles!`;
 
-                while (num1 > num2) {
-                    let edad = Number(prompt('Los niñ@s en Titelles deben tener entre 2 y 7 años. ¿Cuántos años tienen tus niños?'));     
-                    if (edad >= 2 && edad <= 7) {
+                while (num1 >= num2) {
+                    edad = Number(prompt(`Los niñ@s en Titelles deben tener entre 5 y 12 años. ¿Dime la edad del niño ${num2}?`));     
+                    if (edad >= 5 && edad <= 12) {
                         num2++;
                         edades.push(edad);
                         sumaEdades += edad;
                     } else {
-                        alert(`Lo siento, los niñ@s no pueden tener ${edad} años. Por favor, introduce una edad entre 2 y 7 años.`);
+                        alert(`Lo siento, los niñ@s no pueden tener ${edad} años. Por favor, introduce una edad entre 5 y 12 años.`);
                     }
                 }
                 

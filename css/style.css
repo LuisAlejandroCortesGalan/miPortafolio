@@ -468,6 +468,7 @@ main {
     gap: 50px;
     margin-top: 40px;
     max-height: auto;
+    padding-left: 50px;
 }
 
 .show {
@@ -477,7 +478,7 @@ main {
 .punto-clave {
     position: absolute;
     left: 40px;
-    transform: translateX(-95%);
+    transform: translateX(-10%);
     font-size: 14px;
     background-color: var(--color-verde);
     padding: 5px 10px;
@@ -494,7 +495,7 @@ main {
     padding: 5px 10px;
     border-radius: 5px;
     color: white;
-    transform: translateX(-75%);
+    transform: translateX(-25%);
 }
 
 .botones_experiencia {
@@ -559,11 +560,13 @@ main {
     align-items: center;
     max-width: 1000px;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .cardContainerProyectos {
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 
 .divCards {
@@ -635,7 +638,7 @@ main {
 
 
 .seccionContacto {
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
 }
@@ -743,8 +746,8 @@ footer {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    margin-bottom: 50px;
     padding: 20px;
+    margin-top: 30px;
     gap: 10px;
     max-width: 100%;
 }

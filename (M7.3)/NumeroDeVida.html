@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que significa tu numero de Camino de vida!!
+    </title>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Descubre que dice sobre ti <br><span class="win">tu numero de Camino de vida!</span></h1>
+        <div class="inputs">
+            <label>Tu dia de nacimiento</label>
+            <input type="number" id="dia" min="1" max="31">
+
+            <label>Tu mes de nacimiento</label>
+            <input type="number" id="mes" required min="1" max="12">
+
+            <label for="minutos">Tu año de nacimiento</label>
+            <input type="number" id="año" required min="1900" max="2200">
+        </div>
+
+
+        <div class="botones">
+            <button onclick="main()">Ver</button>
+            <button onclick="reiniciar()">Reset</button>
+        </div>
+        <p id="respuesta"></p>
+
+    </div>
+
+    <script>
+        let numero = [];
+        let suma = 0;
+
+        function main() {
+            numero = [];
+            suma = 0;
+
+            let dia = document.getElementById('dia').value;
+            let mes = document.getElementById('mes').value;
+            let año = document.getElementById('año').value;
+
+            if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || año < 1900 || año > 2200) {
+                document.getElementById('respuesta').innerHTML = '<p class="lose">Por favor, ingresa una fecha válida.</p>';
+                return;
+            }
+
+            for (let i = 0; i < dia.length; i++) {
+                numero.push(dia[i]);
+            }
+
+            for (let i = 0; i < mes.length; i++) {
+                numero.push(mes[i]);
+            }
+
+            for (let i = 0; i < año.length; i++) {
+                numero.push(año[i]);
+            }
+
+            for (let i = 0; i < numero.length; i++) {
+                suma += parseInt(numero.charAt(i));
+            }
+
+            if (suma === 11 || suma === 22 || suma === 33) {
+                mostrarResultado(suma);
+            } else {
+                while (suma > 9) {
+                    suma = reducirSuma(suma);
+                }
+                mostrarResultado(suma);
+            }
+        }
+
+        function reducirSuma(num) {
+            let sumaReducida = 0;
+            let numString = num.toString();
+
+            for (let i = 0; i < numString.length; i++) {
+                sumaReducida += parseInt(numString.charAt(i));
+            }
+
+            return sumaReducida;
+        }
+
+        function mostrarResultado(suma) {
+            let mensaje = "";
+
+            if (suma === 11) {
+                mensaje = `<p class="win">Número maestro 11: Simboliza una conexión espiritual con la fuente de la creación, lo que les permite a estas personas manifestar sus sueños subconscientes en el plano material. El 11 es un número poderoso que integra el significado de los números uno y dos en numerología. Las personas tienen una visión global del cosmos y son enviadas al mundo material para colaborar en su realización. Pueden demorar en encontrar su verdadera esencia, y cada fracaso los acerca más a su objetivo final.</p>`;
+            } else if (suma === 22) {
+                mensaje = `<p class="win">Número maestro 22: Estas personas son capaces de transformar sus miedos y oscuridad en fuentes de inspiración. No les asusta explorar su yo espiritual y hacer el trabajo interno necesario para integrar todos los aspectos de su personalidad. Aunque a veces puedan proyectar una imagen seria y reservada, es posible que se deba a que están procesando algo profundo en su subconsciente. </p>`;
+            } else if (suma === 33) {
+                mensaje = `<p class="win">Número maestro 33: Las personas que tienen este número son optimistas, inspiradoras y siempre buscan el bien mayor. Tienen un gran corazón y una gran mente, y quieren compartir su conocimiento, su luz y su amor con los demás. Estas personas no solo sueñan con cambiar el mundo, sino que también tienen la determinación y la capacidad para hacerlo posible. Aunque a veces pueden enfrentarse a la incomprensión o la resistencia de personas que se aferran a lo establecido, el número 33 les recuerda la importancia de encontrar a aquellas personas que comparten su visión.</p>`;
+            } else if (suma === 1) {
+                mensaje = `<p class="win">Número 1: Las personas que tienen el número 1 como camino de vida se caracterizan por su liderazgo y su creatividad. Representa la iniciativa, la aspiración y el dinamismo, al igual que el primer signo del zodíaco, Aries. Estas personas no se conforman con lo que les ofrece el mundo, sino que buscan realizar sus propios proyectos y contribuir al bien común. Sin embargo, esta actitud valiente y decidida también puede hacerlos actuar de forma precipitada. </p>`;
+            } else if (suma === 2) {
+                mensaje = `<p class="win">Número 2: Este número representa la sensibilidad, la ternura, la bondad y la cooperación. Se considera el número más psíquico de todos los caminos de vida. Las personas con este número se preocupan por los demás y disfrutan dedicando su energía a las relaciones que aprecian. Su energía es pacífica y diplomática, capaz de crear armonía entre las personas. Aunque son muy emotivas y vulnerables a las críticas, saben cómo balancear las opiniones de los demás con su intuición. </p>`;
+            } else if (suma === 3) {
+                mensaje = `<p class="win">Número 3: Las personas con el camino de vida número 3 tienen un don para la creatividad, la comunicación y la transformación personal. Su facilidad con las palabras les permite adaptarse a diferentes entornos sociales, profesionales y personales a lo largo de su vida. Una de las ventajas es la capacidad de cambiar de dirección cuando sea necesario. Estas personas saben cómo superar los obstáculos y aprovechar las oportunidades. Su creatividad e imaginación son sus grandes fortalezas. No obstante, también pueden tener dificultades para tomar decisiones y mantenerse firmes. </p>`;
+            } else if (suma === 4) {
+                mensaje = `<p class="win">Número 4: Este número se caracteriza por su esfuerzo y dedicación para alcanzar metas. Su actitud práctica y realista les ayuda a superar los obstáculos y a obtener resultados duraderos. Sin embargo, también pueden ser muy exigentes consigo mismas y caer en la rigidez y el perfeccionismo. Esto puede hacer que se pierdan de disfrutar los momentos simples y felices de la vida. </p>`;
+            } else if (suma === 5) {
+                mensaje = `<p class="win">Número 5: Estas personas no se resisten al flujo de la vida, sino que se adaptan a él y buscan las oportunidades que se presentan. El número 5 les da la capacidad de aprovechar al máximo las situaciones imprevistas y vivir experiencias extraordinarias. No obstante, también deben tener cuidado con su tendencia a la inestabilidad y el desapego. </p>`;
+            } else if (suma === 6) {
+                mensaje = `<p class="win">Número 6: Los que tienen este número suelen sentir pasión por las profesiones, donde pueden aplicar sus dones y talentos para mejorar las vidas de las personas que los rodean. Como son idealistas por naturaleza, siempre buscan lo mejor en los demás y se esfuerza por ayudar a las personas que los rodean a desarrollar todo su potencial. No obstante, también pueden sentirse desanimados y decepcionados si perciben que las personas más cercanas a ellos no los aprecian o valoran lo suficiente. </p>`;
+            } else if (suma === 7) {
+                mensaje = `<p class="win">Número 7: El número 7 es el más afortunado de todos. Trae la buena suerte y la energía positiva del siete a todo lo que haces en la vida. Si naciste con este camino de vida, tienes una facilidad natural para lograr tus objetivos. Sea lo que sea que te propongas hacer o aprender, lo haces con gracia y talento. Por eso, puede que te parezca fácil la vida, y que creas que mereces todo lo que tienes. </p>`;
+            } else if (suma === 8) {
+                mensaje = `<p class="win">Número 8: Su motivación interna les impulsa a demostrar su valor y, por lo general, se ganan la confianza y el aprecio de otras personas ambiciosas. Son líderes entre líderes que saben usar sus habilidades sociales y su inteligencia para afrontar los desafíos de la vida con facilidad. Sin embargo, estas habilidades también pueden tentarles a actuar por egoísmo, y los numerólogos les aconsejan que no dejen que el ego les domine. </p>`;
+            } else if (suma === 9) {
+                mensaje = `<p class="win">Número 9: Las personas con este número tienen una misión especial: traer la luz de la nueva era a este mundo. Son almas compasivas e idealistas que quieren hacer una diferencia positiva con sus dones y talentos. Su forma de relacionarse con los demás es sincera y profunda, y buscan ofrecer apoyo emocional y espiritual a quienes lo necesitan. Su potencial como líderes, maestros, políticos o activistas es enorme, ya que saben cómo inspirar y movilizar a las masas hacia una causa noble. Sin embargo, también deben tener en cuenta la realidad de sus circunstancias y no perderse en sus visiones. </p>`;
+            } else {
+                mensaje = `<p class="win">Tu número es ${suma}: Esta fecha no es valida...</p>`;
+            }
+
+            document.getElementById('respuesta').innerHTML = mensaje;
+        }
+
+        function reiniciar() {
+            location.reload();
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .inputs {
+            display: flex;
+            justify-content: center;
+            margin: 0 20px 0 20px;
+            gap: 10px;
+        }
+
+        input {
+            width: 150px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px;
+            padding: 20px;
+            border: 5px solid darkgreen;
+            border-radius: 5px;
+            min-width: 400px;
+            height: auto;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .win {
+            font-size: 36px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 36px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+</body>
+
+</html>

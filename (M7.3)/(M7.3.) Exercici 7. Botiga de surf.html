@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de surf!!
+    </title>
+</head>
+
+<body>
+    <div class="box">
+        <h1><span class="win">Formulario de SURF</span></h1>
+
+        <label>¿Tienes experiencia surfeando?</label>
+        <div>
+            <input type="radio" id="xp-yes" name="xp" value="yes" required>
+            <label for="xp-yes">Sí</label>
+
+            <input type="radio" id="xp-no" name="xp" value="no" required>
+            <label for="xp-no">No</label>
+            <p id="respuesta"></p>
+        </div>
+
+        <label>¿Que altura tienen las olas? (En metros)</label>
+        <input type="number" id="olas" required>
+        <p id="respuesta1"></p>
+
+        <label for="minutos">Minutos reservados</label>
+        <input type="number" id="minutos" required>
+        <p id="respuesta3"></p>
+
+
+
+        <div class="botones">
+            <button onclick="main()">Introducir numero</button>
+            <button onclick="reiniciar()">Reset</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        function costoFibra(minutos) {
+            let costoFibra = 35;
+            let horas = minutos / 60;
+            let horasReales = Math.ceil(horas);
+            let total = horasReales * costoFibra;
+            console.log("horas", horasReales);
+            return total;
+        }
+
+        function costoEspuma(minutos) {
+            let costoEspuma = 20;
+            let horas = minutos / 60;
+            let horasReales = Math.ceil(horas);
+            let total = horasReales * costoEspuma;
+            console.log("horas", horasReales);
+            return total;
+        }
+
+        function calcularTabla(xp) {
+            if (xp.value === 'yes') {
+                return "Tabla de fibra";
+                // document.getElementById('respuesta').innerHTML = `<p class="win">Tabla de Fibra</p>`;
+            } else if (xp.value === 'no') {
+                // document.getElementById('respuesta').innerHTML = `<p class="lose">Tabla de Espuma</p>`;
+                return "Tabla de espuma";
+            }
+        }
+
+        function mostrarOlas(olas) {
+            if (olas >= 2) {
+                return "Olas grandes";
+            } else if (olas < 2) {
+                return "Olas pequeñas";
+            }
+        }
+
+        function main() {
+
+            let xp = document.querySelector('input[name="xp"]:checked');
+            let olas = Number(document.getElementById('olas').value);
+            let minutos = Number(document.getElementById('minutos').value);
+            let tabla = document.querySelector('input[name="tabla"]:checked');
+
+            if (minutos <= 0) {
+                document.getElementById('respuesta3').innerHTML = `<p class="lose">No hay minutos reservados!!</p>`;
+            }
+            
+            if (olas <= 0) {
+                document.getElementById('respuesta1').innerHTML = `<p class="lose">No hay Olas!!</p>`;
+            }
+            document.getElementById('respuesta1').innerHTML = `<p class="win">${mostrarOlas(olas)}!!</p>`
+
+            if (!xp) {
+                document.getElementById('respuesta').innerHTML = `<p class="lose">Por favor, selecciona si tienes experiencia surfeando.</p>`;
+            }
+            document.getElementById('respuesta').innerHTML = `<p class="win">${calcularTabla(xp)}</p>`;
+
+            if (calcularTabla(xp) === 'Tabla de espuma') {
+                document.getElementById('respuesta3').innerHTML = `<p class="win">Has utilizado una tabla de espuma durante ${minutos} minutos cuesta: ${costoEspuma(minutos)}€!!</p>`;
+            } else if (calcularTabla(xp) === 'Tabla de fibra') {
+                document.getElementById('respuesta3').innerHTML = `<p class="win">Has utilizado una tabla de fibra durante ${minutos} minutos cuesta: ${costoFibra(minutos)}€!!</p>`;
+            }
+
+        }
+
+        function reiniciar() {
+            location.reload();
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px;
+            padding: 20px;
+            border: 5px solid darkgreen;
+            border-radius: 5px;
+            min-width: 400px;
+            height: auto;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .win {
+            font-size: 36px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 36px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+</body>
+
+</html>

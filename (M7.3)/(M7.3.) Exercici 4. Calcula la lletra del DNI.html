@@ -4,50 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibuja una L mayuscula</title>
+    <title>Calcula la letra de tu DNI?
+    </title>
 </head>
 
 <body>
     <div class="box">
-        <h1>Elige un número para dibujar la <span class="icon bonita">L</span></h1>
-        <label>Elige un numero del 1 al 30</label>
-        <input type="number" id="num1">
+        <h1>Escribe tu <span class="win">DNI!!</span> y descubre si la letra es la correcta</h1>
+        <label>Introduce una DNI sin comas, tildes o caracteres especiales</label>
+        <input type="text" id="dni" placeholder="Ej: 00000000X">
         <div class="botones">
-            <button onclick="adivinar()">Dibuja la L!</button>
+            <button onclick="contar()">Procesar</button>
             <button onclick="reiniciar()" class="reset">Reiniciar</button>
         </div>
         <p id="respuesta"></p>
     </div>
 
     <script>
-        function adivinar() {
-            document.getElementById("respuesta").innerHTML = "";
-            let num1 = Number(document.getElementById("num1").value);
-            if (num1 < 1 || num1 > 30) {
-                document.getElementById("respuesta").innerHTML = "Introduce un caracter valido entre 1 y 30";
+        function contar() {
+            let dni = document.getElementById("dni").value;
+            let letra = dni.charAt(8);
+            let numero = dni.slice(0,8);
+
+            let letrasPosibles = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
+
+            if (isNaN(numero) || numero.length!== 8 || letrasPosibles.indexOf(letra.toUpperCase()) === -1) {
+                document.getElementById("respuesta").innerHTML = "Introduce un DNI válido";
                 return;
             }
-            let num2 = Math.round((num1 / 2) + 1);
 
-            for (let i = 1; i < num1; i++) {
-                document.getElementById("respuesta").innerHTML += `*<br>`
+            let letraCalculada = letrasPosibles[numero % 23];
+            console.log(letraCalculada);
+            console.log(letra)
+
+            if (letraCalculada.toLowerCase() == letra.toLowerCase() ) {
+                document.getElementById("respuesta").innerHTML = `<span class="win">Correcto! <br>La letra de tu dni es ${letraCalculada}</span>.`;
+            } else {
+            document.getElementById("respuesta").innerHTML = `<span class="lose"> Hay un Error! <br>La letra de tu dni debería ser ${letraCalculada}</span>.`;
             }
 
-            for (let i = 0; i < num2; i++) {
-                document.getElementById("respuesta").innerHTML += ' ' + '*' + ' ';
-            }
-
-
-
-            console.log('el num1: ' + num1 + ' num2: ' + num2);
         }
-
-
 
         function reiniciar() {
             location.reload();
         }
-
     </script>
 
     <style>
@@ -57,6 +57,8 @@
         }
 
         body {
+            margin: 80px;
+            ;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,18 +101,13 @@
             padding: 20px;
             border: 5px solid darkgreen;
             border-radius: 5px;
-            width: auto;
+            width: 500px;
             height: auto;
-            margin-top: 40px;
         }
 
         h1 {
             margin: 0;
             color: darkred;
-        }
-
-        label {
-            color: darkgreen;
         }
 
         input {
@@ -125,32 +122,20 @@
         }
 
         .win {
-            font-size: 42px;
+            font-size: 36px;
             color: darkgreen;
         }
 
         .lose {
             color: darkred;
-            font-size: 42px;
+            font-size: 36px;
         }
 
         #respuesta {
             display: block;
-            font-size: 36px;
-            margin: 0;
-            text-align: start;
-        }
-
-        .reset {
-            background-color: darkred;
-        }
-
-        .generar {
-            background-color: darkblue;
-        }
-
-        #pistaBtn {
-            background-color: goldenrod;
+            width: 300px;
+            flex-wrap: wrap;
+            overflow: auto;
         }
     </style>
 </body>
