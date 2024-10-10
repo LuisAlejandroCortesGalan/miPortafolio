@@ -37,6 +37,21 @@ b {
     color: var(--color-verde-claro);
 }
 
+.sub {
+    text-align: center;
+    margin: 10px;
+    color: var(--color-verde-claro);
+    font-size: 20px;
+}
+
+.subContacto {
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+    max-width: 90%;
+    line-height: 1.6;
+}
+
 hr {
     border: solid 1px var(--color-verde);
     width: 100vw;
@@ -280,10 +295,10 @@ main {
 
 .subtitulo {
     text-align: center;
-    font-size: 18px;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    max-width: 70%;
+    font-size: 20px;
+    margin: 30px 0;
+    line-height: 2;
+    max-width: 80%;
 }
 
 .sobreMi {
@@ -294,7 +309,7 @@ main {
 }
 
 #sobreMiNav {
-    margin: 0 0 50px 0;
+    margin: 50px 0 50px 0;
 }
 
 .imgSobreMi {
@@ -723,6 +738,7 @@ textarea {
     text-align: center;
     line-height: 1.6;
     font-size: 18px;
+    margin-top: 30px;
 }
 
 

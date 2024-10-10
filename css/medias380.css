@@ -134,6 +134,18 @@
         margin: 20px 0;
     }
 
+    .sub {
+        width: 300px;
+        font-size: 12px;
+    }
+
+    
+    .subContacto {
+        width: 300px;
+        font-size: 14px;
+    }
+
+
     .subtitulo {
         text-align: center;
         font-size: 12px;
