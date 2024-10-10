@@ -1,5 +1,5 @@
 
-@media only screen and (min-width: 380px) and (max-width: 764px) {
+@media only screen and (min-width: 765px) and (max-width: 1200px) {
     html, body {
         scroll-behavior: smooth;
         overflow-x: hidden;
@@ -7,6 +7,11 @@
 
     .header2 span {
         font-size: 25px;
+    }
+
+    .header2 img {
+        width: 300px;
+        height: auto;
     }
 
     h1 {
@@ -29,8 +34,6 @@
         font-size: 12px;
     }
 
-
-
     .textoEmocion {
         font-size: 18px;
     }
@@ -39,30 +42,37 @@
         gap: 10px;
         padding: 20px;
         max-width: 100%;
+        width: 95%;
         padding: 15px 40px 10px 40px;
         justify-content: center;
 
     }
 
+    ul li .navLinks {
+        padding-left: 15px;
+    }
+
     .navLinks {
         position: relative; 
-        font-size: 0;
+        font-size: 12px;
+        gap: 5px;
         padding: 10px;
         display: flex;
         align-items: center; 
     }
-    
+
     .navLinks i {
-        font-size: 18px;
+        font-size: 12px;
         position: absolute;
         left: 0; 
         top: 50%;
         transform: translateY(-50%);
         align-items: center;
+        margin-right: 50px;
     }
 
     .nombre {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .sticky {
@@ -95,7 +105,7 @@
     .experienciaLaboral {
         font-size: 14px;
         margin: 10px 0;
-        width: 360px;
+        max-width: 90%;
     }
 
     .descripcion_xp {
@@ -129,7 +139,8 @@
         font-size: 14px;
         justify-content: center;
         align-items: center;
-        width: 90%;
+        max-width: 90%;
+        padding: 0 20px;
     }
 
     b {
@@ -143,7 +154,7 @@
     .sobreMi {
         flex-direction: column-reverse;
         gap: 20px;
-        width: 90%;
+        width: 50%;
         font-size: 18px;
         margin: 0 0 20px 0;
     }
@@ -184,7 +195,7 @@
     .cardContainer {
         flex-wrap: wrap;
         gap: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
     }
 
     .card {
@@ -211,7 +222,8 @@
 
     .imgSobreMi {
         width: 100%;
-        margin: 10px 0;
+        height: 90%;
+        margin: 0px 0;
     }
     #cardGrande {
         width: 240px;
@@ -223,7 +235,6 @@
         margin: 20px 0 50px 0;
     }
 
-
     .form {
         width: 90%;
         margin-bottom: 40px;
@@ -234,9 +245,22 @@
         gap: 10px;
     }
 
+    .contacto > P {
+        color: white;
+        font-size: 26px;
+        font-weight: bolder;
+        margin-bottom: 30px;
+    }
+
+    .contacto h3 {
+        font-weight: 300;
+        margin: 40px 0px;
+    }
+
     .tituloContact {
-        font-size: 16px;
+        font-size: 26px;
         margin-bottom: 10px;
+        font-weight: 300;
     }
 
     input {

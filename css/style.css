@@ -546,7 +546,7 @@ main {
 }
 
 #proyectos {
-    max-width: 1000px;
+    max-width: 90%;
 }
 
 .divTitulo {
@@ -643,11 +643,6 @@ main {
     flex-direction: column;
 }
 
-.contactoContainer {
-    display: flex;
-    flex-direction: row;
-}
-
 #fondo {
     position: relative;
     align-items: center;
@@ -718,14 +713,19 @@ textarea {
 
 
 .contacto {
-    width: 500px;
+    width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     padding: 20px;
     gap: 30px;
     border: 1px solid white;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 18px;
 }
+
+
 
 #contactoNav {
     padding-top: 50px;

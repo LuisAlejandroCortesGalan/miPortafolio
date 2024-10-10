@@ -1,21 +1,27 @@
-function ip() {
-    var p = false;
-    var n = prompt("Escoge un número: ");
-    if (n > 1) {
-        p = ep(n);
+function verificarNumeroPrimo() {
+    let numero = parseInt(prompt("Escoge un número: "), 10);  // Convertir el input a número entero
+    if (isNaN(numero)) {
+        alert("Por favor, introduce un número válido.");
+        return;
     }
-    alert(p);
+    
+    let esPrimo = false;
+    if (numero > 1) {
+        esPrimo = esNumeroPrimo(numero);  // Llamada a la función para verificar si es primo
+    }
+    alert(esPrimo);
 }
 
-
-function ep(n) {
-    let p = true;
-    let i = 2;
-    while (p && i < n) {
-        if (n % i == 0) {
-            p = false;
+function esNumeroPrimo(numero) {
+    let primo = true;
+    let divisor = 2;
+    
+    // Verificamos divisibilidad del número por los valores menores a él
+    while (primo && divisor < numero) {
+        if (numero % divisor === 0) {
+            primo = false;
         }
-        i++;
+        divisor++;
     }
-    return p;
+    return primo;
 }

@@ -32,7 +32,7 @@ function contar() {
 
     // Verificar si es 2 o 3 (números primos)
     if (num1 === 2 || num1 === 3) {
-        document.getElementById('respuesta').innerHTML = `Correcto, ${num1} es PRIMO`;
+        document.getElementById('respuesta').innerHTML = `<p class="win">Correcto, ${num1} es PRIMO</p>`;
         alert("Número primo, ¡Felicidades!");
         return;
     }
@@ -44,11 +44,15 @@ function contar() {
     while (!p) {
         alert("Número no primo, inténtalo de nuevo");
         num1 = Number(prompt("Intenta con otro número:"));
+        if (num1 <= 1) {
+        alert("El número debe ser mayor que 1");
+        num1 = Number(prompt("Intenta con otro número:"));
+        }
         p = ep(num1);
     }
 
     // Mensaje cuando el número es primo
-    document.getElementById('respuesta').innerHTML = `Correcto, ${num1} es PRIMO`;
+    document.getElementById('respuesta').innerHTML = `<p class="win">Correcto, ${num1} es PRIMO</p>`;
     alert("Número primo, ¡Felicidades!");
 }
 

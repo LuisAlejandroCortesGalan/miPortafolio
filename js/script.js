@@ -23,11 +23,9 @@ function scrollToTop() {
 
 let textos = [
     "FullStack",
-    "Front End",
-    "Back End",
-    "WordPress",
     "Php",
-    "Wamp"
+    "Larabel",
+    "WordPress"
 ]
 
 let index = 0;
