@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuelos!!
+    </title>
+    <script src="js/vuelos.js"></script>
+    <script src="js/script.js"></script>
+
+
+</head>
+
+<body>
+    <section class="box">
+        <div class="contenedores">
+            <h1>Introduce los datos y <br> <span class="lose">Da de alta un VUELO</span></h1>
+            <label for="numeroVuelo">Número de vuelo</label>
+            <input type="number" class="numeroVuelo" id="numeroVuelo">
+            <label for="distancia">Distancia(KM)</label>
+            <input type="number" class="distancia" id="distancia">
+            <label for="compañia">Compañia</label>
+            <input type="text" class="compañia" id="compañia">
+            <label for="numeroPasajeros">Número de pasajeros</label>
+            <input type="number" class="numeroPasajeros" id="numeroPasajeros">
+            <label for="numeroMotores">Número de motores</label>
+            <input type="number" class="numeroMotores" id="numeroMotores">
+            <button onclick="darAlta()">Dar de alta</button>
+            <p id="respuesta1"></p>
+        </div>
+
+
+        <div class="contenedores">
+            <h1>Mira edita y elimina <br> <span class="lose">VUELOS</span></h1>
+            <button onclick="mirar()" class="visto">Mirar todos los vuelos</button>
+            <label for="numeroVueloVer">Introduce el numero de vuelo</label>
+            <input type="number" class="numeroVueloVer" id="numeroVueloVer" placeholder="ej: 1">
+            <div style="display: none;" class="oculto">
+                <label for="distanciaCambiar">Distancia(KM)</label>
+                <input type="number" class="distanciaCambiar" id="distanciaCambiar">
+                <label for="compañiaCambiar">Compañia</label>
+                <input type="text" class="compañiaCambiar" id="compañiaCambiar">
+                <label for="numeroPasajerosCambiar">Número de pasajeros</label>
+                <input type="number" class="numeroPasajerosCambiar" id="numeroPasajerosCambiar">
+                <label for="numeroMotoresCambiar">Número de motores</label>
+                <input type="number" class="numeroMotoresCambiar" id="numeroMotoresCambiar">
+            </div>
+            <button onclick="comprobarVuelo1()" class="visto" style="background-color: darkblue;">Comprobar y editar</button>
+            <button onclick="eliminarVuelo()" style="flex-direction: row; background-color: darkred;" class="visto">Eliminar vuelo</button>
+            <button onclick="cambiarVuelo()" style="display: none; flex-direction: row; background-color: darkblue;" class="oculto">Cambiar vuelo</button>
+            <button onclick="volverAtras()" style="display: none; flex-direction: row;" class="oculto">Volver atrás</button>
+            <p id="respuesta2"></p>
+        </div>
+
+
+
+
+    </section>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contenedores {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: solid 1px yellowgreen;
+            padding: 20px;
+            min-width: 600px;
+            max-width: 700px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 400px;
+            max-width: auto;
+            height: auto;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 32px;
+            color: darkgreen;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .oculto {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .oculto1 {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        .win {
+            font-size: 24px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 24px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+</body>
+
+</html>

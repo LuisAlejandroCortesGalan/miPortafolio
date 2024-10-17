@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos de array!!
+    </title>
+</head>
+
+<body>
+    <h1>Formulario de Personas</h1>
+    <div class="box">
+        <diV class="contenedores">
+            <label for="dni">Introduce tu DNI (Metodo find)</label>
+            <input type="text" id="dni" required>
+            <div class="botones">
+                <button onclick="dni()">Ver si la persona esta de alta o no</button>
+                <button onclick="reiniciar()">Reset</button>
+            </div>
+            <p id="respuestaFind"></p>
+        </diV>
+        <diV class="contenedores">
+            <label for="dniPosicion">Introduce tu DNI (Metodo findIndex)</label>
+
+            <input type="text" id="dniPosicion" required>
+            <div class="botones">
+                <button onclick="dniPosicion()">Ver su posición en el array</button>
+                <button onclick="reiniciar()">Reset</button>
+            </div>
+            <p id="respuestaFindIndex"></p>
+        </diV>
+        <diV class="contenedores">
+            <label for="filterHobbie">Introduce un hobbie (Metodo filter)</label>
+            <input type="text" id="filterHobbie" required>
+            <div class="botones">
+                <button onclick="filterHobbie()">Ver personas con este hobbie</button>
+                <button onclick="reiniciar()">Reset</button>
+            </div>
+            <p id="respuestaFilter"></p>
+        </diV>
+
+        <diV class="contenedores">
+            <label for="reduceHobbie">Introduce un nombre (Metodo reduce)</label>
+            <input type="text" id="reduceHobbie" required>
+            <div class="botones">
+                <button onclick="reduceHobbie()">Ver total de hobbys</button>
+                <button onclick="reiniciar()">Reset</button>
+            </div>
+            <p id="respuestaReduce"></p>
+        </diV>
+
+        <diV class="contenedores">
+            <label for="someHobbie">Introduce un hobbie (Metodo some y includes)</label>
+            <input type="text" id="someHobbie" required>
+            <div class="botones">
+                <button onclick="someHobbie()">Ver si alguna persona tiene este hobbie</button>
+                <button onclick="reiniciar()">Reset</button>
+            </div>
+            <p id="respuestaSome"></p>
+        </diV>
+
+        <diV class="contenedores">
+            <label for="findHobbie">Introduce un hobbie (Metodo find y includes)</label>
+            <input type="text" id="findHobbie" required>
+            <div class="botones">
+                <button onclick="findHobbie()">Ver la primera persona tiene este hobbie</button>
+                <button onclick="reiniciar()">Reset</button>
+                <p id="respuestaFindIncludes"></p>
+            </div>
+        </diV>
+
+        <diV class="contenedores">
+            <label for="mapNombresMayusculas">Crea un nuevo array con todos los nombres en mayusculas(Metodo
+                map)</label>
+            <div class="botones">
+                <button onclick="mapNombresMayusculas()">Crear y ver el nuevo array</button>
+                <button onclick="reiniciar()">Reset</button>
+            </div>
+            <p id="respuestaMap"></p>
+        </diV>
+
+    </div>
+
+    <script>
+        const personas = [
+            {
+                nombre: "Juan",
+                dni: "12345678",
+                hobbies: ["leer", "bailar"]
+            },
+            {
+                nombre: "María",
+                dni: "87654321",
+                hobbies: ["pintar", "correr", "viajar"]
+            },
+            {
+                nombre: "Pedro",
+                dni: "98765432",
+                hobbies: ["cocinar", "ver películas"]
+            },
+            {
+                nombre: "Laura",
+                dni: "54321678",
+                hobbies: ["hacer deporte", "viajar"]
+            },
+            {
+                nombre: "Carlos",
+                dni: "87651234",
+                hobbies: ["tocar la guitarra", "hacer deporte"]
+            }
+        ];
+
+        let dni = () => {
+            let dni = document.getElementById("dni").value;
+            let respuesta = personas.find(persona => persona.dni === dni);
+            respuesta ? document.getElementById("respuestaFind").innerHTML = `<p><span class="win">La persona esta de alta </span></p>` : document.getElementById("respuestaFind").innerHTML = `<p><span class="lose">La persona no esta de alta </span></p>`;
+        }
+
+        let dniPosicion = () => {
+            let dni = document.getElementById("dniPosicion").value;
+            let posicion = personas.findIndex(persona => persona.dni === dni);
+            posicion == -1 ? document.getElementById("respuestaFindIndex").innerHTML = `<p><span class="lose">La persona no se encuentra en el array</span></p>` : document.getElementById("respuestaFindIndex").innerHTML = `<p><span class="win">El indice de la persona es ${posicion}</span></p>`;
+
+
+        }
+
+
+        let filterHobbie = () => {
+            let hobbie = document.getElementById("filterHobbie").value;
+            let personasConHobbie = personas.filter(persona => persona.hobbies.includes(hobbie));
+            let nombres = "";
+
+            if (personasConHobbie.length > 0) {
+                personasConHobbie.forEach(persona => {
+                    nombres += persona.nombre + ", ";
+                });
+                nombres = nombres.slice(0, -2);
+                document.getElementById("respuestaFilter").innerHTML = `<p><span class="win">Se encuentran <span class="lose">${personasConHobbie.length}</span> personas con el hobbie <span class="lose">${hobbie}</span>. <br> Las personas son: <span class="lose"> <br>${nombres}</span></p>`;
+            } else {
+                document.getElementById("respuestaFilter").innerHTML = `<p><span class="lose">No se encuentran personas con el hobbie <span class="lose">${hobbie}</span></span></p>`;
+            }
+            console.log("el hobbie es:", hobbie, "personasconHobbie:", personasConHobbie);
+        }
+
+        let reduceHobbie = () => {
+            let nombre = document.getElementById("reduceHobbie").value;
+            let letra = nombre.charAt(0).toUpperCase();
+            nombre = nombre.slice(1);
+            let nombreMayus = letra + nombre;
+            let personaConNombre = personas.filter(persona => persona.nombre.includes(nombreMayus));
+            let hobbies = "";
+            if (personaConNombre.length > 0) {
+                for (let i = 0; i < personaConNombre.length; i++) {
+                    hobbies += personaConNombre[i].hobbies.join(", ") + ".";
+                }
+                document.getElementById("respuestaReduce").innerHTML = `<p class="lose"> Los hobbies de ${nombreMayus} son: </p><span class="win"> ${hobbies} </span>`;
+            } else {
+                document.getElementById("respuestaReduce").innerHTML = `<p class="lose">No se encuentra a ${nombreMayus} en la lista de personas</p>`;
+            }
+        }
+
+        let someHobbie = () => {
+            let hobbie = document.getElementById('someHobbie').value;
+            let respuesta = personas.some(persona => persona.hobbies.includes(hobbie));
+            console.log(respuesta);
+            document.getElementById("respuestaSome").innerHTML = `<p class="win">${respuesta}</p>`;
+        }
+
+        let findHobbie = () => {
+            let hobbie = document.getElementById('findHobbie').value;
+            let respuesta = personas.find(persona => persona.hobbies.includes(hobbie));
+            console.log(respuesta);
+            respuesta ? document.getElementById("respuestaFindIncludes").innerHTML = `<p class="win">${respuesta.nombre}</p>` : document.getElementById("respuestaFindIncludes").innerHTML = `<p class="lose">No se encuentra ninguna persona con este hobbie</p>`;
+        }
+
+        let mapNombresMayusculas = () => {
+            let nuevoArray = personas.map(persona => persona.nombre.toUpperCase());
+            console.log(typeof (nuevoArray));
+            console.log(nuevoArray);
+            let arrayString = nuevoArray.join(' | ');
+            document.getElementById('respuestaMap').innerHTML = arrayString;
+        }
+
+        let reiniciar = () => {
+            location.reload();
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+
+        }
+
+        .contenedores {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: solid 1px yellowgreen;
+            padding: 20px;
+            width: 80%;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px;
+            padding: 20px;
+            border: 5px solid darkgreen;
+            border-radius: 5px;
+            min-width: 400px;
+            max-width: 900px;
+            height: auto;
+        }
+
+        h1 {
+            margin: 50px 0 0 0;
+            font-size: 48px;
+            color: darkgreen;
+            font-weight: bolder;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .win {
+            font-size: 36px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 36px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+</body>
+
+</html>
