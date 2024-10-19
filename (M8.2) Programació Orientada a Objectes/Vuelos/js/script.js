@@ -15,30 +15,27 @@ function darAlta() {
     } else {
         console.log(numeroVuelo, distancia, compañia, numeroPasajeros, numeroMotores);
         let vuelo = new Vuelos(numeroVuelo, distancia, compañia, numeroPasajeros, numeroMotores);
+        console.log("ver vuelo alta", vuelo);
         vuelos.push(vuelo);
-        
+
         respuesta.innerHTML = `<p class="win">Vuelo dado de alta con éxito: <br> Numero de Vuelo: ${numeroVuelo} <br> Distancia: ${distancia} km <br> Compañía: ${compañia} <br> Número de Pasajeros: ${numeroPasajeros} <br> Número de Motores: ${numeroMotores}</p>`;
         console.log(vuelos);
+        for (let i = 0; i < vuelos.length; i++) {
+            let huella = vuelos[i].calcularHuellaCarbono();
+            respuesta.innerHTML += `<p class="win">La huella de carbono del vuelo numero: ${vuelos[i].numeroVuelo} es de: ${huella} toneladas de CO2</p>`;        
+        }
     }
+    
 }
 
 function comprobarVuelo() {
-    let numeroVuelo = document.getElementById('numeroVueloCambiar').value;
-    let respuesta = document.getElementById('respuesta3');
+    let numeroVuelo = document.getElementById('numeroVueloVer').value;
+    let respuesta = document.getElementById('respuesta2');
     let comprobarVuelo = false;
-    comprobarVuelo = vuelos.some(vuelo => vuelo.numeroVuelo === numeroVuelo ? true : false)  // Si el numeroVuelo ya existe, se sale del bucle y no se añade el vuelo) 
+    comprobarVuelo = vuelos.some(vuelo => vuelo.numeroVuelo === numeroVuelo ? true : false)  
     console.log(comprobarVuelo);
     if (comprobarVuelo) {
-        respuesta.innerHTML = `<p class="win">El Vuelo existe!</p>`;
-        let oculto = document.getElementsByClassName('oculto');
-        let visto = document.getElementsByClassName('visto');
-        oculto[0].style.display = 'block';
-        for (let i = 1; i < oculto.length; i++) {
-            oculto[i].style.display = 'flex';
-        }
-        for (let i = 0; i < visto.length; i++) {
-            visto[i].style.display = 'none';
-        }
+        respuesta.innerHTML = `<p class="win">El Vuelo existe, Editalo o Eliminalo!</p>`;
     } else {
         respuesta.innerHTML = `<p class="lose">El Vuelo no existe!</p>`;
     }
@@ -48,7 +45,7 @@ function comprobarVuelo1() {
     let numeroVuelo = document.getElementById('numeroVueloVer').value;
     let respuesta = document.getElementById('respuesta2');
     let comprobarVuelo = false;
-    comprobarVuelo = vuelos.some(vuelo => vuelo.numeroVuelo === numeroVuelo ? true : false)  // Si el numeroVuelo ya existe, se sale del bucle y no se añade el vuelo) 
+    comprobarVuelo = vuelos.some(vuelo => vuelo.numeroVuelo === numeroVuelo ? true : false) 
     console.log(comprobarVuelo);
     if (comprobarVuelo) {
         respuesta.innerHTML = `<p class="win">El Vuelo existe! <span class="lose">EDITALO</span></p>`;
@@ -61,15 +58,7 @@ function comprobarVuelo1() {
         for (let i = 0; i < visto.length; i++) {
             visto[i].style.display = 'none';
         }
-        let oculto1 = document.getElementsByClassName('oculto1');
-        let visto1 = document.getElementsByClassName('visto1');
-        for (let i = 1; i < oculto.length; i++) {
-            oculto1[i].style.display = 'flex';
-        }
 
-        for (let i = 0; i < visto.length; i++) {
-            visto1[i].style.display = 'none';
-        }
     } else {
         respuesta.innerHTML = `<p class="lose">El Vuelo no existe!</p>`;
     }
@@ -83,16 +72,19 @@ function cambiarVuelo() {
     let numeroPasajeros = document.getElementById('numeroPasajerosCambiar').value;
     let numeroMotores = document.getElementById('numeroMotoresCambiar').value;
     let respuesta = document.getElementById('respuesta2');
-    let vueloEncontrado = vuelos.find(vuelo => vuelo.numeroVuelo === numeroVuelo)
-    console.log("vuelo encontrado", vueloEncontrado);
+    let vueloEncontrado = vuelos.find(vuelo => vuelo.numeroVuelo === numeroVuelo);
+    console.log("vuelo encontrado array vuelos", vueloEncontrado);
     if (vueloEncontrado) {
-        vueloEncontrado.modificarVuelo(numeroVuelo, distancia, compañia, numeroPasajeros, numeroMotores);
+        let vueloCambiado = vueloEncontrado.modificarVuelo(numeroVuelo, distancia, compañia, numeroPasajeros, numeroMotores);
+        console.log("vuelo cambiado con funcion modificarvuelo", vueloCambiado)
+
         respuesta.innerHTML = `<p class="win">Vuelo modificado con éxito: <br> Numero de Vuelo: ${numeroVuelo} <br> Distancia: ${distancia} km <br> Compañía: ${compañia} <br> Número de Pasajeros: ${numeroPasajeros} <br> Número de Motores: ${numeroMotores}</p>`;
     } else {
         respuesta.innerHTML = `<p class="lose">El Vuelo no existe!</p>`;
     }
 
-    console.log("Vuelos modificados", vuelos)
+
+    console.log("ver vuelo", vuelos);
 }
 
 function eliminarVuelo() {
@@ -112,9 +104,13 @@ function eliminarVuelo() {
 }
 
 function mirar() {
+    document.getElementById('respuesta2').innerHTML = ``;
     if (vuelos.length > 0) {
         for (let i = 0; i < vuelos.length; i++) {
             document.getElementById('respuesta2').innerHTML += `<p class="win">El vuelo numero: ${vuelos[i].numeroVuelo} <br>Con distancia: ${vuelos[i].distancia} Con la compañia: ${vuelos[i].compañia}, numero de pasasjeros: ${vuelos[i].numeroPasajeros} y numero de motores: ${vuelos[i].numeroMotores}</p> <br>`
+            let huella = vuelos[i].calcularHuellaCarbono();
+            console.log("calcularHuellaCarbono", huella);
+            document.getElementById('respuesta2').innerHTML += `<p class="win">La huella de carbono del vuelo numero: ${vuelos[i].numeroVuelo} es de: ${huella} toneladas de CO2</p>`;        
         }
     } else {
         document.getElementById('respuesta2').innerHTML = `<p class="lose">No hay vuelos guardados!</p>`;

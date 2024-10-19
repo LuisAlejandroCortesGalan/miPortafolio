@@ -73,6 +73,7 @@ class Vuelos {
     verVuelo(numeroVuelo) {
         if (this.numeroVuelo === numeroVuelo) {
             return "El vuelo con número de vuelo " + this.numeroVuelo + " tiene una distancia de " + this.distancia + " millas, una compañía de " + this.compañia + ", " + this.numeroPasajeros + " pasajeros y " + this.numeroMotores + " motores.";
+            
         } else {
             return "No se ha encontrado ningún vuelo con el número de vuelo " + numeroVuelo + ".";
         }
