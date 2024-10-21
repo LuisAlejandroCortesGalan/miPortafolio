@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avión comercial, Avioneta y Jet privado!!!
+    </title>
+    <script src="js/avion.js"></script>
+    <script src="js/script.js"></script>
+
+
+</head>
+
+<body>
+    <section class="box">
+        <div class="contenedores">
+            <h1>Introduce los datos y <br> <span class="lose">Da de alta un Avión</span></h1>
+            <label for="aviones" style="font-weight: bolder; font-size: 30px; border-top: 3px solid darkgreen; margin-top: 20px;">Elige un tipo de avión:</label>
+            <select name="aviones" id="aviones">
+                <option value="avionComercial">Avión Comercial</option>
+                <option value="avioneta">Avioneta</option>
+                <option value="jetPrivado">Jet Privado</option>
+            </select>
+            <label for="numAvion" style=" border-top: 3px solid darkgreen; padding-top: 20px;">Número de avión</label>
+            <input type="number" class="numAvion" id="numAvion">
+            <label for="marca">Marca</label>
+            <input type="text" class="marca" id="marca">
+            <label for="modelo">Modelo</label>
+            <input type="text" class="modelo" id="modelo">
+            <label for="carga">Carga (Kg)</label>
+            <input type="number" class="carga" id="carga">
+            <label for="longitud">Longitud (Metros)</label>
+            <input type="number" name="longitud" id="longitud">
+            <button onclick="altaAvion()">Dar de alta</button>
+            <button onclick="mirarAviones()" class="visto">Mirar todos los aviones</button>
+            <p id="respuesta1"></p>
+            <div>
+                <h1 style="display: none;" id="listadoTitulo">Listado de clientes:</h1>
+                <p id="verClientes"></p>
+            </div>
+        </div>
+
+
+        <div class="contenedores">
+            <h3>Introduce un NUMERO DE AVIÓN para:</h3>
+            <h1 style="font-size: 42px;">Mostrar avion, <br> calcular tiempo de limpieza,<br> calcular combustible<br><span class="lose">y ELIMINAR EL AVIÓN</span></h1>
+            <input type="number" class="obtenerDni" id="obtenerDni" placeholder="Introduce el dni de un cliente">
+            <div style="display: none;" class="oculto">
+                <label for="numeroVuelo">Numero de vuelo</label>
+                <input type="text" id="numeroVuelo" class="numeroVuelo">
+                <label for="compañiaCambiar">Compañia</label>
+                <input type="text" class="compañiaCambiar" id="compañiaCambiar">
+                <label for="distanciaCambiar">Distancia(KM)</label>
+                <input type="number" class="distanciaCambiar" id="distanciaCambiar">
+                <label for="co2Cambiar">Co2 Emitido (Toneladas)</label>
+                <input type="number" class="co2Cambiar" id="co2Cambiar">
+            </div>
+            <button onclick="verCliente()" class="visto">Mostrar Avión</button>
+            <button onclick="mostrarAñadirVuelo()" class="visto" style="background-color: blue;" id="añadirVuelo">Calcular limpieza</button>
+            <button onclick="huellaCarbono()" class="visto" style="background-color: black;" id="añadirVuelo">Calcular combustible</button>
+            <button onclick="eliminarCliente()" style="flex-direction: row; background-color: darkred;" class="visto">Eliminar cliente</button>
+            <button onclick="añadirVuelo()" style="display: none; flex-direction: row; background-color: darkblue;" class="oculto">Añadir vuelo</button>
+            <button onclick="volverAtras()" style="display: none; flex-direction: row;" class="oculto">Volver atrás</button>
+            <h1 style="display: none;" id="clienteTitulo">El Vuelo existe!</h1>
+            <p id="respuesta2"></p>
+        </div>
+
+    </section>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        select {
+            margin: 5px;
+            padding: 10px 20px;
+            color: green;
+            border: solid 1px darkgreen;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+            appearance: none;
+            width: auto;
+        }
+
+        select option:hover {
+            background-color: red;
+        }
+
+        .contenedores {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: solid 5px darkgreen;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 600px;
+            max-width: 700px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: self-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 400px;
+            max-width: auto;
+            height: auto;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 32px;
+            color: darkgreen;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: darkred;
+            padding: 10px 0 0 0 ;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .oculto {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .oculto1 {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        .win {
+            font-size: 24px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 24px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+</body>
+
+</html>

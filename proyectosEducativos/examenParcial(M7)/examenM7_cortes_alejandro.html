@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen parcial, Combinar Números!
+    </title>
+
+    <script src="js/examenM7_cortes_alejandro.js"></script>
+
+
+</head>
+
+<body>
+    <section class="box">
+        <div class="contenedores">
+            <h1>Introduce dos arrays del mismo tamaño <br> <span class="lose">Para combinarlos!</span></h1>
+            <label for="array1">Numeros para el Array 1</label>
+            <input type="text" class="array1" id="array1">
+            <label for="array2">Numeros para el Array 2</label>
+            <input type="text" class="array2" id="array2">
+            <button onclick="mostrar()">Combinar arrays!</button>
+            <button onclick="reset()">Reset</button>
+            <p id="respuesta"></p>
+            <p id="respuesta2"></p>
+            <div>
+                <p id="verClientes"></p>
+            </div>
+        </div>
+
+    </section>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contenedores {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: solid 5px darkgreen;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 600px;
+            max-width: 700px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: self-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 400px;
+            max-width: auto;
+            height: auto;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 32px;
+            color: darkgreen;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: darkred;
+            padding: 10px 0 0 0;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .oculto {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .oculto1 {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        .win {
+            font-size: 24px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 42px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+</body>
+
+</html>

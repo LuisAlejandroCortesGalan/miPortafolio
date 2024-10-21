@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuelos y Clientes!!
+    </title>
+    <script src="js/vuelos.js"></script>
+    <script src="js/clientes.js"></script>
+    <script src="js/script.js"></script>
+
+
+</head>
+
+<body>
+    <section class="box">
+        <div class="contenedores">
+            <h1>Introduce los datos y <br> <span class="lose">Da de alta un Cliente</span></h1>
+            <label for="dni">DNI</label>
+            <input type="number" class="dni" id="dni">
+            <label for="nacionalidad">Nacionalidad</label>
+            <input type="text" class="nacionalidad" id="nacionalidad">
+            <label for="edad">Edad</label>
+            <input type="number" class="edad" id="edad">
+            <button onclick="crearCliente()">Crear cliente</button>
+            <button onclick="verClientes()" style="background-color: blue;">Mirar listado de clientes</button>
+            <button onclick="mediaEdad()" class="visto" style="background-color: rgb(33, 161, 33);" id="añadirVuelo">Media de edad de los mayores de edad</button>
+            <button onclick="huellaCarbonoTodos()" style="background-color: black;" id="añadirVuelo">Huella de carbono de todos los clientes</button>
+
+            <p id="respuesta1"></p>
+            <div>
+                <h1 style="display: none;" id="listadoTitulo">Listado de clientes:</h1>
+                <p id="verClientes"></p>
+            </div>
+        </div>
+
+
+        <div class="contenedores">
+            <h1>Introduce un DNI para:</h1>
+            <h1>Mirar, añadir vuelos, <br> calcular la media de edades,<br> calcular la huella de carbono<br><span class="lose">y ELIMINAR CLIENTES</span></h1>
+            <label for="obtenerDni">Introduce el dni de un cliente</label>
+            <input type="number" class="obtenerDni" id="obtenerDni">
+            <div style="display: none;" class="oculto">
+                <label for="numeroVuelo">Numero de vuelo</label>
+                <input type="text" id="numeroVuelo" class="numeroVuelo">
+                <label for="compañiaCambiar">Compañia</label>
+                <input type="text" class="compañiaCambiar" id="compañiaCambiar">
+                <label for="distanciaCambiar">Distancia(KM)</label>
+                <input type="number" class="distanciaCambiar" id="distanciaCambiar">
+                <label for="co2Cambiar">Co2 Emitido (Toneladas)</label>
+                <input type="number" class="co2Cambiar" id="co2Cambiar">
+            </div>
+            <button onclick="verCliente()" class="visto">Ver cliente</button>
+            <button onclick="mostrarAñadirVuelo()" class="visto" style="background-color: blue;" id="añadirVuelo">Añadir vuelo</button>
+            <button onclick="huellaCarbono()" class="visto" style="background-color: black;" id="añadirVuelo">Calcular la Huella de carbono</button>
+            <button onclick="eliminarCliente()" style="flex-direction: row; background-color: darkred;" class="visto">Eliminar cliente</button>
+            <button onclick="añadirVuelo()" style="display: none; flex-direction: row; background-color: darkblue;" class="oculto">Añadir vuelo</button>
+            <button onclick="volverAtras()" style="display: none; flex-direction: row;" class="oculto">Volver atrás</button>
+            <h1 style="display: none;" id="clienteTitulo">El cliente existe!</h1>
+            <p id="respuesta2"></p>
+        </div>
+
+    </section>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contenedores {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: solid 5px darkgreen;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 600px;
+            max-width: 700px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: self-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 400px;
+            max-width: auto;
+            height: auto;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 32px;
+            color: darkgreen;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: darkred;
+            padding: 10px 0 0 0 ;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .oculto {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .oculto1 {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        .win {
+            font-size: 24px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 24px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+</body>
+
+</html>

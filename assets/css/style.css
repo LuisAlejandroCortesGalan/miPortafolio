@@ -137,8 +137,17 @@ li {
 
 }
 
+strong a {
+    color: var(--color-verde);
+    font-weight: 700;
+}
+
 a {
     text-decoration: none;
+}
+
+.pequeño {
+    font-size: var(--letra-pequeña);
 }
 
 .navLinks {
