@@ -16,36 +16,70 @@
     <section class="box">
         <div class="contenedores">
             <h1>Introduce los datos y <br> <span class="lose">Da de alta un Avión</span></h1>
-            <label for="aviones" style="font-weight: bolder; font-size: 30px; border-top: 3px solid darkgreen; margin-top: 20px;">Elige un tipo de avión:</label>
+            <label for="aviones"
+                style="font-weight: bolder; font-size: 30px; border-top: 3px solid darkgreen; margin-top: 20px;">Elige
+                un tipo de avión:</label>
             <select name="aviones" id="aviones">
                 <option value="avionComercial">Avión Comercial</option>
                 <option value="avioneta">Avioneta</option>
                 <option value="jetPrivado">Jet Privado</option>
             </select>
-            <label for="numAvion" style=" border-top: 3px solid darkgreen; padding-top: 20px;">Número de avión</label>
-            <input type="number" class="numAvion" id="numAvion">
-            <label for="marca">Marca</label>
-            <input type="text" class="marca" id="marca">
-            <label for="modelo">Modelo</label>
-            <input type="text" class="modelo" id="modelo">
-            <label for="carga">Carga (Kg)</label>
-            <input type="number" class="carga" id="carga">
-            <label for="longitud">Longitud (Metros)</label>
-            <input type="number" name="longitud" id="longitud">
-            <button onclick="altaAvion()">Dar de alta</button>
-            <button onclick="mirarAviones()" class="visto">Mirar todos los aviones</button>
-            <p id="respuesta1"></p>
-            <div>
-                <h1 style="display: none;" id="listadoTitulo">Listado de clientes:</h1>
-                <p id="verClientes"></p>
+            <div class="formOcultoAvionComercial contenedores">
+                <label for="numAvionComercial" style=" border-top: 3px solid darkgreen; padding-top: 20px;">Número de avión</label>
+                <input type="number" class="numAvionComercial" id="numAvionComercial">
+                <label for="marcaComercial">Marca</label>
+                <input type="text" class="marcaComercial" id="marcaComercial">
+                <label for="modeloComercial">Modelo</label>
+                <input type="text" class="modeloComercial" id="modeloComercial">
+                <label for="cargaComercial">Carga (Kg)</label>
+                <input type="number" class="cargaComercial" id="cargaComercial">
+                <label for="longitudComercial">Longitud (Metros)</label>
+                <input type="number" name="longitudComercial" id="longitudComercial">
+                <label for="numeroPersonasComercial">Numero de personas</label>
+                <input type="number" name="numeroPersonasComercial" id="numeroPersonasComercial">
+                <button onclick="altaAvionComercial()">Dar de alta</button>
+                <p id="respuesta1"></p>
+            </div>
+            <div class="formOcultoAvioneta contenedores" style="display: none;">
+                <label for="numAvioneta" style=" border-top: 3px solid darkgreen; padding-top: 20px;">Número de avión</label>
+                <input type="number" class="numAvioneta" id="numAvioneta">
+                <label for="marcaAvioneta">Marca</label>
+                <input type="text" class="marcaAvioneta" id="marcaAvioneta">
+                <label for="modeloAvioneta">Modelo</label>
+                <input type="text" class="modeloAvioneta" id="modeloAvioneta">
+                <label for="cargaAvioneta">Carga (Kg)</label>
+                <input type="number" class="cargaAvioneta" id="cargaAvioneta">
+                <label for="longitudAvioneta">Longitud (Metros)</label>
+                <input type="number" name="longitudAvioneta" id="longitudAvioneta">
+                <label for="numeroHelicesAvioneta">Numero de helices</label>
+                <input type="number" class="numeroHelicesAvioneta" id="numeroHelicesAvioneta">
+                <button onclick="altaAvioneta()">Dar de alta</button>
+                <p id="respuesta2"></p>
+            </div>
+            <div class="formOcultoJetPrivado contenedores" style="display: none;">
+                <label for="numAvionJet" style=" border-top: 3px solid darkgreen; padding-top: 20px;">Número de avión</label>
+                <input type="number" class="numAvionJet" id="numAvionJet">
+                <label for="marcaJet">Marca</label>
+                <input type="text" class="marcaJet" id="marcaJet">
+                <label for="modeloJet">Modelo</label>
+                <input type="text" class="modeloJet" id="modeloJet">
+                <label for="cargaJet">Carga (Kg)</label>
+                <input type="number" class="cargaJet" id="cargaJet">
+                <label for="longitudJet">Longitud (Metros)</label>
+                <input type="number" name="longitudJet" id="longitudJet">
+                <label for="numeroPersonasJet">Numero de personas (max 10)</label>
+                <input type="number" class="numeroPersonasJet" id="numeroPersonasJet" min="1" max="10">
+                <button onclick="altaJetPrivado()">Dar de alta</button>
+                <p id="respuesta3"></p>
             </div>
         </div>
 
 
         <div class="contenedores">
             <h3>Introduce un NUMERO DE AVIÓN para:</h3>
-            <h1 style="font-size: 42px;">Mostrar avion, <br> calcular tiempo de limpieza,<br> calcular combustible<br><span class="lose">y ELIMINAR EL AVIÓN</span></h1>
-            <input type="number" class="obtenerDni" id="obtenerDni" placeholder="Introduce el dni de un cliente">
+            <h1 style="font-size: 42px;">Mostrar avion, <br> calcular tiempo de limpieza,<br> calcular
+                combustible<br><span class="lose">y ELIMINAR EL AVIÓN</span></h1>
+            <input type="number" class="obtenerNumeroAvion" id="obtenerNumeroAvion" placeholder="Introduce el numero de avion">
             <div style="display: none;" class="oculto">
                 <label for="numeroVuelo">Numero de vuelo</label>
                 <input type="text" id="numeroVuelo" class="numeroVuelo">
@@ -56,14 +90,10 @@
                 <label for="co2Cambiar">Co2 Emitido (Toneladas)</label>
                 <input type="number" class="co2Cambiar" id="co2Cambiar">
             </div>
-            <button onclick="verCliente()" class="visto">Mostrar Avión</button>
-            <button onclick="mostrarAñadirVuelo()" class="visto" style="background-color: blue;" id="añadirVuelo">Calcular limpieza</button>
-            <button onclick="huellaCarbono()" class="visto" style="background-color: black;" id="añadirVuelo">Calcular combustible</button>
-            <button onclick="eliminarCliente()" style="flex-direction: row; background-color: darkred;" class="visto">Eliminar cliente</button>
-            <button onclick="añadirVuelo()" style="display: none; flex-direction: row; background-color: darkblue;" class="oculto">Añadir vuelo</button>
-            <button onclick="volverAtras()" style="display: none; flex-direction: row;" class="oculto">Volver atrás</button>
-            <h1 style="display: none;" id="clienteTitulo">El Vuelo existe!</h1>
-            <p id="respuesta2"></p>
+            <button onclick="verAvion()" class="visto">Mostrar Avión</button>
+            <button onclick="eliminarAvion()" style="flex-direction: row; background-color: darkred;"
+                class="visto">Eliminar Avion</button>
+            <p id="respuesta4"></p>
         </div>
 
     </section>
@@ -160,7 +190,7 @@
         h3 {
             font-size: 24px;
             color: darkred;
-            padding: 10px 0 0 0 ;
+            padding: 10px 0 0 0;
         }
 
         input {

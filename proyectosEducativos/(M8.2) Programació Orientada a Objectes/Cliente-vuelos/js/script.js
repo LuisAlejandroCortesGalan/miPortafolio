@@ -153,6 +153,7 @@ let añadirVuelo = () => {
 
     let comprobarDni = clientes.find(cliente => cliente.dni == dni);
     if (comprobarDni) {
+
         let datosVuelo = {
         dni: dni,
         numeroVuelo: numeroVuelo,
@@ -160,19 +161,36 @@ let añadirVuelo = () => {
         distancia: distancia,
         co2Emitido: co2Emitido,
     };
-    
 
-    let clienteElegido = clientes.find(cliente => cliente.dni ==  dni);
-    let indiceElegido = clientes.findIndex(cliente => clienteElegido.dni == cliente.dni);
-    agregarVueloAlaClase(indiceElegido, datosVuelo);
+            // Inicializar vuelos si no existe el array
+            if (!comprobarDni.vuelo) {
+                comprobarDni.vuelo = [];
+            }
+
+    
+    
+    let indiceElegido = clientes.findIndex(cliente => comprobarDni.dni == cliente.dni);
+
+    let comprobarVuelo = comprobarDni.vuelo.find(vuelo => vuelo.numeroVuelo == numeroVuelo);
+    
+    console.log("comprobarVuelo", comprobarVuelo)
+    console.log("numero vuelo", numeroVuelo)
+    console.log("comprobar dni", comprobarDni)
+
+
+    if (comprobarVuelo) {
+        console.log("no hay vuelosQ", comprobarVuelo)
+        document.getElementById('respuesta2').innerHTML = `<p class="lose">El cliente con el dni ${dni} ya tiene el vuelo ${numeroVuelo} Registrado.</p>`;
+
+    } else {
+        agregarVueloAlaClase(indiceElegido, datosVuelo);
+    };
+
     } else {
         document.getElementById('clienteTitulo').style.display = 'none';
         document.getElementById('respuesta2').innerHTML = `<p class="lose">No hay cliente con el dni ${dni}.</p>`;
         return;
     }
-
-    
-    
 }
 
 let agregarVueloAlaClase = (indice, vuelo) => {

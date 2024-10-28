@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear edifcios!!!
+    </title>
+</head>
+
+<body>
+    <section class="box">
+        <div class="contenedores">
+            <h1>Introduce los datos y <br> <span class="lose">Da de alta un edificio</span></h1>
+            <label for="edificios">Elige un tipo de Edificio</label>
+            <select name="edificios" id="edificios">
+                <option value="hotel">Hotel</option>
+                <option value="hospital">Hospital</option>
+                <option value="cine">Cine</option>
+            </select>
+            <div class="contenedores">
+                <label for="nombre">Nombre del Edificio</label>
+                <input type="text" id="nombre">
+                <label for="plantas">Numero de plantas</label>
+                <input type="text" id="plantas">
+                <label for="superficie">Superficie (m2)</label>
+                <input type="text" id="superficie">
+                <label for="numeroHabitaciones" class="hotel">Numero de numeroHabitaciones</label>
+                <input type="number" id="numeroHabitaciones" class="hotel">
+                <label for="raciones" class="hospital" style="display: none;">Numero de raciones</label>
+                <input type="number" id="raciones" class="hospital" style="display: none;">
+                <label for="numeroAsistentes" style="display: none;" class="cine">Numero de asistentes</label>
+                <input type="number" id="numeroAsistentes" class="cine" style="display: none;">
+                <label for="precioEntrada" class="cine" style="display: none;">Precio de la entrada</label>
+                <input type="number" id="precioEntrada" class="cine" style="display: none;">
+                <label for="aforoMaximo" class="cine" style="display: none;">Aforo Maximo</label>
+                <input type="number" id="aforoMaximo" class="cine" style="display: none;">
+                <button onclick="introducirEdificio()">Introducir edificio</button>
+                <p id="respuesta1"></p>
+            </div>
+            <div class="contenedores">
+                <h1>Edificios Creados</h1>
+                <label for="nombreEdificio">Introduce el nombre del edifcio</label>
+                <input type="text" id="nombreEdificio">
+                <button onclick="mostrarEdificio()">Ver edificio</button>
+                <button onclick="eliminarEdificio()" style="background-color: darkred;">Eliminar edificio</button>
+                <p id="respuesta2"></p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        select {
+            margin: 5px;
+            padding: 10px 20px;
+            color: green;
+            border: solid 1px darkgreen;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+            appearance: none;
+            width: auto;
+        }
+
+        select option:hover {
+            background-color: red;
+        }
+
+        .contenedores {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: solid 5px darkgreen;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 600px;
+            max-width: 700px;
+            margin: 10px 0;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: self-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 400px;
+            max-width: auto;
+            height: auto;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 32px;
+            color: darkgreen;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: darkred;
+            padding: 10px 0 0 0;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .oculto {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .oculto1 {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        .win {
+            font-size: 24px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 24px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+
+<script src="js/Edificios.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
