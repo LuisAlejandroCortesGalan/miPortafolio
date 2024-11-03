@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen FDLP!!!
+    </title>
+
+
+</head>
+
+<body>
+    <section class="box">
+        <div class="contenedores">
+            <h1>Introduce los datos y <br> <span class="lose">Da de alta INFORMACION</span></h1>
+            <label for="datos"
+                style="font-weight: bolder; font-size: 30px; border-top: 3px solid darkgreen; margin-top: 20px;">Elige
+                un tipo de Dato:</label>
+            <select name="datos" id="datos">
+                <option value="playList">Play List</option>
+                <option value="song">Song</option>
+                <option value="singer">Singer</option>
+                <option value="top3">Top 3</option>
+
+            </select>
+            <div class="formOcultoPlayList contenedores">
+                <label for="playList" style=" border-top: 3px solid darkgreen; padding-top: 20px;">Play List name</label>
+                <input type="text" class="playList" id="playList">
+                <label for="description">Description</label>
+                <input type="text" class="description" id="description">
+                <button onclick="altaPlayList()">Dar de alta PLAYLIST</button>
+                <p id="respuesta1"></p>
+            </div>
+            <div class="formOcultoSong contenedores" style="display: none;">
+                <label for="songName" style=" border-top: 3px solid darkgreen; padding-top: 20px;">Song name</label>
+                <input type="number" class="songName" id="songName">
+                <label for="singer">Singer</label>
+                <input type="text" class="singer" id="singer">
+                <label for="songTime">Song Time</label>
+                <input type="text" class="songTime" id="songTime">
+                <label for="genero">Genero</label>
+                <input type="text" class="genero" id="genero">
+                <label for="favorito">Haz click si quieres que sea Favorito</label>
+                <input type="checkbox" name="favorito" id="favorito">
+                <button onclick="altaSong()">Dar de alta SONG</button>
+                <p id="respuesta2"></p>
+            </div>
+            <div class="formOcultoSinger contenedores" style="display: none;">
+                <label for="singerName" style=" border-top: 3px solid darkgreen; padding-top: 20px;">Singer Name</label>
+                <input type="text" class="singerName" id="singerName">
+                <button onclick="altaSinger()">Dar de alta Singer</button>
+                <p id="respuesta3"></p>
+            </div>
+
+            <div class="formOcultoTop3 contenedores" style="display: none;">
+                <h2>Introduce el nombre de un cantante</h2>
+                <input type="text" id="singerTop3" placeholder="nombre">
+                <h2>Elige una cancion</h2>
+                <input type="text" id="songTop3" placeholder="nombre cancion">
+                <button onclick="altaTop3()">Alta top3</button>
+                <p id="respuestaTop3"></p>
+            </div>
+        </div>
+
+        <div class="contenedores">
+            <h3>Introduce un Nombre de cantante para ver todos sus datos</h3>
+            <label for="nombreCantante">Introduce el nombre del cantante</label>
+            <input type="text" class="nombreCantante" id="nombreCantante">
+
+            <button onclick="verDatosCantante()">Ver todos sus datos</button>
+            <p id="respuesta4"></p>
+        </div>
+
+        <div class="contenedores">
+            <h3>Introduce un Nombre de una PLAYLIST para ver su contenido</h3>
+            <label for="nombrePlayList">Introduce el nombre de la PLAYLIST</label>
+            <input type="text" class="nombrePlayList" id="nombrePlayList">
+
+            <button onclick="verDatosPlayList()">Ver contenido</button>
+            <p id="respuesta5"></p>
+        </div>
+
+
+        <div class="contenedores">
+            <h3>Introduce un Nombre de una PLAYLIST para ACTIVARLO</h3>
+            <label for="nombreActivarPlayList">Introduce el nombre de la PLAYLIST</label>
+            <input type="text" class="nombreActivarPlayList" id="nombreActivarPlayList">
+
+            <button onclick="activarPlayList()">Activar PlayList</button>
+            <p id="respuesta6"></p>
+        </div>
+
+        <div class="contenedores">
+            <h3>Introduce un Nombre de una CANCION PARA REPRODUCIRLA</h3>
+            <label for="nombreCancion">Introduce el nombre de la CANCION</label>
+            <input type="text" class="nombreCancion" id="nombreCancion">
+
+            <button onclick="activarPlaySong()">Reproducir Cancion</button>
+            <p id="respuesta7"></p>
+        </div>
+
+        <div class="contenedores">
+            <h3>Introduce un Nombre de una CANCION PARA QUE SEA FAVORITA</h3>
+            <label for="nombreCancionFavorita">Introduce el nombre de la CANCION</label>
+            <input type="text" class="nombreCancionFavorita" id="nombreCancionFavorita">
+
+            <button onclick="activarSongFavorita()">Poner Cancion como favorita!</button>
+            <p id="respuesta8"></p>
+        </div>
+
+        <div class="contenedores">
+            <h3>Da click para ver cuantas canciones en TOTAL SON FAVORITAS</h3>
+            <button onclick="verFavoritas()">Ver Canciones favoritas!</button>
+            <p id="respuesta9"></p>
+        </div>
+    </section>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        select {
+            margin: 5px;
+            padding: 10px 20px;
+            color: green;
+            border: solid 1px darkgreen;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+            appearance: none;
+            width: auto;
+        }
+
+        select option:hover {
+            background-color: red;
+        }
+
+        .contenedores {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: solid 5px darkgreen;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 500px;
+            max-width: 600px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .reset {
+            background-color: darkred;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: self-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 400px;
+            max-width: auto;
+            height: auto;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 32px;
+            color: darkgreen;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: darkred;
+            padding: 10px 0 0 0;
+        }
+
+        input {
+            text-align: center;
+            border: 2px solid darkgreen;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+            margin: 0;
+        }
+
+        .oculto {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .oculto1 {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        .win {
+            font-size: 24px;
+            color: darkgreen;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .lose {
+            font-size: 24px;
+            color: darkred;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            line-height: 0.3;
+        }
+
+        #respuesta {
+            display: block;
+            flex-direction: column;
+        }
+    </style>
+        <script src="js/PlayList.js"></script>
+        <script src="js/Singer.js"></script>
+        <script src="js/Song.js"></script>
+        <script src="js/script.js"></script>
+</body>
+
+</html>

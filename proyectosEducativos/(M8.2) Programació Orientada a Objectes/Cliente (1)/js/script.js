@@ -1,15 +1,16 @@
+
+//EJEMPLO DE CLIENTES
 let cliente1 = new Cliente('123456789A', 18, 'Peruano', 80);
 let cliente2 = new Cliente('987654321Z', 81, 'Ruso', 100)
-
+//ARRAY DE CLIENTES
 let clientes = [cliente1, cliente2];
 
-
+// VEMOS EL ATRIBUTO CON EL METODO GET
 function verAtributo() {
     let mostrar = document.getElementById('respuesta1');
     let cliente = document.getElementById('clientes').value;
     let atributo = document.getElementById('atributos').value;
     let clienteElegido = clientes[cliente]
-
 
     switch (atributo) {
         case 'dni':
@@ -28,6 +29,7 @@ function verAtributo() {
     }
 }
 
+// CAMBIAMOS EL ATRIBUTO ELEGIDO CON EL METODO SET
 function cambiarAtributo() {
     let mostrar = document.getElementById('respuesta2');
     let cliente = document.getElementById('clientesCambiar').value;
@@ -57,7 +59,7 @@ function cambiarAtributo() {
     }
 }
 
-
+// LLAMAMOS A EL METODO CALCULAR CO2
 function calcularCo2() {
     let mostrar = document.getElementById('respuesta3');
     let cliente = document.getElementById('clientesCo2').value;
@@ -67,6 +69,7 @@ function calcularCo2() {
     mostrar.innerHTML = `<p class="win">El calculo de Co2 de este cliente es : ${clienteElegido.calcularCo2()}</p>`
 }
 
+// LLAMAMOS A EL METODO TOSTRING
 function ver() {
     let mostrar = document.getElementById('respuesta4');
     let cliente = document.getElementById('ver').value;
