@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende a programar paginas web!</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/medias380.css">
+    <link rel="stylesheet" href="assets/css/medias420.css">
+    <link rel="stylesheet" href="assets/css/medias768.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="img/fav/fav.png" type="image/x-icon">
+</head>
+<body class="width-content">
+    <header>
+        <div class="nav" style="background-color: #121212; justify-content: center;">
+            <a href="#headerNav">
+            </a>
+            <div class="linea"></div>
+            <nav>
+                <ul>
+                    <li><a class="navLinks" href="#zona1"  style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-1" ></i>EMPEZEMOS</a></li>
+                    <li><a class="navLinks" href="#zona2" style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-2"></i>CONDICIONALES</a></li>
+                    <li><a class="navLinks" href="#zona3" style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-3"></i>ARRAYS</a></li>
+                    <li><a class="navLinks" href="#zona4" style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-4"></i>FUNCIONES</a></li>
+                    <li><a class="navLinks" href="#zona5" style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-5"></i>PRACTIQUEMOS 1</a></li>
+                    <li><a class="navLinks" href="#zona6" style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-6"></i>PRACTIQUEMOS 2</a></li>
+                    <li><a class="navLinks" href="#zona7" style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-7"></i>CONSOLIDEMOS</a></li>
+                    <li><a class="navLinks" href="#zona8" style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-8"></i>METODOS</a></li>
+                    <li><a class="navLinks" href="#zona9" style="font-size: 10px; color: yellowgreen;"><i class="fa-solid fa-9"></i>POO</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <main class="width-content">
+
+
+    <section class="webEducativa">
+
+    
+    <div style="text-align: center; line-height: 1.6;">
+        <h1 class="titulo">¿Quieres aprender programacion web??</h1>
+        <h2 class="titulo" style="padding-top: 0;">¡Aprende las bases!</h2>
+
+        <h3>aprende lo basico de HTML:</h3>
+        <p>HTML (HyperText Markup Language) es el lenguaje de marcado estándar para crear páginas web. Su
+            función principal es estructurar el contenido en un sitio web, permitiendo organizar elementos
+            como
+            texto, imágenes, enlaces, formularios y otros componentes visuales en la página.</p>
+        <strong><a href="https://developer.mozilla.org/es/docs/Web/HTML">MDN Web Docs (Mozilla Developer
+                Network)</a></strong> <br>
+        <strong><a href="https://www.w3schools.com/html/">W3Schools</a></strong><br>
+        <strong><a href="https://www.freecodecamp.org/">freeCodeCamp</a></strong><br>
+
+        <h3>aprende lo basico de CSS:</h3>
+        <p>
+            CSS (Cascading Style Sheets) es el lenguaje utilizado para dar estilo y diseño a las páginas web
+            creadas con HTML. Permite definir cómo se verán los elementos en la página, incluyendo colores,
+            tamaños, tipografías, espaciado, posicionamiento y otros aspectos visuales.</p>
+        <strong><a href="https://developer.mozilla.org/es/docs/Web/CSS">MDN Web Docs (Mozilla Developer
+                Network) CSS</a></strong><br>
+        <strong><a href="https://www.w3schools.com/css/">W3Schools</a></strong><br>
+        <strong><a href="https://www.freecodecamp.org/">freeCodeCamp</a></strong><br>
+        <h3>aprende lo basico de JavaScript:</h3>
+        <p>JavaScript (JS) es un lenguaje de programación que permite agregar interactividad y funcionalidad
+            dinámica a las páginas web. A diferencia de HTML (estructura) y CSS (diseño), JavaScript se
+            ejecuta
+            en el navegador del usuario y permite manipular elementos en tiempo real, responder a eventos
+            (como
+            clics o desplazamientos) y realizar cálculos o modificaciones sin necesidad de recargar la
+            página.
+        </p>
+        <strong><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN Web Docs (Mozilla
+                Developer Network)</a></strong><br>
+        <strong><a href="https://www.w3schools.com/js/">W3Schools</a></strong><br>
+        <strong><a href="https://www.freecodecamp.org/">freeCodeCamp</a></strong><br>
+
+        <!-- ENTRADA DE DATOS-->
+        <div style="text-align: start;">
+
+            <h2 class="titulo" id="zona1">¿Listo para utilizar codigo? ¡Introduzcamos datos!</h2>
+            <h4>Para comenzar a programar necesitaremos un EDITOR DE CODIGO</h4>
+
+            <p>Te recomiendo usar Visual Estudio, te dejo un tutorial sobre como usarlo. Es GRATIS.</p>
+
+            <strong><a href="https://www.youtube.com/watch?v=CxF3ykWP1H4&t=1s">Ver video Sobre el editor</a></strong>
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>Haz un programa que pida al usuario, mediante el prompt, los siguientes datos:</p>
+                <ul  style="flex-direction: column;">
+                    <li>Nombre</li>
+                    <li>Apellido</li>
+                    <li>Edad</li>
+                </ul>
+                <p>Una vez que el usuario haya terminado de introducir los datos, estos deben mostrarse:</p>
+                <ul  style="flex-direction: column;">
+                    <li>Por consola</li>
+                    <li>Con un popup (alert)</li>
+                    <li>Mediante <code>getElementById()</code></li>
+                </ul>
+                <strong><a
+                        href="proyectosEducativos/(M3) entrada de datos/(M3) Exercici 1. Mostrar dades.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 2</h3>
+                <p>Haz un programa que pida dos números enteros al usuario. Al final, el programa imprime
+                    por pantalla el siguiente mensaje:</p>
+                <ul  style="flex-direction: column;">
+                    <li>El resultado de la suma es: “valor”</li>
+                    <li>El resultado de la resta es: “valor”</li>
+                    <li>El resultado de la multiplicación es: “valor”</li>
+                    <li>El resultado de la división es: “valor”</li>
+                </ul>
+                <strong><a
+                        href="proyectosEducativos/(M3) entrada de datos/(M3) Exercici 2. Calculadora arcaica.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 3</h3>
+                <p>El programa solicita al usuario que introduzca 3 notas y el programa muestra la media de
+                    las 3 notas por pantalla.</p>
+                <strong><a
+                        href="proyectosEducativos/(M3) entrada de datos/(M3) Exercici 1. Mostrar dades.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 4</h3>
+                <p>Escribe un programa en JavaScript que lea un número y muestre por pantalla el doble y el
+                    triple de ese número.</p>
+
+                <strong><a
+                        href="proyectosEducativos/(M3) entrada de datos/(M3) Exercici EXTRA 1. Calcula el doble i triple.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 5</h3>
+                <p>Escribe un programa en JavaScript que calcule los litros de pintura necesarios para
+                    pintar una pared rectangular.</p>
+                <p>Un litro de pintura cubre aproximadamente 12 m² en una sola mano.</p>
+                <p>Crea una constante <code>COBERTURA_A_LITROS</code> para guardar la cifra de cobertura de
+                    la pintura (12 m²).</p>
+                <p>Deberás solicitar al usuario:</p>
+                <ul style="flex-direction: column;">
+                    <li>La altura y el ancho de la pared (multiplicando obtendrás el área de la misma).</li>
+                    <li>El número de manos a aplicar.</li>
+                </ul>
+                <p>Muestra en pantalla los litros de pintura a utilizar.</p>
+                <strong><a
+                        href="proyectosEducativos/(M3) entrada de datos/(M3) Exercici EXTRA 2. Litres de pintura necessaris..html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+
+        </div>
+        <!-- ESTRUCTURAS CONDICIONALES -->
+        <div style="text-align: start;">
+
+            <h2 class="titulo" id="zona2">¡Estructuras condicionales!</h2>
+
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>Crea un programa que solicite al usuario que introduzca dos números enteros y muestre por
+                    pantalla el mayor de los dos.</p>
+
+                <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici 1. Nombres enters.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 2</h3>
+                <p>Crea un programa que solicite al usuario que introduzca su nombre y el número de años que
+                    lleva trabajando en una empresa. Luego, muestra por pantalla su nivel de experiencia,
+                    según la siguiente tabla:</p>
+                <ul style="flex-direction: column;">
+                    <li>Menos de 2 años: Nivel principiante.</li>
+                    <li>Entre 2 y 4 años: Nivel intermedio.</li>
+                    <li>Más de 4 y hasta 7 años: Nivel avanzado.</li>
+                    <li>Más de 7 y hasta 10 años: Nivel experto.</li>
+                    <li>Más de 10 años: Nivel Gurú.</li>
+                </ul>
+                <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici 2. Quin nivell d'experiència té.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 3</h3>
+                <p>Los estudios lingüísticos modernos dicen que las palabras más bonitas del diccionario son
+                    aquellas que contienen 9 letras y comienzan por la letra 'H', o bien, contienen 5 letras
+                    y comienzan por la letra 'P'.</p>
+                <p>Haz un programa que pida una palabra y determine si es bonita o no (según el patrón
+                    explicado anteriormente).</p>
+                <p>El método <code>charAt()</code> seguramente te puede ayudar en este ejercicio.</p>
+                <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici 3. Les paraules més boniques del diccionari.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 4</h3>
+                <p>Crea un programa que solicite al usuario que introduzca un número del 1 al 10 y muestre
+                    por pantalla su equivalente en letras (por ejemplo, 1 se mostraría como "uno", 2 como
+                    "dos", etc.).</p>
+
+                <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici 4. Escriu Números en Lletres.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 5</h3>
+                <p>Haz un programa que solicite dos números y un operador (+, -, *, /).</p>
+                <p>Al final, el programa debe imprimir por pantalla el resultado de realizar la operación
+                    que contenga la variable operador.</p>
+                <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici 5. Escull l'operació que vols calcular.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 6</h3>
+                <p>Crea un programa para un restaurante donde tienen tres platos (carne, pasta "con gluten"
+                    y risotto "con lactosa").</p>
+                <p>El programa debe solicitar el plato que quiere el usuario, pero también debe preguntar si
+                    tiene alguna preferencia o intolerancia (vegano, intolerancia al gluten o intolerancia a
+                    la lactosa).</p>
+                <p>Si la persona pide un plato "que puede comer", mostraremos por consola el mensaje
+                    "perfecto, comanda correcta"; si no, se mostrará el mensaje "usted no puede comer este
+                    plato".</p>
+                <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici 6. Comanda correcta.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 7</h3>
+                <p>Haz un programa que pregunte al usuario dos números enteros a los que llamarás dividendo
+                    y divisor respectivamente.</p>
+                <p>El divisor debe estar comprendido entre 2 y 7.</p>
+                <p>En caso contrario, el programa debe mostrar un mensaje de error.</p>
+                <p>Si el divisor es correcto (2-7), muestra en pantalla si el dividendo es múltiplo del
+                    divisor o no.</p>
+                <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici EXTRA 1. Calcula si els números són múltiples o no.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 8</h3>
+                <p>Solicita al usuario un número entre 0 y 99 y muéstralo escrito en letras (puedes hacerlo
+                    en catalán o
+                    castellano).</p>
+                <p>Ejemplo: 56 (cincuenta y seis) o 56 (cinquanta-sis)</p> <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici EXTRA 2. Traductor de números.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 9</h3>
+                <p>Escribe un programa que te permita jugar piedra, papel o tijera con el ordenador.</p>
+                <p>Para ello, el ordenador debe generar un número aleatorio entre 1 y 3 que represente
+                    piedra, papel o tijera respectivamente, y el usuario deberá responder a su vez con un
+                    número entre 1 y 3 después de mostrar la siguiente pantalla:</p>
+                <p><strong>Juguemos a piedra, papel o tijera:</strong></p>
+                <p>1. Piedra</p>
+                <p>2. Papel</p>
+                <p>3. Tijera</p>
+                <p>Elige (1-3):</p>
+                <p>Si el usuario indica algún número diferente del solicitado, debe aparecer el siguiente
+                    mensaje: «Entiendo que no quieres jugar. ¡Adiós!»</p>
+                <p>En caso contrario, indica el ganador de la siguiente manera:</p>
+                <p>«Yo xxx y tú xxx. ¡He ganado!» o «¡Has ganado!» según sea el caso.</p>
+                <p>Ejemplo:</p>
+                <p>«Yo papel y tú tijera. ¡Has ganado!»</p>
+                <strong><a
+                        href="proyectosEducativos/(M4) Estructuras condicionales/(M4) Exercici EXTRA 3. Juguem a pedra, paper o tisora.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+
+        </div>
+
+        <!-- ESTRUCTURAS REPETITIVAS Y ARRAYS -->
+        <div style="text-align: start;">
+
+            <h2 class="titulo" id="zona3">¡Estructuras repetitivas y arrays!</h2>
+
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>Crea un programa que solicite al usuario cuántos nombres desea introducir.</p>
+                <p>Una vez tenemos este número, pediremos al usuario tantos nombres de persona como haya
+                    indicado previamente y los almacenaremos en un Array.</p>
+                <p>Después, mostraremos por pantalla solo los nombres que comienzan con la letra “A”.</p>
+                <strong><a
+                        href="proyectosEducativos/(M5 )Estructures repetitives i arrays/(M5) Exercici 1. L´usuari ària decideix quants noms vol introduir.r..html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 2</h3>
+                <p>El programa pide dos números enteros y luego calcula la suma de los valores comprendidos
+                    entre los dos números, incluidos.</p>
+                <p>Ejemplo: 4 y 6 .el resultado es = 4 + 5 + 6 = 15</p>
+                <strong><a
+                        href="proyectosEducativos/(M5 )Estructures repetitives i arrays/(M5) Exercici 2. Suma dels valors entre dos nombres.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 3</h3>
+                <p>Esta línea de código:</p>
+                <p><code>Math.ceil((Math.random() * 10));</code></p>
+                <p>Retorna un número entre el 1 y el 10 de forma aleatoria.</p>
+                <p>El ejercicio consiste en que el usuario debe adivinar el número escogido aleatoriamente
+                    por el programa.</p>
+                <p>El programa pide números al usuario hasta que este acierte el número aleatorio generado
+                    por el programa.</p>
+                <p>Una vez el usuario haya adivinado el número, se mostrará por pantalla el siguiente
+                    mensaje: “¡Enhorabuena, el número era X!”</p> <strong><a
+                        href="proyectosEducativos/(M5 )Estructures repetitives i arrays/(M5) Exercici 3. Endevina el número entre 0 i 10.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 4</h3>
+                <p>Haz un programa que pregunte cuántos niños y niñas queremos introducir para hacer una
+                    reserva de una actuación de marionetas.</p>
+                <p>Una vez sabemos el número de niños y niñas, debes preguntar sus edades. Las edades solo
+                    pueden estar comprendidas entre 5 y 12 años, por lo tanto, si al pedir una edad, el
+                    usuario introduce una que no está en este rango, debes volver a pedirla (hasta que
+                    introduzca una correcta).</p>
+                <p>Finalmente, debes mostrar por pantalla la media de edades de los niños.</p>
+
+                <strong><a
+                        href="proyectosEducativos/(M5 )Estructures repetitives i arrays/(M5) Exercici 4. Titelles.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 5</h3>
+                <p>Modifica el ejercicio 3 del Módulo 4.</p>
+                <p>Debes pedir palabras hasta que tengas tres que sean bonitas. Debes ir guardando las
+                    palabras bonitas en un array y cuando tengas las tres, imprímelas.</p>
+                <strong><a
+                        href="proyectosEducativos/(M5 )Estructures repetitives i arrays/(M5) Exercici 5. Paraules boniques.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 6</h3>
+                <p>Realiza un juego para adivinar un número aleatorio N, entre 1 y 500.</p>
+                <p>Si la distancia entre el número a adivinar y el de la usuaria es de 50 o más, el programa
+                    deberá decir:</p>
+                <blockquote>“Frío, frío: tu número es más grande” o “Frío, frío: tu número es más pequeño”
+                </blockquote>
+                <p>Si la distancia entre el número a adivinar y el de la usuaria está entre 15 y 50, el
+                    programa deberá decir:</p>
+                <blockquote>“Tibio, tibio: tu número es más grande” o “Tibio, tibio: tu número es más
+                    pequeño”</blockquote>
+                <p>Y si la distancia entre el número a adivinar y el de la usuaria es menor a 15, el
+                    programa deberá decir:</p>
+                <blockquote>“Caliente, caliente: tu número es más grande” o “Caliente, caliente: tu número
+                    es más pequeño”</blockquote>
+                <p>El proceso termina cuando la usuaria acierta.</p>
+                <strong><a
+                        href="proyectosEducativos/(M5 )Estructures repetitives i arrays/(M5) Exercici EXTRA 1. Realitza el programa de fred-fred, calent-calent.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 7</h3>
+                <p>Realiza un programa que dibuje la letra L en pantalla utilizando asteriscos.</p>
+                <p>El programa pedirá la altura.</p>
+                <p>El palo horizontal de la L tendrá una longitud de la mitad (división entera entre 2) de
+                    la altura más uno.</p>
+                <p>Ejemplo:</p>
+                <blockquote>Introduzca la altura de la L: 5</blockquote>
+                <p>La base será la división del número entre 2: (5 / 2) + 1 = 3</p>
+                <pre>
+            *
+            *
+            *
+            *
+            * * *
+                </pre>
+                <strong><a
+                        href="proyectosEducativos/(M5 )Estructures repetitives i arrays/(M5) Exercici EXTRA 2. Extra2 Fes un programa que dibuixi una L.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+
+        </div>
+
+        <!-- FUNCIONES -->
+        <div style="text-align: start;">
+
+            <h2 class="titulo" id="zona4">veamos funciones!</h2>
+
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>El programa solicita al usuario que introduzca dos números y la operación que desea
+                    realizar.</p>
+                <p>Cada operación (suma, resta, multiplicación, división y módulo) estará programada en una
+                    función diferente.</p>
+                <strong><a
+                        href="proyectosEducativos/(M6) Funcions/(M6) Exercici 1. Calculadora arcaica (amb funcions).html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 2</h3>
+                <p>Modifica el ejercicio 1 del módulo 5 para que el usuario decida cuántos nombres desea
+                    introducir.</p>
+                <p>Ahora, implementa el programa utilizando funciones.</p>
+                <strong><a
+                        href="proyectosEducativos/(M6) Funcions/(M6) Exercici 2. Fes-ho amb funcions.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+
+        </div>
+
+        <!-- PRACTICAR LO APRENDIDO -->
+        <div style="text-align: start;">
+
+            <h2 class="titulo" id="zona5">Practiquemos lo aprendido!</h2>
+
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>Crea un programa que solicite al usuario que introduzca tres números enteros por teclado.
+                </p>
+                <p>El programa debe mostrar por pantalla:</p>
+                <ul style="flex-direction: column;">
+                    <li>El mayor de los tres números.</li>
+                    <li>El menor de los tres números.</li>
+                    <li>Si hay dos números iguales.</li>
+                </ul>
+                <strong><a href="proyectosEducativos/(M7.1)/(M7.1.) Exercici 1. Tres nombres enters.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 2</h3>
+                <p>Crea un programa que determine si un número es múltiplo de otro.</p>
+                <p>Para hacerlo, crea una función que reciba los dos números como parámetros y que retorne
+                    <strong>true</strong> si el primer número introducido es múltiplo del segundo, o
+                    <strong>false</strong> si no lo es.
+                </p>
+                <strong><a href="proyectosEducativos/(M7.1)/(M7.1.) Exercici 2. True o False.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 3</h3>
+                <p>El usuario debe introducir un número y el programa debe mostrar en pantalla si el número
+                    es <strong>par</strong> o <strong>impar</strong>.</p>
+                <strong><a
+                        href="proyectosEducativos/(M7.1)/(M7.1.) Exercici 3. El nombre és parell o imparell.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 4</h3>
+                <p>Crea una función que reciba como parámetros los lados de un triángulo. La función debe
+                    retornar un mensaje indicando si el triángulo es:</p>
+                <ul style="flex-direction: column;">
+                    <li><strong>Equilátero</strong>: todos los lados son iguales.</li>
+                    <li><strong>Isósceles</strong>: dos lados son iguales.</li>
+                    <li><strong>Escaleno</strong>: todos los lados son diferentes.</li>
+                </ul>
+                <strong><a href="proyectosEducativos/(M7.1)/(M7.1.) Exercici 4. Triangle.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 5</h3>
+                <p>Muestra por pantalla los números pares comprendidos entre el 100 y el 0 en orden
+                    descendente.</p>
+                <strong><a
+                        href="proyectosEducativos/(M7.1)/(M7.1.) Exercici 5. Nombres parells del 100 al 0.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 6</h3>
+                <p>El usuario/a introducirá un número (del 1 al 10) por pantalla, y utilizando un bucle, el
+                    programa le mostrará la tabla de multiplicar de ese número.</p>
+
+                <p>Ejemplo:</p>
+                <pre>
+                    2 x 1 = 2
+                    2 x 2 = 4
+                    2 x 3 = 6
+                    ...
+                    2 x 10 = 20
+                </pre> <strong><a
+                        href="proyectosEducativos/(M7.1)/(M7.1.) Exercici 6. Taula de multiplicar.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 7</h3>
+                <p>Realiza un programa donde el usuario introduzca un carácter y un número. El programa
+                    imprimirá en pantalla un cuadrado con el tamaño y el carácter introducidos por el
+                    usuario.</p>
+
+                <p>Ejemplo:</p>
+
+                <pre>
+                % % % % %
+                % % % % %
+                % % % % %
+                % % % % %
+                % % % % %
+                </pre>
+                <strong><a href="proyectosEducativos/(M7.1)/(M7.1.) Exercici 7. Dibuixa un quadrat.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 8</h3>
+                <h4>Menú de Conversión de Unidades</h4>
+                <ul style="flex-direction: column;">
+                    <li>Pasar de metros a pies.</li>
+                    <li>De pies a metros.</li>
+                    <li>De metros a yardas.</li>
+                    <li>De yardas a metros.</li>
+                </ul>
+                <strong><a href="proyectosEducativos/(M7.1)/(M7.1.) Exercici 8. Canviar unitats.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+
+        </div>
+
+        <!-- PRACTICAR LO APRENDIDO 2 -->
+        <div style="text-align: start;">
+
+            <h2 class="titulo" id="zona6">Continuemos practicando lo aprendido!</h2>
+
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>¿Sabes decir qué hace el programa adjunto?</p>
+                <p>Para hacerlo, seguramente tendrías que poner algún punto de ruptura (breakpoint) y
+                    evaluar el valor de las variables donde se toman decisiones.</p>
+                <h2>Código JavaScript</h2>
+                <pre>
+            <code>
+            function verificarNumeroPrimo() { 
+                let numero = parseInt(prompt("Escoge un número: "), 10);  // Convertir el input a número entero
+                if (isNaN(numero)) {
+                    alert("Por favor, introduce un número válido.");
+                    return;
+                }
+                
+                let esPrimo = false;
+                if (numero > 1) {
+                    esPrimo = esNumeroPrimo(numero);  // Llamada a la función para verificar si es primo
+                }
+                alert(esPrimo);
+            }
+            
+            function esNumeroPrimo(numero) {
+                let primo = true;
+                let divisor = 2;
+                
+                // Verificamos divisibilidad del número por los valores menores a él
+                while (primo && divisor < numero) {
+                    if (numero % divisor === 0) {
+                        primo = false;
+                    }
+                    divisor++;
+                }
+                return primo;
+            }
+            </code>
+                </pre>
+                <strong><a href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 1..html" target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 2</h3>
+                <p>Haz un programa que muestre lo siguiente en pantalla:</p>
+
+                <pre>
+                *
+                * *
+                * * *
+                * * * *
+                * * * * *
+                * * * * * *
+                </pre>
+
+                <p>El número de líneas formadas por “*” vendrá dado por un número que el usuario/usuario
+                    introducirá por consola.</p>
+
+                <p>Condición: En todo el código del programa solo puede haber un *.</p>
+
+                <p>También, a poder ser, no utilices ningún método como repeat() o substring() de la clase
+                    String.</p>
+                <strong><a href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 2. Dibuixa un triangle.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 3</h3>
+                <p>Haz un programa que muestre lo siguiente en pantalla:</p>
+
+                <pre>
+                * * * * * *
+                * * * * *
+                * * * *
+                * * *
+                * *
+                *
+                </pre>
+
+                <p>El número de líneas formadas por “*” vendrá dado por un número que el usuario introducirá
+                    por consola.</p>
+
+                <p>Condición: En todo el código del programa solo puede haber un *.</p>
+
+                <p>También, a poder ser, no utilices ningún método como repeat() o substring() de la clase
+                    String.</p> <strong><a
+                        href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 3. Dibuixa un triangle invertit.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 4</h3>
+                <p>Haz un programa que muestre lo siguiente en pantalla:</p>
+
+                <pre>
+                *
+                * *
+                * * *
+                * * * *
+                * * * * *
+                * * * * * *
+                * * * * *
+                * * * *
+                * * *
+                * *
+                *
+                </pre>
+
+                <p>La línea con más “*” vendrá dada por un número que el usuario introducirá por consola.
+                </p>
+
+                <p>Condición: En todo el código del programa solo puede haber dos *.</p>
+
+                <p>También, a poder ser, no utilices ningún método como repeat() o substring() de la clase
+                    String.</p>
+                <strong><a href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 4. Dibuixa una piràmide.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 5</h3>
+                <p>Realiza un programa donde el usuario introduzca un número y el programa llame a un método
+                    que retorna el factorial del número introducido.</p>
+                <p>El factorial de un número n (entero, no negativo) es el producto de todos los números
+                    enteros positivos inferiores o iguales a n.</p>
+                <strong><a
+                        href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 5. Calcula el factorial d'un nombre.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 6</h3>
+                <p>El usuario debe introducir números hasta que introduzca un número primo.</p>
+
+                <p>En el momento en que el usuario introduzca un número primo, el programa debe mostrar por
+                    pantalla el siguiente mensaje: “¡Exacto, el número “x” es primo!”</p>
+
+                <p>Nota: Utiliza la función creada en el ejercicio: (M7.2.) Ejercicio 1.</p>
+                <strong><a
+                        href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 6. Demana nombres fins que introdueixi un nombre primer.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 7</h3>
+                <p>Determina si es bisiesto o no papra ello, utiliza la siguiente lógica:</p>
+                <ol>
+                    <li>Un año es bisiesto si es divisible por 4.</li>
+                    <li>Sin embargo, si el año es divisible por 100, no es bisiesto, a menos que también sea
+                        divisible por 400.</li>
+                </ol>
+                <p>Por ejemplo, 2000 y 2020 son bisiestos, mientras que 1900 no lo es.</p>
+                <p>Este método permite verificar la condición con un simple código en cualquier lenguaje de
+                    programación.</p>
+                <p>Si necesitas más información, puedes consultar este recurso <a
+                        href="https://www.feroza.net/blog/algoritmo-para-determinar-si-un-ano-es-bisiesto">aquí</a>.
+                </p>
+                <strong><a
+                        href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 7. Calcula si l'any és de traspàs.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 8</h3>
+                <h4>Sucesión de Fibonacci</h4>
+                <p>El usuario introduce un número por teclado y el programa llama a un método que debe
+                    mostrar la sucesión de Fibonacci.</p>
+                <p>Ejemplo:</p>
+                <p>Si el usuario introduce el 10, el resultado debe ser:</p>
+                <p>0, 1, 1, 2, 3, 5, 8, 13, 21, 34</p>
+                <strong><a
+                        href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 8. Mostra la successió de Fibonacci.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+
+        </div>
+
+        <!-- CONSOLIDEMOS NUESTROS PROGRESOS -->
+        <div style="text-align: start;">
+
+            <h3 class="titulo" id="zona7">Consolidemos nuestros progresos!</h3>
+
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>Programa de Lista de Tareas</p>
+                <p>Crea un programa que tenga un menú con las siguientes opciones:</p>
+                <ul style="flex-direction: column;">
+                    <li>Añadir tarea</li>
+                    <li>Mostrar todas las tareas</li>
+                    <li>Eliminar tarea</li>
+                    <li>Salir de la aplicación</li>
+                </ul>
+                <p>Este programa permite gestionar una lista de tareas pendientes. Las tareas se podrán
+                    añadir, mostrar y eliminar una vez completadas.</p> <strong><a
+                        href="proyectosEducativos/(M7.3)/(M7.3.) Exercici 1. Tasques.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 2</h3>
+                <p>En este programa, el usuario debe introducir una cadena de texto, y el programa,
+                    utilizando un bucle <code>for</code>, debe mostrar la cadena invertida.</p>
+
+                <strong><a
+                        href="proyectosEducativos/(M7.3)/(M7.3.) Exercici 2. Mostra un string al revés.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 3</h3>
+                <p>El usuario debe introducir una frase, y el programa determinará si la frase es un
+                    palíndromo.</p>
+                <strong><a
+                        href="proyectosEducativos/(M7.3)/(M7.3.) Exercici 3. Indica si la frase és palíndrom.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 4</h3>
+                <p>Utilice esta tabla para asociar el resto de la división entre 23 con la letra
+                    correspondiente del DNI:</p>
+                <table border="1">
+
+                    <th>Número</th>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                    <th>11</th>
+                    <th>12</th>
+                    <th>13</th>
+                    <th>14</th>
+                    <th>15</th>
+                    <th>16</th>
+                    <th>17</th>
+                    <th>18</th>
+                    <th>19</th>
+                    <th>20</th>
+                    <th>21</th>
+                    <th>22</th>
+                    </tr>
+                    <tr>
+                        <td>Letra</td>
+                        <td>T</td>
+                        <td>R</td>
+                        <td>W</td>
+                        <td>A</td>
+                        <td>G</td>
+                        <td>M</td>
+                        <td>Y</td>
+                        <td>F</td>
+                        <td>P</td>
+                        <td>D</td>
+                        <td>X</td>
+                        <td>B</td>
+                        <td>N</td>
+                        <td>J</td>
+                        <td>Z</td>
+                        <td>S</td>
+                        <td>Q</td>
+                        <td>V</td>
+                        <td>H</td>
+                        <td>L</td>
+                        <td>C</td>
+                        <td>K</td>
+                        <td>E</td>
+                    </tr>
+                </table>
+                <tr>
+                    <td>22</td>
+                    <td>E</td>
+                </tr>
+                </table>
+                <strong><a
+                        href="proyectosEducativos/(M7.3)/(M7.3.) Exercici 4. Calcula la lletra del DNI.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 5</h3>
+                <p>Dado un array de palabras introducidas por el usuario, el programa debe:</p>
+                <ul style="flex-direction: column;">
+                    <li>Decir el número de palabras que contienen la letra A.</li>
+                    <li>Mostrar estas palabras en pantalla.</li>
+                </ul>
+                <strong><a
+                        href="proyectosEducativos/(M7.3)/(M7.3.) Exercici 5. Paraules amb la lletra A.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 6</h3>
+                <p>Dado un array de números, el programa debe:</p>
+                <ul  style="flex-direction: column;">
+                    <li>Mostrar la suma de todos los números pares.</li>
+                    <li>Mostrar la suma de todos los números impares.</li>
+                </ul>
+                <strong><a
+                        href="proyectosEducativos/(M7.3)/(M7.3.) Exercici 6. Suma tots els parells i els imparells d'un array.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 7</h3>
+                <p>Escribe un programa que muestre un menú a los usuarios con las siguientes opciones:</p>
+                <br>
+                <ul  style="flex-direction: column;">
+                    <li>Calcular material de tabla (llama a una función que recibe un booleano que
+                        representa si la persona tiene experiencia o no). Si tiene, retornará el mensaje
+                        "tabla de fibra", si no, retornará el mensaje "tabla de espuma". (Preguntamos al
+                        usuario si tiene experiencia o no).</li>
+                    <li>Imprimir pronóstico (llama a una función que recibe la altura de la ola en metros).
+                        Si la altura es más de 2 metros, imprimirá "olas grandes", si no, imprimirá "olas
+                        pequeñas". (Introducimos la altura de las olas por pantalla, simulando que las
+                        recibimos de una aplicación externa).</li>
+                    <li>Calcular el costo por reserva (llama a una función que recibe los minutos de reserva
+                        y el tipo de tabla reservada y retorna el costo de la reserva). (Preguntamos al
+                        usuario por los minutos y el tipo).</li>
+                </ul>
+                <p>Tabla tipo espuma: 20€ cada 60 min.</p>
+                <p>Tabla tipo fibra: 35€ cada 60 min.</p>
+                <br>
+                <p>Salir del programa.</p>
+                <p>Hasta que la persona no escriba un 4, el programa debe continuar mostrando el menú y
+                    dando la posibilidad de realizar acciones.</p>
+                <strong><a
+                        href="proyectosEducativos/(M7.2)/(M7.2.) Exercici 7. Calcula si l'any és de traspàs.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+        </div>
+
+
+        <!-- METODOS DE ARRAYS-->
+        <div style="text-align: start;">
+
+            <h2 class="titulo" id="zona8">Aprendamos los metodos de los arrays!</h2>
+            <p>Antes de resolver el ejercicio, mira el siguiente video explicativo y hecha un vistazo al pdf
+                de Barcelona activa:</p>
+            <br>
+            <strong><a href="https://www.youtube.com/watch?v=5yPf74sCu2k">Ver video (Metodos de arrays que
+                    debes conocer)</a>
+            </strong>
+            <br>
+            <strong><a
+                    href="https://itacademy.barcelonactiva.cat/pluginfile.php/24714/mod_resource/content/1/M5_Metodes_arrays.pdf">Ver
+                    pdf sobre arrays (IT academy)</a></strong>
+
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>Dados este array donde hay 5 personas:</p>
+                <pre><code>
+                                const personas = [
+                                    {
+                                        nombre: "Juan",
+                                        dni: "12345678",
+                                        hobbies: ["leer", "bailar"]
+                                    },
+                                    {
+                                        nombre: "María",
+                                        dni: "87654321",
+                                        hobbies: ["pintar", "correr", "viajar"]
+                                    },
+                                    {
+                                        nombre: "Pedro",
+                                        dni: "98765432",
+                                        hobbies: ["cocinar", "ver películas"]
+                                    },
+                                    {
+                                        nombre: "Laura",
+                                        dni: "54321678",
+                                        hobbies: ["hacer deporte", "viajar"]
+                                    },
+                                    {
+                                        nombre: "Carlos",
+                                        dni: "87651234",
+                                        hobbies: ["tocar la guitarra", "hacer deporte"]
+                                    }
+                                ];
+                                    </code></pre>
+
+                <p>1. Buscar una persona por su DNI utilizando el método <code>find</code>. Se pide al
+                    usuario que introduzca el DNI a buscar, y luego se informa si la persona está registrada
+                    en la aplicación.</p>
+                <p>2. Encontrar la posición de una persona en el array utilizando el método
+                    <code>findIndex</code>. Se pide al usuario que introduzca el DNI a buscar, y luego se
+                    informa de la posición de la persona en el array.
+                </p>
+                <p>3. Mostrar las personas que tienen un hobby específico utilizando el método
+                    <code>filter</code>. Se pide al usuario que introduzca un hobby, y luego se muestran las
+                    personas que tienen ese hobby en su lista de hobbies.
+                </p>
+                <p>4. Mostrar el total de hobbies que tienen las personas utilizando el método
+                    <code>reduce</code>.
+                </p>
+                <p>5. Verificar si alguna persona tiene un hobby específico utilizando la combinación de los
+                    métodos <code>some</code> e <code>includes</code>. Se pide al usuario que introduzca el
+                    hobby a buscar, y luego se informa si alguna persona tiene ese hobby.</p>
+                <p>6. Encontrar la primera persona con un hobby específico utilizando la combinación de los
+                    métodos <code>find</code> e <code>includes</code>. Se pide al usuario que introduzca el
+                    hobby, y luego se muestra la primera persona que tiene ese hobby.</p>
+                <p>7. Crear un nuevo array con los nombres de todas las personas en mayúsculas utilizando el
+                    método <code>map</code>.</p><strong><a
+                        href="proyectosEducativos/(M8.1) Objectes, arrays d'objectes i altres métodes d'array/(M8.1.) Exercici 1. Mètodes d'array.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+        </div>
+
+
+
+        <!-- PROGRAMACION ORIENTADA A OBJETOS-->
+        <div style="text-align: start;">
+
+            <h2 class="titulo" id="zona9">POO o Programación Orientada a Objetos</h2>
+            <p>Antes de resolver los ejercicios, mira la explicacion en W3Schools y hecha un vistazo a los
+                pdf
+                de Barcelona activa:</p>
+            <br>
+            <strong><a
+                    href="https://itacademy.barcelonactiva.cat/pluginfile.php/24720/mod_resource/content/1/FDLP_JS_M8_POO1.pdf">W3schools, Classes</a>
+            </strong>
+            <br>
+            <strong><a
+                    href="https://itacademy.barcelonactiva.cat/pluginfile.php/24720/mod_resource/content/1/FDLP_JS_M8_POO1.pdf">Programación
+                    Orientada a Objetos</a>
+            </strong>
+            <br>
+            <strong><a
+                    href="https://itacademy.barcelonactiva.cat/pluginfile.php/24721/mod_resource/content/3/FDLP_JS_M8_POO2.pdf">Programación
+                    Orientada a Objetos (El constructor)</a></strong>
+
+            <div>
+                <h3>Ejercicio 1</h3>
+                <p>Crea un programa que tenga una clase llamada <strong>Client</strong>.</p>
+                <p>Esta clase <strong>Client</strong> tendrá como atributos el DNI, la edad, la nacionalidad y el número de vuelos cogidos.</p>
+                <p>Además del constructor, la clase <strong>Client</strong> debe disponer de los siguientes métodos:</p>
+                <ul  style="flex-direction: column;">
+                    <li>Métodos que permitan consultar y modificar cada uno de los atributos.</li>
+                    <li>Un método que calcula la huella de carbono (multiplicando los viajes por 0,5 toneladas de CO₂).</li>
+                    <li>Un método que devolverá una descripción completa del cliente (<strong>toString()</strong>).</li>
+                </ul>
+                <p>Crea dos clientes y comprueba que los métodos creados funcionan correctamente. Es decir, llama a todos los métodos de los dos clientes.</p>
+                <p>Recuerda que cada clase debe guardarse en un archivo diferente y enlazarse adecuadamente al HTML.</p>
+                <strong><a
+                        href="proyectosEducativos/(M8.2) Programació Orientada a Objectes/Cliente (1)/(M8.2) Exercici 1. Client.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 2</h3>
+                <p>Haz un programa que permita dar de alta, modificar, ver y eliminar vuelos. La clase <strong>Vol</strong> debe tener los atributos: número de vuelo, distancia (en km), compañía, número de pasajeros y número de motores.</p>
+                <p>También deberá contener un constructor completo y los getters y setters necesarios. Además, debe tener un método <strong>calculaPetjadaCarboni()</strong> que calculará el CO₂ emitido por el avión teniendo en cuenta que cada motor libera 0,1 toneladas de CO₂ cada 1000 km de distancia.</p>
+                
+                <h2>Funcionalidades del programa:</h2>
+                <ul  style="flex-direction: column;">
+                    <li>La función <strong>crearVol()</strong> debe recibir los datos para crear un vuelo y agregarlo a un array de vuelos.</li>
+                    <li>La función <strong>donarDeBaixaVol()</strong> debe recibir el número de vuelo a dar de baja. Si el vuelo está en el array, lo eliminaremos y mostraremos un mensaje informativo en pantalla; si no, avisaremos que el vuelo no se encuentra en nuestra aplicación.</li>
+                    <li>La función <strong>veureVol()</strong> debe recibir el número de vuelo a mostrar. Si el vuelo está en el array, mostraremos todos sus atributos y también llamaremos al método <strong>calculaPetjadaCarboni()</strong>; si no, avisaremos que el vuelo no se encuentra en nuestra aplicación.</li>
+                    <li>La función <strong>modificarVol()</strong> debe recibir el número de vuelo a modificar. Si el vuelo está en el array, preguntaremos qué atributo se desea modificar, haremos la modificación pertinente y mostraremos un mensaje informativo en pantalla. Si no, avisaremos que el vuelo no se encuentra en nuestra aplicación.</li>
+                </ul>
+                <strong><a
+                        href="proyectosEducativos/(M8.2) Programació Orientada a Objectes/Vuelos/(M8.2) Exercici 2. Vols.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 3</h3>
+                <p>Modifica las clases Client y Vol</p>
+                <p>Fes un programa que tingui programades totes les opcions: (Cada opció pot ser un botó diferent)</p>
+                <ul  style="flex-direction: column;">
+                    <li>Crear cliente/a.</li>
+                    <li>Eliminar cliente/a.</li>
+                    <li>Crear vuelo de un cliente/a.</li>
+                    <li>Mostrar la media de edad de los clientes mayores de edad.</li>
+                    <li>Calcular la huella de carbono de un cliente (es la suma del CO₂ emitido de todos sus vuelos).</li>
+                    <li>Calcular la huella de carbono media de todos los clientes.</li>
+                    <li>CompensaCO₂: Precio fijo de 5 € por tonelada de CO₂.</li>
+                </ul>
+                <h2>A tener en cuenta:</h2>
+                <ul  style="flex-direction: column;">
+                    <li>Al crear un cliente, este no deberá tener ningún vuelo "asociado".</li>
+                    <li>En la app solo queremos tener un array de clientes, no de vuelos. Los vuelos se deben guardar dentro de los clientes.</li>
+                    <li>El diagrama.</li>
+                </ul>
+                <strong><a
+                        href="proyectosEducativos/(M8.2) Programació Orientada a Objectes/Cliente-vuelos/(M8.2) Exercici 3. Programa per gestionar vols de clients.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 4</h3>
+                <p>Programa de Aviones</p>
+                <p>Haz un programa que contenga la clase Avión y las clases derivadas Avión Comercial, Avioneta y Jet privado.</p>
+                <p>Debes programar las opciones:</p>
+                <ul  style="flex-direction: column;">
+                    <li>Dar de alta avión.</li>
+                    <li>Eliminar avión.</li>
+                    <li>Mostrar avión (cuando mostremos un avión, mostraremos todos sus datos y también llamaremos a los métodos propios de este avión en concreto).</li>
+                </ul>
+                <p>No se instanciará ningún objeto de la clase Avión, sino que solo se instanciarán objetos de las clases derivadas.</p>
+                <p>Los atributos comunes a todas las clases serán el número de avión, la marca, modelo, carga (en kg) y longitud (en metros).</p>
+                <p>Se debe crear un método en la clase adecuada que permita calcular los minutos necesarios para limpiar el avión. Para limpiar un avión comercial se debe multiplicar la longitud del avión por 10 minutos y agregar un plus de 240 minutos por la parte exterior. Para limpiar una avioneta se debe multiplicar la longitud de la avioneta por 10 minutos y dividirlo entre 2. Finalmente, para limpiar un jet se debe multiplicar la longitud del jet por 10 minutos, dividirlo entre 2 y agregar un plus de 15 minutos.</p>
+                <p>También se debe crear un método en la clase adecuada que calcule el combustible necesario. Para este cálculo se debe multiplicar la longitud del avión por la carga (el resultado serán los litros de combustible necesarios).</p>
+                <p>El avión comercial tiene un número de personas dentro y el método calcularCostoComida() debe calcular el costo total de la comida en función de estas personas, teniendo en cuenta que la comida de cada persona cuesta 10 €.</p>
+                <p>La avioneta puede recorrer una distancia en concreto en función del número de hélices que tenga. El método calcularDistancia() nos ayudará a hacer este cálculo teniendo en cuenta que por cada hélice podemos recorrer 1.000 km.</p>
+                <p>El jet privado tiene un número de personas dentro y el método calcularCostoReserva() debe calcular el costo de la reserva del jet teniendo en cuenta que por cada persona se pagan 1.000 €. El número máximo de pasajeros es de 10.</p>
+                <strong><a
+                        href="proyectosEducativos/(M8.2) Programació Orientada a Objectes/avionComercial, avioneta, jet privado/(M8.2) Exercici 4. Avió Comercial, Avioneta i Jet privat.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+            <div>
+                <h3>Ejercicio 5</h3>
+                <p>Aplicación de Edificios</p>
+                <p>La ciudad de Barcelona, como cualquier ciudad, está formada por un número muy grande de edificios. Hay muchas clases de edificios: edificios de viviendas, hospitales, escuelas, bloques de apartamentos, bloques de oficinas, hoteles, cines, etc.</p>
+                <p>El ejercicio propuesto consistirá en crear una aplicación que contendrá una clase Edificio y varias clases derivadas. No se instanciará ningún objeto de la clase Edificio, sino que se instanciarán objetos de las clases derivadas de esta. Las clases derivadas son: Hotel, Hospital y Cine.</p>
+                <p>Todos los edificios tendrán ciertas datos comunes (nombre, número de plantas, superficie (m²)) que se darán al crear el edificio y no se modificarán, pero sí que se deberá poder acceder a ellas para leerlas.</p>
+                <p>Se creará un método <strong>limpiar()</strong> en la clase adecuada, el cual mostrará por pantalla el tiempo que se ha tardado en limpiar el edificio, teniendo en cuenta que se tarda un minuto por cada 5 m². Además, si un edificio tiene más de una planta, se tarda medio minuto en subir de una planta a otra. Por tanto, se añadirá medio minuto por cada planta adicional. Por cada minuto de trabajo se pagará un euro diario. Además, como se limpia cada día, para obtener el costo mensual, se deberá multiplicar por 30 (este costo mensual también se mostrará por pantalla).</p>
+                <p>Además, se implementará un método llamado <strong>calcularCostoVigilancia()</strong> que mostrará lo que cuesta al mes contratar vigilantes en cada edificio. Se considera que cada vigilante de hotel o hospital puede vigilar 1000 m². Por tanto, si un edificio tiene una superficie de 5500 m², necesitaremos 6 vigilantes. En cambio, los vigilantes de los cines pueden vigilar 3000 m². Contratar a cada vigilante cuesta a los propietarios del edificio 1.300 euros mensuales, pero los vigilantes de hoteles cobran un plus de peligrosidad de 500 euros mensuales.</p>
+                <p>En el hospital se reparte comida a los pacientes tres veces al día. Habrá un método <strong>repartirComida()</strong> en el lugar adecuado que mostrará, cuando sea llamado, el mensaje “Se están repartiendo xxx raciones”. Este número puede variar a lo largo del tiempo, y, por tanto, se deberá permitir acceder al atributo correspondiente, tanto para leerlo como para modificarlo, aunque no se haga directamente.</p>
+                <p>En el cine se creará la función <strong>projectarSesion()</strong>, que mostrará el mensaje “Se han recaudado xxx.xx euros”, teniendo en cuenta que, para calcular la recaudación, se debe multiplicar el precio de una entrada por el número de asistentes a la sesión, que no podrá superar el aforo máximo. Por tanto, el método <strong>projectarSesion</strong> deberá recibir como parámetros el número de asistentes y el precio de la entrada para esa sesión. El número de asistentes a la sesión no puede ser mayor que el aforo total de la sala.</p>
+                <p>En los hoteles, cada día pasa el servicio de habitaciones. Se calcula que cada miembro del servicio puede atender 20 habitaciones. Se creará un método que calcule, y muestre por pantalla: a) Cuántas personas son necesarias para atender el servicio de habitaciones en el hotel. b) Cuál es el total necesario para los sueldos de estas personas, teniendo en cuenta que cada persona cobra 1.000 euros al mes.</p>
+                <p>Ejemplos: El “Hospital de Vilafranca”, de 1.950 m² y 2 plantas. En este momento tiene 26 pacientes. El “Hospital General de Cataluña”, de 25.350 m² y 10 plantas. En este momento tiene 315 pacientes. El “Cine Montecarlo”, de 3180 m² y 1 planta. El “Cine Principal”, de 12.450 m² y 2 plantas. El “Hotel Hilton”, de 73.858 m² y 22 plantas. Tiene 583 habitaciones. El “Hotel Pepita”, de 593 m² y 3 plantas. Tiene 12 habitaciones.</p>
+                <p>La aplicación debe ser capaz de dar de alta, mostrar y eliminar edificios. Al llamar a la función mostrar, llamaremos a todos los métodos del edificio en cuestión para ver todos sus datos por pantalla.</p>
+                <strong><a
+                        href="proyectosEducativos/(M8.2) Programació Orientada a Objectes/crearEdificios/(M8.2) Exercici 5. Programa per crear edificis.html"
+                        target="_blank">Aqui
+                        la solución (Te invito a intentar solucionarlo primero sin mirar la
+                        solución)</a></strong>
+            </div>
+        </div>
+
+    </div>
+</section>
+</main>
+<footer>
+    <p>&copy;Copyright 2024. <span>Alejandro Cortes Galan</span> v.0.0.1.</p>
+    <p>Todos los derechos reservados</p>
+</footer>
+<button onclick="scrollToTop()" id="scrollTopBtn">⬆</button>
+
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
