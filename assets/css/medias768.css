@@ -317,22 +317,26 @@
         font-size: 8px;
     }
 
+    #educativo h1 {
+        font-size: 36px;
+    }
+
     #educativo h2 {
         font-size: 28px;
     }
 
     #educativo h3 {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     #educativo p {
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
 
     }
 
     #educativo li {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     #educativo div {
