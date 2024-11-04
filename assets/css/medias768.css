@@ -1,6 +1,7 @@
-
 @media only screen and (min-width: 765px) and (max-width: 1200px) {
-    html, body {
+
+    html,
+    body {
         scroll-behavior: smooth;
         overflow-x: hidden;
     }
@@ -20,7 +21,7 @@
 
     .botonCv {
         font-size: 15px;
-    } 
+    }
 
     #btnAlternWeb {
         font-size: 12px;
@@ -53,18 +54,18 @@
     }
 
     .navLinks {
-        position: relative; 
+        position: relative;
         font-size: 12px;
         gap: 5px;
         padding: 10px;
         display: flex;
-        align-items: center; 
+        align-items: center;
     }
 
     .navLinks i {
         font-size: 12px;
         position: absolute;
-        left: 0; 
+        left: 0;
         top: 50%;
         transform: translateY(-50%);
         align-items: center;
@@ -84,7 +85,7 @@
 
 
     .titulo {
-        font-size: 32x;
+        font-size: 32px;
         margin: 40px 0;
     }
 
@@ -129,7 +130,7 @@
         left: 30px;
     }
 
-    .punto-clave1  {
+    .punto-clave1 {
         font-size: 8px;
         left: 30px;
     }
@@ -139,7 +140,7 @@
         font-size: 16px;
     }
 
-    
+
     .subContacto {
         width: 650px;
         font-size: 18px;
@@ -216,7 +217,7 @@
         margin: 0;
         margin-bottom: 30px;
     }
-    
+
     .card h4 {
         font-size: 14px;
         padding: 0;
@@ -236,6 +237,7 @@
         height: 90%;
         margin: 0px 0;
     }
+
     #cardGrande {
         width: 240px;
         height: auto;
@@ -256,7 +258,7 @@
         gap: 10px;
     }
 
-    .contacto > P {
+    .contacto>P {
         color: white;
         font-size: 26px;
         font-weight: bolder;
@@ -293,5 +295,59 @@
     .proyectos {
         max-width: 100%;
     }
-}
 
+
+    /* MEDIAS PAGINA EDUCATIVA */
+
+    #educativo .nav ul {
+        display: flex;
+        justify-content: center;
+        width: 100vw !important;
+    }
+
+    .quitarGap {
+        gap: 0;
+    }
+
+    #educativo .navLinks {
+        font-size: 8px !important;
+    }
+
+    #educativo i {
+        font-size: 8px;
+    }
+
+    #educativo h2 {
+        font-size: 28px;
+    }
+
+    #educativo h3 {
+        font-size: 14px;
+    }
+
+    #educativo p {
+        font-size: 12px;
+        text-align: center;
+
+    }
+
+    #educativo li {
+        font-size: 10px;
+    }
+
+    #educativo div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 700px;
+    }
+
+    #educativo strong {
+        font-size: 12px;
+    }
+
+    #educativo blockquote {
+        text-align: center;
+    }
+}

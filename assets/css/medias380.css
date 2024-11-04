@@ -294,6 +294,72 @@
     .proyectos {
         max-width: 100%;
     }
+
+
+            /* MEDIAS PAGINA EDUCATIVA */
+
+        
+            .quitarGap {
+                gap: 5px;
+            }
+    
+            #educativo h1 {
+                font-size: 24px;
+            }
+    
+            #educativo .navLinks {
+                font-size: 0px !important;
+            }
+        
+            #educativo i {
+                color: yellowgreen;
+                font-size: 14px;
+            }
+        
+            #educativo h2 {
+                font-size: 20px;
+            }
+        
+            #educativo h3 {
+                font-size: 12px;
+            }
+
+            #educativo h4 {
+                font-size: 10px;
+            }
+        
+            #educativo p {
+                font-size: 10px;
+                text-align: center;
+        
+            }
+        
+            #educativo li {
+                font-size: 10px;
+            }
+        
+            #educativo div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 280px !important;
+            }
+
+            #educativo div .nav {
+                display: flex;
+                justify-content: center;
+                width: 100vw !important;
+                padding: 0;            
+            }
+        
+            #educativo strong {
+                font-size: 10px;
+            }
+        
+            #educativo blockquote {
+                text-align: center;
+            }
 }
 
 
