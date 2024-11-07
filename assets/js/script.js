@@ -24,7 +24,8 @@ function scrollToTop() {
 let textos = [
     "FullStack",
     "Php",
-    "Larabel",
+    "Laravel",
+    "Symphony",
     "WordPress"
 ]
 
