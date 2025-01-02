@@ -25,7 +25,7 @@ let textos = [
     "FullStack",
     "React",
     "Node.js",
-    "MongoDB",
+    "MariaDB",
     "TypeScript",
     "Express"
 ];
