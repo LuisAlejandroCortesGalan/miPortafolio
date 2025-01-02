@@ -273,6 +273,7 @@
 
     .contacto ul {
         margin-top: 10px;
+        gap: 10px;
     }
 
     input {

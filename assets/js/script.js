@@ -23,11 +23,13 @@ function scrollToTop() {
 
 let textos = [
     "FullStack",
-    "Php",
-    "Laravel",
-    "Symphony",
-    "WordPress"
-]
+    "React",
+    "Node.js",
+    "MongoDB",
+    "TypeScript",
+    "Express"
+];
+
 
 let index = 0;
 let currentText = '';

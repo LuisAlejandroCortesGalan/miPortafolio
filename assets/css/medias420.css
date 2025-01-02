@@ -251,6 +251,10 @@
         gap: 10px;
     }
 
+    .contacto ul {
+        gap: 10px;
+    }
+
     .tituloContact {
         font-size: 16px;
         margin-bottom: 10px;
