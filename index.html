@@ -356,8 +356,8 @@
         </p>
         <section class="proyectos">
             <div class="botones_experiencia" id="botonesPortafolio">
-                <button onclick="mostrarAlternWeb()" id="btnAlternWeb" class="active">AlternWeb (Practicas)</button>
-                <button onclick="mostrarCreArt()" id="btnCreArt">Proyecto CreArt</button>
+                <button onclick="mostrarCreArt()" id="btnCreArt" class="active">Proyecto CreArt</button>
+                <button onclick="mostrarAlternWeb()" id="btnAlternWeb" >AlternWeb (Practicas)</button>
                 <button onclick="mostrarProyectos()" id="btnProyectos">Proyectos Educativos</button>
             </div>
             <!-- SECTION PROYECTOS EDUCATIVOS -->
@@ -422,7 +422,20 @@
 
 
         <!-- SECTION CREART -->
-        <section class="cardContainer" id="creArt" style="display: none;">
+        <section class="cardContainer" id="creArt" style="display: flex;">
+            <a target="_blank" href="https://chefgpt.tech" id="linkCard">
+                <div class="card" id="cardGrande">
+                    <h4>Proyecto FreeLance ChefGPT</h4>
+                    <img src="assets/img/cards/chefgpt.jpeg" alt="Imagen de la web Chefgpt">
+                    <p>
+                        Desarrollo de una aplicación desde cero con <b>React</b>, <b>Node.js</b>, <b>Express.js</b>, y <b>MongoDB</b>.
+                    </p>
+                    <p>
+                        App gastronómica con <b>IA (Qwen)</b> que sugiere recetas, organiza menús y aprovecha ingredientes. Actualmente en construcción.
+                    </p>
+                    
+                </div>
+            </a>
             <a target="_blank" href="https://web-creart-2.onrender.com/" id="linkCard">
                 <div class="card" id="cardGrande">
                     <h4>Proyecto FreeLance CreArt ONG</h4>
@@ -438,10 +451,22 @@
                     </p>
                 </div>
             </a>
+            <a target="_blank" href="https://web-creart-2.onrender.com/" id="linkCard">
+                <div class="card" id="cardGrande">
+                    <h4>Proyecto FreeLance CreArt ONG</h4>
+                    <img src="assets/img/cards/calendario.png" alt="Imagen de la web web de eventos">
+                    <p>
+                        Aplicación <b>MERN</b> desarrollada con <b>TypeScript</b>, <b>TailwindCSS</b>, <b>Mapbox</b> y <b>FullCalendar</b>.
+                    </p>
+                    <p>
+                        Guarda eventos en un <b>mapa</b> y <b>calendario</b> interactivo con diseño responsive.
+                    </p>
+                </div>
+            </a>
         </section>
 
         <!-- SECTION ALTERNWEB -->
-        <section class="cardContainer" id="alternWeb" style="display: flex;">
+        <section class="cardContainer" id="alternWeb" style="display: none;">
             <a target="_blank" href="https://jordim86.sg-host.com/" id="linkCard">
                 <div class="card">
                     <h4>Jordi Pla, Psicologo</h4>

@@ -23,12 +23,14 @@ function scrollToTop() {
 
 let textos = [
     "FullStack",
+    "MongoDB",
+    "Express",
     "React",
     "Node.js",
-    "MariaDB",
     "TypeScript",
-    "Express"
+    "TailwindCSS"
 ];
+
 
 
 let index = 0;
@@ -120,8 +122,6 @@ function texto_oculto() {
 
 
 // FUNCION PARA ALTERNAR LA EXPERIENCIA LABORAL
-
-
 
 let experienciaIt = document.getElementById('experienciaIt');
 let experienciaChef = document.getElementById('experienciaChef');
